@@ -691,12 +691,15 @@ function renderArtifactDetails(artifactName) {
     container.innerHTML = `
       <div class="artifact-intro-box">
         <div>
-          <h4 style="color:var(--primary); font-size:1.15rem; margin-bottom:0.25rem;">chunks.parquet / chunks.jsonl — Unidad Primaria para LLMs</h4>
-          <p style="font-size:0.875rem; color:var(--text-muted);">
-            Fragmentos semánticos autocontenidos de ~550 palabras con ventana de solapamiento de 80 palabras y trazabilidad dual de páginas. Sumar siempre <code>unique_words</code> para volumen léxico.
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.35rem; flex-wrap:wrap;">
+            <h4 style="color:var(--primary); font-size:1.15rem; margin:0;">chunks.parquet / chunks.jsonl — Unidad Primaria para LLMs</h4>
+            <span class="badge-pill" style="background:#fef3c7; color:#92400e; font-size:0.7rem; font-weight:700;">EJEMPLAR SINTÉTICO DE REFERENCIA</span>
+          </div>
+          <p style="font-size:0.875rem; color:var(--text-muted); margin:0;">
+            Fragmentos semánticos autocontenidos de ~550 palabras con ventana de solapamiento de 80 palabras y trazabilidad dual de páginas. Sumar siempre <code>unique_words</code> para volumen léxico. Los registros mostrados abajo ilustran la estructura exacta generada al procesar cualquier PDF.
           </p>
         </div>
-        <span class="badge-pill badge-pass">Cobertura: ${SAMPLE_CORPUS.summary.integrity_status} (≥ 99.5%)</span>
+        <span class="badge-pill badge-pass">Cobertura esperada: ${SAMPLE_CORPUS.summary.integrity_status} (≥ 99.5%)</span>
       </div>
 
       ${SAMPLE_CORPUS.chunks.map(c => `
@@ -728,12 +731,15 @@ function renderArtifactDetails(artifactName) {
     container.innerHTML = `
       <div class="artifact-intro-box">
         <div>
-          <h4 style="color:var(--primary); font-size:1.15rem; margin-bottom:0.25rem;">tables.parquet / tables.jsonl — Evidencia Cuantitativa Tabular</h4>
-          <p style="font-size:0.875rem; color:var(--text-muted);">
-            Cuadrículas validadas por el clasificador heurístico. Incluyen leyenda superior (caption), representación Markdown lista para inyección en prompt y lista de registros estructurados.
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.35rem; flex-wrap:wrap;">
+            <h4 style="color:var(--primary); font-size:1.15rem; margin:0;">tables.parquet / tables.jsonl — Evidencia Cuantitativa Tabular</h4>
+            <span class="badge-pill" style="background:#fef3c7; color:#92400e; font-size:0.7rem; font-weight:700;">EJEMPLAR SINTÉTICO DE REFERENCIA</span>
+          </div>
+          <p style="font-size:0.875rem; color:var(--text-muted); margin:0;">
+            Cuadrículas validadas por el clasificador heurístico. Incluyen leyenda superior (caption), representación Markdown lista para inyección en prompt y lista de registros estructurados. Estructura idéntica a la que se generará para tus tablas.
           </p>
         </div>
-        <span class="badge-pill badge-pass">Tablas Aceptadas: ${SAMPLE_CORPUS.tables.length}</span>
+        <span class="badge-pill badge-pass">Muestra: ${SAMPLE_CORPUS.tables.length} Tablas</span>
       </div>
 
       ${SAMPLE_CORPUS.tables.map(t => `
@@ -765,12 +771,15 @@ function renderArtifactDetails(artifactName) {
     container.innerHTML = `
       <div class="artifact-intro-box">
         <div>
-          <h4 style="color:var(--primary); font-size:1.15rem; margin-bottom:0.25rem;">tables_rejected.jsonl — Auditoría de Rejillas Descartadas</h4>
-          <p style="font-size:0.875rem; color:var(--text-muted);">
-            Registro auditable de cuadrículas descartadas por representar prosa maquetada en columnas o celdas fragmentadas. Permite verificar que no se descarten tablas válidas.
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.35rem; flex-wrap:wrap;">
+            <h4 style="color:var(--primary); font-size:1.15rem; margin:0;">tables_rejected.jsonl — Auditoría de Rejillas Descartadas</h4>
+            <span class="badge-pill" style="background:#fef3c7; color:#92400e; font-size:0.7rem; font-weight:700;">EJEMPLAR SINTÉTICO DE REFERENCIA</span>
+          </div>
+          <p style="font-size:0.875rem; color:var(--text-muted); margin:0;">
+            Registro auditable de cuadrículas descartadas por representar prosa maquetada en columnas o celdas fragmentadas. Permite verificar que no se descarten tablas válidas en tus ejecuciones.
           </p>
         </div>
-        <span class="badge-pill badge-warn">Rejillas Rechazadas: ${SAMPLE_CORPUS.tables_rejected.length}</span>
+        <span class="badge-pill badge-warn">Muestra: ${SAMPLE_CORPUS.tables_rejected.length} Rechazo</span>
       </div>
 
       <table class="manual-table">
@@ -800,12 +809,15 @@ function renderArtifactDetails(artifactName) {
     container.innerHTML = `
       <div class="artifact-intro-box">
         <div>
-          <h4 style="color:var(--primary); font-size:1.15rem; margin-bottom:0.25rem;">sections.parquet / sections.jsonl — Estructura Jerárquica Documental</h4>
-          <p style="font-size:0.875rem; color:var(--text-muted);">
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.35rem; flex-wrap:wrap;">
+            <h4 style="color:var(--primary); font-size:1.15rem; margin:0;">sections.parquet / sections.jsonl — Estructura Jerárquica Documental</h4>
+            <span class="badge-pill" style="background:#fef3c7; color:#92400e; font-size:0.7rem; font-weight:700;">EJEMPLAR SINTÉTICO DE REFERENCIA</span>
+          </div>
+          <p style="font-size:0.875rem; color:var(--text-muted); margin:0;">
             Unidades temáticas lógicas completas del documento antes de la fragmentación en chunks. Conserva la procedencia exacta por bloque y página.
           </p>
         </div>
-        <span class="badge-pill">Total Secciones: ${SAMPLE_CORPUS.sections.length}</span>
+        <span class="badge-pill">Muestra: ${SAMPLE_CORPUS.sections.length} Secciones</span>
       </div>
 
       <table class="manual-table">
@@ -839,12 +851,16 @@ function renderArtifactDetails(artifactName) {
     container.innerHTML = `
       <div class="artifact-intro-box">
         <div>
-          <h4 style="color:var(--primary); font-size:1.15rem; margin-bottom:0.25rem;">pages.parquet / pages.jsonl — Auditoría Página por Página</h4>
-          <p style="font-size:0.875rem; color:var(--text-muted);">
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.35rem; flex-wrap:wrap;">
+            <h4 style="color:var(--primary); font-size:1.15rem; margin:0;">pages.parquet / pages.jsonl — Auditoría Página por Página</h4>
+            <span class="badge-pill" style="background:#fef3c7; color:#92400e; font-size:0.7rem; font-weight:700;">EJEMPLAR SINTÉTICO DE REFERENCIA</span>
+          </div>
+          <p style="font-size:0.875rem; color:var(--text-muted); margin:0;">
             Evidencia primaria física. Almacena las tres capas de texto (nativo, OCR y limpio) junto con las líneas de borde repetitivas eliminadas para garantizar trazabilidad inmutable.
           </p>
         </div>
-        <span class="badge-pill badge-pass">Páginas Auditadas: ${SAMPLE_CORPUS.pages.length}</span>
+        <span class="badge-pill badge-pass">Muestra: ${SAMPLE_CORPUS.pages.length} Páginas</span>
+      </div>
       </div>
 
       <div class="grid-2">
@@ -880,12 +896,15 @@ function renderArtifactDetails(artifactName) {
     container.innerHTML = `
       <div class="artifact-intro-box">
         <div>
-          <h4 style="color:var(--primary); font-size:1.15rem; margin-bottom:0.25rem;">integrity_report.json — Matriz de Auditoría Relacional</h4>
-          <p style="font-size:0.875rem; color:var(--text-muted);">
-            Resultado de la verificación automática de 9 reglas de consistencia interna. Si falla alguna regla crítica, el estado se declara FAIL.
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.35rem; flex-wrap:wrap;">
+            <h4 style="color:var(--primary); font-size:1.15rem; margin:0;">integrity_report.json — Matriz de Auditoría Relacional</h4>
+            <span class="badge-pill" style="background:#fef3c7; color:#92400e; font-size:0.7rem; font-weight:700;">EJEMPLAR SINTÉTICO DE REFERENCIA</span>
+          </div>
+          <p style="font-size:0.875rem; color:var(--text-muted); margin:0;">
+            Resultado de la verificación automática de 9 reglas de consistencia interna. Si falla alguna regla crítica en tus documentos, el estado se declara FAIL y se detiene la exportación.
           </p>
         </div>
-        <span class="badge-pill badge-pass" style="font-size:0.9rem; padding:0.4rem 0.9rem;">ESTADO: ${SAMPLE_CORPUS.integrity_report.status}</span>
+        <span class="badge-pill badge-pass" style="font-size:0.9rem; padding:0.4rem 0.9rem;">ESTADO ESPERADO: ${SAMPLE_CORPUS.integrity_report.status}</span>
       </div>
 
       <table class="manual-table">

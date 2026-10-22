@@ -320,11 +320,152 @@
     <section id="artefactos" class="tab-pane">
       <div class="card">
         <div class="card-header">
-          <span class="badge-pill" style="background:#e0f2fe; color:#0369a1; margin-bottom:0.5rem;">DICCIONARIO DE DATOS Y VISOR</span>
+          <span class="badge-pill" style="background:#e0f2fe; color:#0369a1; margin-bottom:0.5rem;">DICCIONARIO DE DATOS Y CONTRATOS DE SALIDA</span>
           <h2 class="card-title">Especificación Técnica de los Artefactos Generados</h2>
           <p class="card-subtitle">
-            Inspección detallada de los esquemas de datos y registros reales producidos en <code class="inline-code">/content/pdf_intelligence</code>.
+            Guía de esquemas, tipos de datos y relaciones de los 7 archivos producidos por el pipeline. Explica el flujo de trabajo real con tus propios documentos y presenta ejemplos de referencia técnica para cada formato.
           </p>
+        </div>
+
+        <!-- AVISO DE TRANSPARENCIA METODOLÓGICA -->
+        <div style="background:#eff6ff; border:1px solid #bfdbfe; border-left:5px solid #2563eb; padding:1.25rem 1.5rem; border-radius:var(--radius-sm); margin-bottom:1.75rem;">
+          <div style="display:flex; align-items:flex-start; gap:0.75rem;">
+            <span style="font-size:1.6rem; line-height:1;">ℹ️</span>
+            <div>
+              <strong style="color:#1e40af; font-size:1.05rem; display:block; margin-bottom:0.35rem;">
+                Aviso de Claridad: ¿Qué son los datos mostrados en esta sección?
+              </strong>
+              <p style="font-size:0.92rem; color:#1e3a8a; line-height:1.6; margin:0;">
+                Esta sección es una <strong>especificación técnica de esquemas y contrato de datos</strong>. Los registros mostrados en el visor interactivo inferior corresponden a un <strong>banco de prueba sintético de referencia (Mockup Canónico)</strong> diseñado para documentar la estructura exacta de cada campo, sus tipos de datos y sus vínculos relacionales. <strong>En esta interfaz web estática no se cargan ni procesan documentos PDF privados</strong>: para generar estos artefactos con tus propios archivos PDF, sigue el flujo de trabajo detallado a continuación.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- GUÍA DE TRABAJO EN PRODUCCIÓN -->
+        <div class="deepdive-section" style="background:#ffffff; border:1px solid var(--border); border-radius:var(--radius-md); padding:1.5rem; margin-bottom:2rem;">
+          <h4 class="deepdive-section-heading" style="color:var(--primary); font-size:1.15rem; margin-bottom:1rem;">
+            🛠️ ¿Cómo se trabajaría en la práctica con tus propios documentos PDF?
+          </h4>
+          <p class="deepdive-text" style="margin-bottom:1.25rem;">
+            Para transformar una colección de documentos PDF reales en los 7 artefactos de inteligencia documental auditada, el flujo de trabajo operativo consta de cuatro pasos estandarizados:
+          </p>
+
+          <div class="grid-2" style="gap:1.25rem;">
+            <div class="deepdive-box" style="border-left: 4px solid var(--ucr-blue);">
+              <strong style="color:var(--ucr-blue); display:block; font-size:0.95rem; margin-bottom:0.35rem;">
+                Paso 1: Disposición de los PDFs de Entrada
+              </strong>
+              <p style="font-size:0.875rem; color:#475569; line-height:1.5;">
+                Coloca los documentos que deseas procesar (informes técnicos, leyes, artículos científicos, memorias institucionales) en un directorio local (ej: <code>./data/mis_pdfs/</code>) o en una carpeta de Google Drive si utilizas el entorno en la nube.
+              </p>
+            </div>
+
+            <div class="deepdive-box" style="border-left: 4px solid var(--primary);">
+              <strong style="color:var(--primary); display:block; font-size:0.95rem; margin-bottom:0.35rem;">
+                Paso 2: Ejecución del Pipeline V5.2
+              </strong>
+              <p style="font-size:0.875rem; color:#475569; line-height:1.5;">
+                Lanza el procesamiento a través de la CLI del paquete:
+                <br><code style="font-size:0.8rem; background:#f1f5f9; padding:0.2rem 0.4rem; border-radius:3px; display:inline-block; margin-top:0.25rem;">pdf-intelligence process --input ./data/mis_pdfs --output ./data/salida_pipeline</code>
+                <br>O ejecuta directamente el cuaderno <a href="#guia_codigo" onclick="switchTab('guia_codigo')" style="color:var(--ucr-blue); font-weight:600;">Google Colab</a> incluido en el repositorio.
+              </p>
+            </div>
+
+            <div class="deepdive-box" style="border-left: 4px solid var(--accent);">
+              <strong style="color:var(--accent); display:block; font-size:0.95rem; margin-bottom:0.35rem;">
+                Paso 3: Generación Automática de los 7 Artefactos
+              </strong>
+              <p style="font-size:0.875rem; color:#475569; line-height:1.5;">
+                El motor ejecuta las 10 fases algorítmicas y deposita en la carpeta de salida los 7 archivos con la información extraída de <strong>tus documentos</strong>, garantizando <code>chunk_coverage ≥ 0.995</code> y trazabilidad dual de páginas.
+              </p>
+            </div>
+
+            <div class="deepdive-box" style="border-left: 4px solid var(--warning);">
+              <strong style="color:var(--warning); display:block; font-size:0.95rem; margin-bottom:0.35rem;">
+                Paso 4: Conexión con RAG, DuckDB y LLMs
+              </strong>
+              <p style="font-size:0.875rem; color:#475569; line-height:1.5;">
+                Cargas <code>chunks.parquet</code> en tu base vectorial (FAISS, Chroma, Qdrant), abres <code>corpus.duckdb</code> para analítica SQL o conectas tu agente de IA usando las directrices del <a href="#skill_agente" onclick="switchTab('skill_agente')" style="color:var(--ucr-blue); font-weight:600;">Skill de Agente</a> para responder con citas inmutables.
+              </p>
+            </div>
+          </div>
+
+          <!-- Matriz resumen de los 7 artefactos -->
+          <div style="margin-top:1.5rem;">
+            <strong style="font-size:0.95rem; color:var(--primary); display:block; margin-bottom:0.5rem;">
+              Inventario de Artefactos Producidos por Documento o Corpus:
+            </strong>
+            <table class="manual-table">
+              <thead>
+                <tr>
+                  <th>Archivo Físico</th>
+                  <th>Formato</th>
+                  <th>Propósito Técnico</th>
+                  <th>Destinatario Principal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>chunks.parquet</code> / <code>.jsonl</code></td>
+                  <td>Parquet / JSON Lines</td>
+                  <td>Unidades semánticas primarias (~550 palabras, solapamiento 80w, trazabilidad dual).</td>
+                  <td>Modelos de Lenguaje (LLMs) y Bases Vectoriales (RAG)</td>
+                </tr>
+                <tr>
+                  <td><code>tables.parquet</code> / <code>.jsonl</code></td>
+                  <td>Parquet / JSON Lines</td>
+                  <td>Tablas cuantitativas validadas por clasificador heurístico (Markdown y Records).</td>
+                  <td>Inyección en Prompts de LLMs y Dataframes Pandas</td>
+                </tr>
+                <tr>
+                  <td><code>tables_rejected.jsonl</code></td>
+                  <td>JSON Lines</td>
+                  <td>Rejillas descartadas (prosa en columnas o celdas rotas) con motivo explícito.</td>
+                  <td>Auditoría y Validación Metodológica Humana</td>
+                </tr>
+                <tr>
+                  <td><code>sections.parquet</code> / <code>.jsonl</code></td>
+                  <td>Parquet / JSON Lines</td>
+                  <td>Estructura jerárquica del documento antes de fragmentar en chunks.</td>
+                  <td>Reconstrucción de Capítulos y Navegación Jerárquica</td>
+                </tr>
+                <tr>
+                  <td><code>pages.parquet</code> / <code>.jsonl</code></td>
+                  <td>Parquet / JSON Lines</td>
+                  <td>Auditoría física página por página (texto nativo, OCR, texto limpio, líneas de borde).</td>
+                  <td>Auditoría Forense y Verificación de Extracción</td>
+                </tr>
+                <tr>
+                  <td><code>corpus.duckdb</code></td>
+                  <td>DuckDB SQL Relacional</td>
+                  <td>Base de datos embebida con todas las tablas indexadas y relacionadas.</td>
+                  <td>Consultas SQL OLAP de Alto Rendimiento</td>
+                </tr>
+                <tr>
+                  <td><code>integrity_report.json</code></td>
+                  <td>JSON estructurado</td>
+                  <td>Verificación automática de 9 reglas de consistencia relacional interna (PASS / FAIL).</td>
+                  <td>Control de Calidad Automatizado (CI/CD)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ENCABEZADO DEL EXPLORADOR DE EJEMPLOS CANÓNICOS -->
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1rem; border-top:1px solid var(--border); padding-top:1.5rem;">
+          <div>
+            <h3 style="font-size:1.25rem; font-weight:800; color:var(--primary); margin:0;">
+              🔍 Visor de Ejemplos Canónicos de Salida (Esquema de Referencia)
+            </h3>
+            <p style="font-size:0.875rem; color:var(--text-muted); margin:0.25rem 0 0;">
+              Selecciona un artefacto para inspeccionar registros de muestra y entender la morfología de campos que generará el pipeline con tus documentos:
+            </p>
+          </div>
+          <span class="badge-pill" style="background:#fef3c7; color:#92400e; font-weight:700;">
+            🧪 DATOS SINTÉTICOS DE MUESTRA
+          </span>
         </div>
 
         <div class="artifact-sub-nav">
@@ -338,6 +479,17 @@
 
         <div id="artifact-display-container">
           <!-- Renderizado dinámicamente por app.js (100% offline sin errores CORS) -->
+        </div>
+
+        <div style="margin-top:2rem; padding:1.5rem; background:#f8fafc; border:1px solid var(--border); border-radius:var(--radius-md); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <strong style="color:var(--primary); font-size:1.05rem; display:block;">¿Deseas saber cómo se limpian y depuran estos artefactos?</strong>
+            <span style="font-size:0.875rem; color:var(--text-muted);">Conoce los 6 ciclos de depuración heurística aplicados sobre el texto y las tablas antes de generar estas salidas.</span>
+          </div>
+          <div style="display:flex; gap:0.75rem;">
+            <button class="btn btn-primary" onclick="switchTab('depuracion')">🧹 Ver los 6 Ciclos de Depuración →</button>
+            <button class="btn btn-outline" onclick="switchTab('duckdb')">⚡ Ver Consultas SQL DuckDB →</button>
+          </div>
         </div>
       </div>
     </section>

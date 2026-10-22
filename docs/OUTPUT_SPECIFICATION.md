@@ -1,5 +1,8 @@
 # Especificación de Salidas y Diccionario de Datos: V5.2
 
+> [!NOTE]
+> **Aviso de Claridad Operativa:** Este documento define el **contrato de datos formal y diccionario de esquemas** de los 7 artefactos generados por el pipeline. Cuando ejecutas el pipeline sobre tu colección de PDFs mediante `pdf-intelligence process --input ./data/mis_pdfs --output ./data/salida`, el sistema crea exactamente estos archivos con los campos, tipos y relaciones aquí documentados. Los ejemplos presentados en la interfaz web de GitHub Pages son instancias sintéticas de referencia (mock de validación) para documentar visualmente estos esquemas.
+
 El pipeline genera dos familias complementarias de archivos en la carpeta de destino:
 1. **Vistas Tabulares y de Streaming**: Archivos `.jsonl` (un registro por línea, ideal para streaming y LLMs) y sus espejos tabulares optimizados `.parquet` (donde los diccionarios y listas internas se aplanan como cadenas JSON mediante `flatten_row`).
 2. **Archivos de Control e Índices**: Base de datos relacional `corpus.duckdb`, índices `tfidf_*.joblib`, `faiss.index`, y reportes de auditoría en formato JSON (`manifest.json`, `integrity_report.json`, `quality_report.json`, `data_dictionary.json`).
