@@ -1,0 +1,205 @@
+# CIOdD-UCR PDF Intelligence Pipeline (V5.2) — From PDF to RAG & Knowledge Vault
+
+[![Version](https://img.shields.io/badge/version-5.2.0-blue.svg)](https://github.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Zero Text Loss](https://img.shields.io/badge/Text%20Loss-Zero%20(coverage%20%E2%89%A5%2099.5%25)-success.svg)](docs/ARCHITECTURE.md)
+[![Database](https://img.shields.io/badge/Relational-DuckDB%20%2B%20Parquet-orange.svg)](docs/COOKBOOK_DUCKDB.md)
+[![Search](https://img.shields.io/badge/Search-TF--IDF%20%2B%20FAISS-purple.svg)](src/pdf_intelligence/search.py)
+[![Institution](https://img.shields.io/badge/Institution-CIOdD--UCR-004B87.svg)](https://odd.ucr.ac.cr)
+
+> **Centro de Investigación Observatorio del Desarrollo (CIOdD) — Universidad de Costa Rica (UCR)**  
+> *Research & RAG Edition — Octubre 2026*  
+> Autor y Desarrollador Principal: **Agustín Gómez**
+
+---
+
+## 🌟 Interfaz Interactiva en Vivo (GitHub Pages)
+
+Accede a la interfaz interactiva alojada en GitHub Pages para explorar el pipeline, visualizar artefactos en tiempo real, simular consultas RAG y probar el laboratorio de heurísticas:
+
+👉 **[Abrir Portal Interactivo GitHub Pages (`/docs`)](https://tu-usuario.github.io/pdf-to-rag-pipeline/)** *(O abrir localmente [`docs/index.html`](file:///Users/agustingomez/Downloads/0.%20FROM%20PDF%20to%20RAG/docs/index.html) en tu navegador)*.
+
+### ¿Qué puedes hacer en la interfaz interactiva?
+- 🔄 **Explorar las 10 Fases**: Flujo visual de procesamiento con inspección de código Python y fórmulas matemáticas.
+- 📦 **Inspeccionar Artefactos**: Visualizador en vivo de `chunks.jsonl`, `tables.jsonl`, `tables_rejected.jsonl`, `sections.jsonl`, `pages.jsonl` e `integrity_report.json`.
+- 🤖 **Simulador RAG y Prompts**: Búsqueda léxica, ensamblaje automático de evidencia con tablas vinculadas y botón para copiar al portapapeles.
+- 🧠 **Bóveda de Conocimiento (Brain OS)**: Visualizador de las 4 capas funcionales para sistemas operativos personales de IA.
+- 🧪 **Laboratorio de Heurísticas**: Controles deslizantes para ajustar tamaño de chunks, solapamiento y ratios tipográficos en tiempo real.
+- 📈 **Matriz de Evolución**: Comparativa forense entre el script original V1.0 (`pdf_to_rac_json.py`) y la versión V5.2.
+- ⚡ **DuckDB SQL Studio**: Ejecutor de consultas relacionales sobre el corpus.
+
+---
+
+## 📖 Descripción del Proyecto
+
+El **CIOdD-UCR PDF Intelligence Pipeline V5.2** es una solución integral de ingeniería documental diseñada para transformar bibliotecas heterogéneas de archivos PDF (digitales nativos, escaneados o híbridos) en un **corpus científico estructurado, auditable y con cero pérdida de información**. 
+
+A diferencia de los frameworks RAG genéricos que sufren de alucinaciones de páginas, pérdida silenciosa de secciones cortas y falsas tablas por prosa en columnas, este pipeline implementa un estricto protocolo de 10 fases con verificación criptográfica SHA-256 y trazabilidad dual de páginas (índice físico del PDF + etiqueta impresa original).
+
+---
+
+## 🏗️ Arquitectura y Flujo de Procesamiento
+
+El pipeline procesa cada documento en **10 fases secuenciales** y consolida el corpus en **4 fases globales**:
+
+```mermaid
+flowchart TD
+    PDF["📄 Archivo PDF Entrada"] --> P1["1. PDFProfiler\nSHA-256 + Metadatos + Preclasificación"]
+    P1 --> P2["2. LayoutExtractor\nPyMuPDF Dict + Tipografía + BBoxes"]
+    P2 --> P3["3. HeadingDetector (Paso 1)\nFiltros Exclusión + Score >= 2.0"]
+    P3 --> P4{"4. OCRExtractor\n¿chars<80 OR words<20 OR q<0.35?"}
+    P4 -- Sí --> OCR["Tesseract OCR 200 DPI (spa+eng)"]
+    P4 -- No --> P5["5. AdaptiveTableExtractor\nEstrategia Lines vs Text + Heurísticas"]
+    OCR --> P5
+    P5 --> P6["6. QualityAssessor\nCalidad Desacoplada + Limpieza Bordes (#)"]
+    P6 --> P7["7. demote_repeated_headings (Paso 2)\nDegradación en >=4 págs o >=8%"]
+    P7 --> P8["8. SectionBuilder\nAgrupación Jerárquica + Uniones ' › '"]
+    P8 --> P9["9. ChunkBuilder\n550w Objetivo, 80w Solapamiento, Fusión <60w"]
+    P9 --> P10["10. CorpusBuilder\nJSONL + Parquet + DuckDB + TF-IDF + FAISS + Auditoría"]
+```
+
+### Resumen de las 10 Fases
+1. **Perfilado (`PDFProfiler`)**: Cálculo de SHA-256, metadatos internos (`pypdf`), clasificación en `digital`, `scanned`, `hybrid` o `empty` mediante muestreo.
+2. **Layout Nativo (`LayoutExtractor`)**: Extracción de diccionarios ordenados por lectura, coordenadas bbox, spans tipográficos y mediana de fuente.
+3. **Detección de Encabezados (`HeadingDetector`)**: Sistema multicriterio por puntaje ($\ge 2.0$) con filtros de exclusión (notas al pie, viñetas, ejes).
+4. **OCR Adaptativo (`OCRExtractor`)**: Renderizado a 200 DPI y extracción con Tesseract bilingüe solo cuando la calidad o volumen nativo es deficiente.
+5. **Extracción y Filtro de Tablas (`AdaptiveTableExtractor`)**: Clasificador heurístico que separa tablas genuinas de prosa fragmentada, extrayendo leyendas (caption) y Markdown.
+6. **Calidad y Limpieza de Bordes (`QualityAssessor`)**: Normalización de cabeceras/pies a `#` en $\ge 35\%$ de páginas y recorte seguro **solo en bordes**.
+7. **Democión de Encabezados Repetidos (`demote_repeated_headings`)**: Degrada encabezados repetidos en $\ge 4$ páginas o $\ge 8\%$ del PDF.
+8. **Construcción de Secciones (`SectionBuilder`)**: Estructuración lógica con jerarquías (`" › "`) y procedencia de bloques.
+9. **Segmentación en Chunks (`ChunkBuilder`)**: Empaquetado hacia 550 palabras (máx 800), solapamiento intrasección de 80 palabras y **fusión de secciones cortas ($< 60$ palabras)** sin descarte de texto.
+10. **Consolidación, Índices y Auditoría (`CorpusBuilder`)**: Exportación a Parquet/JSONL, base `corpus.duckdb`, índices TF-IDF y FAISS, y 9 reglas de integridad.
+
+---
+
+## 📁 Estructura del Repositorio
+
+```text
+├── src/
+│   └── pdf_intelligence/                <-- Paquete modular de producción
+│       ├── __init__.py                  <-- Exportaciones y versionado v5.2.0
+│       ├── config.py                    <-- Dataclass PipelineConfig con hiperparámetros
+│       ├── profiler.py                  <-- PDFProfiler (hash SHA-256 y metadatos)
+│       ├── layout.py                    <-- LayoutExtractor (bloques, tipografía, bboxes)
+│       ├── heading.py                   <-- HeadingDetector y demote_repeated_headings
+│       ├── ocr.py                       <-- OCRExtractor (Tesseract OCR adaptativo)
+│       ├── tables.py                    <-- AdaptiveTableExtractor (filtro heurístico y markdown)
+│       ├── quality.py                   <-- QualityAssessor y recorte de líneas de borde
+│       ├── structure.py                 <-- SectionBuilder y ChunkBuilder (cero pérdida)
+│       ├── document.py                  <-- DocumentExtractor (orquestador de 10 fases)
+│       ├── corpus.py                    <-- CorpusBuilder (Parquet, DuckDB, TF-IDF, auditoría)
+│       ├── search.py                    <-- LocalSearch (búsqueda rápida sin APIs externas)
+│       ├── utils.py                     <-- Normalizadores, hashes y serialización
+│       └── cli.py                       <-- Interfaz de línea de comandos (CLI)
+├── docs/                                <-- Interfaz Interactiva en GitHub Pages y Guías
+│   ├── index.html                       <-- Aplicación web interactiva (Single-Page App)
+│   ├── app.js                           <-- Lógica reactiva, simuladores y explorador
+│   ├── styles.css                       <-- Sistema de diseño limpio con identidad UCR
+│   ├── data/
+│   │   └── sample_corpus.json           <-- Datos de demostración interactiva
+│   ├── ARCHITECTURE.md                  <-- Arquitectura técnica y fórmulas a fondo
+│   ├── CODE_REFERENCE.md                <-- Referencia de clases, funciones y métodos
+│   ├── OUTPUT_SPECIFICATION.md          <-- Diccionario de datos y especificación de salidas
+│   ├── CLEANING_AND_DEBUGGING_CYCLES.md <-- Los 6 ciclos de depuración explicados
+│   ├── LLM_AND_RAG_GUIDE.md             <-- Guía de uso, prompts y citación para LLMs
+│   ├── BRAIN_OS_INTEGRATION.md          <-- Integración con Bóvedas de Conocimiento (v1.6)
+│   ├── EVOLUTION_V1_TO_V5.md            <-- Comparativa histórica V1.0 vs V5.2
+│   └── COOKBOOK_DUCKDB.md               <-- Recetas SQL para consultas analíticas
+├── legacy/
+│   ├── v1_original/
+│   │   ├── pdf_to_rac_json.py           <-- Versión original de hace >1 año (Abril 2026)
+│   │   └── README.md
+│   └── v5_2_monolith/
+│       ├── ciodd_ucr_pdf_intelligence_pipeline_v5_2.py  <-- Monolito Colab Octubre 2026
+│       └── README.md
+├── notebooks/
+│   └── ciodd_pdf_intelligence_v5_2_colab.ipynb  <-- Notebook listo para Google Colab
+├── tests/
+│   └── test_pipeline.py                 <-- Pruebas unitarias automatizadas
+├── .github/workflows/
+│   └── deploy-pages.yml                 <-- Despliegue automático a GitHub Pages
+├── pyproject.toml                       <-- Configuración de empaquetado PEP 621
+├── requirements.txt                     <-- Dependencias de producción
+├── requirements-dev.txt                 <-- Dependencias de desarrollo
+├── LICENSE                              <-- Licencia MIT
+└── README.md                            <-- Documentación principal
+```
+
+---
+
+## 🚀 Instalación y Uso Rápido
+
+### 1. Clonar el Repositorio
+```bash
+git clone https://github.com/tu-usuario/pdf-to-rag-pipeline.git
+cd pdf-to-rag-pipeline
+```
+
+### 2. Instalar Dependencias
+```bash
+# Entorno básico
+pip install -e .
+
+# Con soporte opcional para Embeddings densos y FAISS
+pip install -e ".[embeddings]"
+```
+
+### 3. Procesar un Directorio de PDFs desde la Terminal (CLI)
+```bash
+pdf-intelligence process --input ./mis_documentos --output ./salida_corpus
+```
+
+### 4. Búsqueda Local Rápida con TF-IDF (100% Offline)
+```bash
+pdf-intelligence search "inteligencia artificial en educación pública" --top-k 5
+```
+
+### 5. Auditar Integridad Relacional
+```bash
+pdf-intelligence audit --output ./salida_corpus
+```
+
+---
+
+## 📦 Artefactos de Salida Generados
+
+| Archivo | Formato | Propósito Principal |
+|---|---|---|
+| `chunks.jsonl` / `.parquet` | JSONL / Parquet | **Unidad primaria para LLMs**. Fragmentos semánticos con citas de página y tablas vinculadas. |
+| `tables.jsonl` | JSONL | Tablas genuinas aprobadas, con versión en **Markdown** y diccionarios estructurados. |
+| `tables_rejected.jsonl` | JSONL | Rejillas descartadas con motivo explícito (`reject_reason`) para auditoría. |
+| `sections.jsonl` / `.parquet` | JSONL / Parquet | Secciones jerárquicas con títulos y procedencia de párrafos. |
+| `pages.jsonl` / `.parquet` | JSONL / Parquet | Capas de texto nativo, texto OCR, texto limpio y líneas de borde eliminadas. |
+| `documents.jsonl` / `.parquet` | JSONL / Parquet | Catálogo de documentos con métricas de cobertura y calidad. |
+| `corpus.duckdb` | Base Relacional | Base relacional indexada para consultas SQL analíticas de alto rendimiento. |
+| `tfidf_vectorizer.joblib` / `matrix` | Joblib | Matriz léxica para recuperación local en sub-segundos. |
+| `embeddings.npy` / `faiss.index` | Numpy / FAISS | Representaciones vectoriales densas multilingües (384 dimensiones). |
+| `integrity_report.json` | JSON | Resultado de 9 controles automáticos de integridad (`PASS` / `FAIL`). |
+| `manifest.json` | JSON | Registro reproducible con versiones de librerías y huellas criptográficas SHA-256. |
+
+---
+
+## 🧠 Integración con Bóvedas de Conocimiento (Brain OS v1.6)
+
+El pipeline está diseñado para servir como el motor de ingesta de **Brain OS (Manual de Arquitectura Personal con IA v1.6 por Jaime Figueres)**.
+- **Capa 0 (Ingesta Cruda)**: Transforma los PDFs en fragmentos Parquet/JSONL con trazabilidad SHA-256.
+- **Capa 1 (Compilador)**: Alimenta notas atómicas en Obsidian y compila tableros interactivos HTML.
+- **Capa 2 (Memoria Operativa)**: Los chunks actúan como la memoria de largo plazo (claims) con citas exactas.
+- **Capa 3 (Agente Autónomo)**: El agente RAG consulta `corpus.duckdb` para redactar informes y responder preguntas operativas.
+
+Consulta la guía completa en [`docs/BRAIN_OS_INTEGRATION.md`](docs/BRAIN_OS_INTEGRATION.md).
+
+---
+
+## 🧪 Pruebas Unitarias
+
+Para ejecutar el conjunto de pruebas unitarias automatizadas:
+```bash
+python3 tests/test_pipeline.py
+```
+
+---
+
+## 📜 Licencia y Créditos
+
+Este proyecto está liberado bajo la **[Licencia MIT](LICENSE)**. Desarrollado en el **Centro de Investigación Observatorio del Desarrollo (CIOdD)** de la **Universidad de Costa Rica (UCR)**.

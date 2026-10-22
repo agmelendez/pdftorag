@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CIOdD-UCR PDF Intelligence Pipeline V5.2 — From PDF to RAG & Knowledge Vault</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Hero Header -->
+  <header>
+    <div class="header-container">
+      <div class="badge-pill badge-pass">
+        <span>●</span> Versión 5.2.0 — Research & RAG Edition (Octubre 2026)
+      </div>
+      <div class="header-title-row">
+        <div>
+          <h1 class="main-title">CIOdD-UCR <span>PDF Intelligence</span> Pipeline</h1>
+          <p class="header-subtitle">
+            Sistema interactivo de ingesta documental, estructuración profunda, auditoría criptográfica SHA-256 e indexación relacional/vectorial. Transforma PDFs heterogéneos en corpus científicos de alta fidelidad para LLMs, sistemas RAG y Bóvedas de Conocimiento (Brain OS).
+          </p>
+        </div>
+        <div class="header-actions">
+          <a href="https://github.com" target="_blank" class="btn btn-primary">
+            ⭐ Ver en GitHub
+          </a>
+          <a href="#artifacts" class="btn btn-outline" onclick="document.querySelector('[data-tab=artifacts]').click()">
+            🔍 Explorar Corpus
+          </a>
+        </div>
+      </div>
+
+      <!-- Feature Badges -->
+      <div class="badges-bar">
+        <span class="feature-tag">🛡️ Cero Pérdida de Texto (coverage ≥ 0.995)</span>
+        <span class="feature-tag">📑 Trazabilidad Dual (Pág. PDF + Pág. Impresa)</span>
+        <span class="feature-tag">📊 Extracción y Filtro Heurístico de Tablas</span>
+        <span class="feature-tag">🗄️ DuckDB Relacional + Parquet</span>
+        <span class="feature-tag">🧠 Búsqueda Híbrida: TF-IDF + FAISS</span>
+        <span class="feature-tag">🏛️ Centro de Investigación Observatorio del Desarrollo — UCR</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="tab-nav">
+    <div class="nav-container">
+      <button class="nav-tab active" data-tab="overview">
+        🔄 Arquitectura y 10 Fases
+      </button>
+      <button class="nav-tab" data-tab="artifacts">
+        📦 Explorador de Artefactos
+      </button>
+      <button class="nav-tab" data-tab="rag_simulator">
+        🤖 Simulador RAG y Prompts
+      </button>
+      <button class="nav-tab" data-tab="brain_os">
+        🧠 Bóveda de Conocimiento (Brain OS)
+      </button>
+      <button class="nav-tab" data-tab="heuristics">
+        🧪 Laboratorio de Heurísticas
+      </button>
+      <button class="nav-tab" data-tab="evolution">
+        📈 Evolución V1.0 → V5.2
+      </button>
+      <button class="nav-tab" data-tab="duckdb">
+        ⚡ DuckDB SQL Studio
+      </button>
+      <button class="nav-tab" data-tab="documentation">
+        📖 Documentación Técnica
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content Area -->
+  <main class="content-area">
+
+    <!-- TAB 1: OVERVIEW & 10 PHASES -->
+    <section id="overview" class="tab-pane active">
+      <div class="grid-4" style="margin-bottom: 2rem;">
+        <div class="stat-box">
+          <div class="stat-label">Garantía de Cobertura</div>
+          <div class="stat-value" style="color: var(--success);">≥ 99.5%</div>
+          <div class="stat-sub">Sin descarte de secciones cortas</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Fases Secuenciales</div>
+          <div class="stat-value">10 Fases</div>
+          <div class="stat-sub">Por documento + 4 globales</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Modelos de Recuperación</div>
+          <div class="stat-value">Híbrido</div>
+          <div class="stat-sub">TF-IDF Léxico + FAISS Denso</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Auditoría Automática</div>
+          <div class="stat-value" style="color: var(--accent);">9 Reglas</div>
+          <div class="stat-sub">Integridad y huellas SHA-256</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">Flujo Integral del Pipeline (Fases 1 a 10)</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Haz clic en cualquier fase para inspeccionar su módulo en Python, fórmulas matemáticas, entradas y salidas.
+            </p>
+          </div>
+        </div>
+        
+        <div class="grid-2">
+          <!-- Flow Column -->
+          <div class="pipeline-flow" id="pipeline-flow-container">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+
+          <!-- Detail Column -->
+          <div>
+            <div id="phase-details-content" class="phase-details-panel">
+              <!-- Rendered dynamically by app.js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: ARTIFACTS EXPLORER -->
+    <section id="artifacts" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">Explorador de Datos y Artefactos del Corpus</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Visualiza en tiempo real los archivos estructurados generados en <code class="inline-code">/content/pdf_intelligence</code>.
+            </p>
+          </div>
+        </div>
+
+        <div class="sub-tabs">
+          <button class="sub-tab-btn active" data-artifact="chunks">📄 chunks.jsonl</button>
+          <button class="sub-tab-btn" data-artifact="tables">📊 tables.jsonl</button>
+          <button class="sub-tab-btn" data-artifact="tables_rejected">🚫 tables_rejected.jsonl</button>
+          <button class="sub-tab-btn" data-artifact="sections">📑 sections.jsonl</button>
+          <button class="sub-tab-btn" data-artifact="pages">📖 pages.jsonl</button>
+          <button class="sub-tab-btn" data-artifact="integrity">🛡️ integrity_report.json</button>
+        </div>
+
+        <div id="artifact-viewer-container">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: RAG SIMULATOR & PROMPT BUILDER -->
+    <section id="rag_simulator" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">Simulador RAG y Ensamblador de Evidencia para LLMs</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Recupera fragmentos relevantes del corpus y ensambla bloques de contexto estructurados respetando la jerarquía de evidencia de <code class="inline-code">MANUAL_USO_LLM_CORPUS_PDF_V5.md</code>.
+            </p>
+          </div>
+        </div>
+
+        <div class="search-input-box">
+          <input type="text" id="rag-search-input" class="search-input" placeholder="Buscar por palabra clave o concepto (ej. docentes, muestreo, privacidad, inteligencia artificial)..." value="docentes">
+          <button id="rag-search-btn" class="btn btn-primary">🔍 Buscar en Corpus</button>
+        </div>
+
+        <div id="rag-results-container">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: BRAIN OS & KNOWLEDGE VAULT -->
+    <section id="brain_os" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="badge-pill" style="background:#e0f2fe; color:#0369a1;">Arquitectura Jaime Figueres / FAIR.cr</div>
+            <h2 class="card-title">Bóveda de Conocimiento y Sistema Operativo Personal (Brain OS v1.6)</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Cómo el CIOdD-UCR PDF Intelligence Pipeline sirve como el motor de ingesta fundamental para alimentar Bóvedas de Conocimiento y asistentes autónomos.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 1.5rem;">
+          <div style="background:#f8fafc; padding:1.25rem; border-radius:var(--radius-sm); border:1px solid var(--border);">
+            <h4 style="color:var(--primary); margin-bottom:0.5rem;">El Problema que Resuelve</h4>
+            <p style="font-size:0.9rem; color:#475569;">
+              En organizaciones científicas y equipos de investigación, la información crítica vive dispersa en PDFs estáticos, informes anuales y bases de datos tabulares. Los LLMs fallan cuando se les arrojan PDFs crudos porque sufren de alucinación de páginas, tablas rotas y pérdida de párrafos cortos.
+            </p>
+          </div>
+          <div style="background:#f8fafc; padding:1.25rem; border-radius:var(--radius-sm); border:1px solid var(--border);">
+            <h4 style="color:var(--primary); margin-bottom:0.5rem;">La Solución Integrada: Pipeline V5.2 + Brain OS</h4>
+            <p style="font-size:0.9rem; color:#475569;">
+              El PDF Intelligence Pipeline extrae el contenido con cero pérdida y trazabilidad matemática (Layer 0), mientras que Brain OS estructura la memoria operativa, compila vistas interactivas en HTML/Markdown y permite a agentes inteligentes ejecutar flujos de trabajo autónomos sin requerir intervención humana constante.
+            </p>
+          </div>
+        </div>
+
+        <h3 style="color:var(--primary); margin-bottom:1rem; font-size:1.1rem;">Las 4 Capas Funcionales de la Bóveda de Conocimiento</h3>
+        <div class="grid-4">
+          <div class="stat-box" style="border-top: 4px solid #0284c7;">
+            <div class="stat-label">Capa 0: Ingesta Cruda</div>
+            <div style="font-weight:700; color:var(--primary); margin-top:0.35rem;">PDF Intelligence V5.2</div>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.35rem;">
+              Extracción limpia, OCR adaptativo, bboxes, detección de tablas y generación de Parquet/JSONL.
+            </p>
+          </div>
+          <div class="stat-box" style="border-top: 4px solid #10b981;">
+            <div class="stat-label">Capa 1: Compilador</div>
+            <div style="font-weight:700; color:var(--primary); margin-top:0.35rem;">Markdown & HTML</div>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.35rem;">
+              Compilación de notas atómicas en Obsidian y generación de tableros interactivos para revisión.
+            </p>
+          </div>
+          <div class="stat-box" style="border-top: 4px solid #f59e0b;">
+            <div class="stat-label">Capa 2: Memoria</div>
+            <div style="font-weight:700; color:var(--primary); margin-top:0.35rem;">Daily Logs & Flush</div>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.35rem;">
+              Memoria de corto plazo (bitácoras diarias) sincronizada con la memoria de largo plazo (biblioteca de claims).
+            </p>
+          </div>
+          <div class="stat-box" style="border-top: 4px solid #8b5cf6;">
+            <div class="stat-label">Capa 3: Agente Autónomo</div>
+            <div style="font-weight:700; color:var(--primary); margin-top:0.35rem;">Colaborador Operativo</div>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.35rem;">
+              Agentes RAG que consultan DuckDB y FAISS para responder con citas verificables de documento y página.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: HEURISTICS PLAYGROUND -->
+    <section id="heuristics" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">Laboratorio Interactivo de Heurísticas de Segmentación</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Ajusta los hiperparámetros clave y observa en tiempo real cómo impactan la cobertura léxica, el número de chunks y el solapamiento.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-3" style="margin-bottom: 1.5rem;">
+          <div>
+            <label style="font-weight:600; font-size:0.875rem; color:var(--primary); display:block; margin-bottom:0.25rem;">
+              CHUNK_TARGET_WORDS: <span id="val-target-words" style="color:var(--accent);">550 palabras</span>
+            </label>
+            <input type="range" id="slider-target-words" min="200" max="1000" step="50" value="550" style="width:100%;">
+            <span style="font-size:0.75rem; color:var(--text-muted);">Tamaño objetivo para alimentar la ventana de contexto del LLM.</span>
+          </div>
+
+          <div>
+            <label style="font-weight:600; font-size:0.875rem; color:var(--primary); display:block; margin-bottom:0.25rem;">
+              CHUNK_OVERLAP_WORDS: <span id="val-overlap-words" style="color:var(--accent);">80 palabras</span>
+            </label>
+            <input type="range" id="slider-overlap-words" min="0" max="200" step="10" value="80" style="width:100%;">
+            <span style="font-size:0.75rem; color:var(--text-muted);">Ventana de solapamiento léxico entre chunks consecutivos de la misma sección.</span>
+          </div>
+
+          <div>
+            <label style="font-weight:600; font-size:0.875rem; color:var(--primary); display:block; margin-bottom:0.25rem;">
+              HEADING_FONT_RATIO: <span id="val-font-ratio" style="color:var(--accent);">1.18x mediana</span>
+            </label>
+            <input type="range" id="slider-font-ratio" min="1.0" max="2.0" step="0.05" value="1.18" style="width:100%;">
+            <span style="font-size:0.75rem; color:var(--text-muted);">Proporción mínima de tamaño tipográfico respecto a la mediana de la página.</span>
+          </div>
+        </div>
+
+        <div id="simulation-output">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: EVOLUTION V1 TO V5.2 -->
+    <section id="evolution" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">Evolución Histórica: De `pdf_to_rac_json.py` (V1.0) a V5.2</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Análisis comparativo de los defectos sistemáticos resueltos en la transición hacia un pipeline de nivel de investigación científica.
+            </p>
+          </div>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Dimensión Técnica</th>
+              <th>Versión 1.0 / 4.0 Original (`pdf_to_rac_json.py`)</th>
+              <th>Versión Final 5.2 (`pdf_intelligence`)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Conservación de Texto</strong></td>
+              <td><span style="color:var(--danger);">Pérdida silenciosa</span>: toda sección de &lt; 60 palabras se descartaba por completo.</td>
+              <td><span style="color:var(--success); font-weight:700;">Cero pérdida</span>: secciones cortas se fusionan controladamente; <code class="inline-code">chunk_coverage ≥ 0.995</code>.</td>
+            </tr>
+            <tr>
+              <td><strong>Trazabilidad de Páginas</strong></td>
+              <td>El solapamiento entre fragmentos etiquetaba falsamente la página del párrafo adyacente.</td>
+              <td><code class="inline-code">page_start / page_end</code> cubren exclusivamente las palabras propias (<code class="inline-code">unique_words</code>).</td>
+            </tr>
+            <tr>
+              <td><strong>Encabezados y Secciones</strong></td>
+              <td>Cualquier línea en mayúsculas o con número inicial creaba una nueva "sección" (1.655 falsos positivos).</td>
+              <td>Detector multicriterio (<code class="inline-code">score ≥ 2.0</code>) con descalificadores y degradación de cabeceras repetidas.</td>
+            </tr>
+            <tr>
+              <td><strong>Detección de Tablas</strong></td>
+              <td>Generaba ~1 tabla por página clasificando prosa partida como rejillas numéricas.</td>
+              <td>Clasificador heurístico (<code class="inline-code">AdaptiveTableExtractor</code>) que aísla prosa en <code class="inline-code">tables_rejected.jsonl</code>.</td>
+            </tr>
+            <tr>
+              <td><strong>Limpieza de Bordes</strong></td>
+              <td>La limpieza de cabeceras borraba dígitos legítimos en el cuerpo del texto.</td>
+              <td>Normalización a <code class="inline-code">#</code> y recorte exclusivo en las 3 líneas de los bordes (<code class="inline-code">removed_edge_lines</code>).</td>
+            </tr>
+            <tr>
+              <td><strong>Páginas OCR</strong></td>
+              <td>Utilizaba bloques de layout nativos ignorando el texto extraído por Tesseract.</td>
+              <td>Las páginas bajo OCR sustituyen y alimentan directamente el texto limpio y las secciones.</td>
+            </tr>
+            <tr>
+              <td><strong>Metadatos y Auditoría</strong></td>
+              <td>Sin verificación criptográfica, sin esquemas Parquet ni base DuckDB.</td>
+              <td><code class="inline-code">corpus.duckdb</code>, índices TF-IDF y FAISS, <code class="inline-code">manifest.json</code> con SHA-256 e <code class="inline-code">integrity_report.json</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TAB 7: DUCKDB SQL STUDIO -->
+    <section id="duckdb" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">DuckDB SQL Studio — Consultas Analíticas Relacionales</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Ejecuta consultas analíticas cruzando chunks, tablas, documentos y páginas sin requerir cargar JSONLs en memoria.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+          <label style="font-weight:600; font-size:0.875rem; color:var(--primary); display:block; margin-bottom:0.35rem;">
+            Seleccionar Consulta Pre-configurada del Cookbook:
+          </label>
+          <select id="duckdb-query-select" style="width:100%; padding:0.6rem 0.8rem; border:1px solid var(--border); border-radius:var(--radius-sm); font-size:0.9rem;">
+            <option value="q1">1. Inventario de documentos con conteo de chunks, cobertura y calidad promedio</option>
+            <option value="q2">2. Fragmentos de alta calidad con paginación impresa exacta</option>
+            <option value="q3">3. Tablas aceptadas con alta confianza y dimensiones</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 1rem;">
+          <textarea id="duckdb-sql-editor" style="width:100%; height:80px; font-family:var(--font-mono); font-size:0.85rem; padding:0.75rem; border-radius:var(--radius-sm); border:1px solid var(--border); background:#0f172a; color:#f8fafc;" readonly>SELECT document_id, filename, total_chunks, chunk_coverage, average_quality FROM documents ORDER BY average_quality DESC;</textarea>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; margin-bottom:1.25rem;">
+          <button id="duckdb-run-btn" class="btn btn-primary">⚡ Ejecutar Consulta SQL</button>
+        </div>
+
+        <div>
+          <strong style="font-size:0.85rem; color:var(--primary); display:block; margin-bottom:0.35rem;">Resultados de la Consulta:</strong>
+          <div id="duckdb-result-table">
+            <p style="color:var(--text-muted); font-size:0.85rem;">Presiona "Ejecutar Consulta SQL" para ver los resultados relacionales simulados.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 8: DOCUMENTATION & API -->
+    <section id="documentation" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2 class="card-title">Documentación Técnica de la Biblioteca y CLI</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Guía de instalación rápida, uso en línea de comandos y estructura de módulos.
+            </p>
+          </div>
+        </div>
+
+        <h3 style="color:var(--primary); margin-bottom:0.5rem; font-size:1.05rem;">1. Instalación Rápida</h3>
+        <pre><code># Clonar repositorio
+git clone https://github.com/tu-usuario/pdf-to-rag-pipeline.git
+cd pdf-to-rag-pipeline
+
+# Instalar paquete en modo desarrollo
+pip install -e .
+
+# Dependencias opcionales de Embeddings y FAISS
+pip install -e ".[embeddings]"</code></pre>
+
+        <h3 style="color:var(--primary); margin-top:1.5rem; margin-bottom:0.5rem; font-size:1.05rem;">2. Ejecución desde CLI</h3>
+        <pre><code># Procesar lote de PDFs
+pdf-intelligence process --input ./data/pdfs --output ./data/pdf_intelligence
+
+# Búsqueda léxica local ultrarrápida con TF-IDF
+pdf-intelligence search "inteligencia artificial educación" --top-k 5
+
+# Auditar reporte de integridad
+pdf-intelligence audit --output ./data/pdf_intelligence</code></pre>
+
+        <h3 style="color:var(--primary); margin-top:1.5rem; margin-bottom:0.5rem; font-size:1.05rem;">3. Uso en Python como Módulo</h3>
+        <pre><code>from pdf_intelligence import PipelineConfig, CorpusBuilder, LocalSearch
+
+# Configurar pipeline
+config = PipelineConfig(
+    pdf_directory="./data/pdfs",
+    output_directory="./data/pdf_intelligence",
+    ocr_enabled=True,
+    chunk_target_words=550
+)
+
+# Ejecutar consolidación completa
+builder = CorpusBuilder(config)
+builder.process()
+
+# Búsqueda local sin APIs externas
+searcher = LocalSearch("./data/pdf_intelligence")
+results = searcher.search_tfidf("gobernanza de datos", top_k=3)</code></pre>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Toast Alert -->
+  <div id="toast-alert" class="toast"></div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>CIOdD-UCR PDF Intelligence Pipeline</h3>
+        <p>Centro de Investigación Observatorio del Desarrollo — Universidad de Costa Rica</p>
+        <p style="margin-top:0.35rem; font-size:0.8rem; color:#64748b;">
+          Desarrollado para investigación científica auditable y flujos de RAG de alta fidelidad.
+        </p>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:0.5rem;">Documentos del Proyecto</h4>
+        <ul style="list-style:none; line-height:1.8;">
+          <li><a href="https://github.com" style="color:#94a3b8; text-decoration:none;">Código Fuente Modular (src/pdf_intelligence)</a></li>
+          <li><a href="https://github.com" style="color:#94a3b8; text-decoration:none;">Monolito Google Colab V5.2</a></li>
+          <li><a href="https://github.com" style="color:#94a3b8; text-decoration:none;">Manual de Uso para LLMs (V5)</a></li>
+          <li><a href="https://github.com" style="color:#94a3b8; text-decoration:none;">Bóveda de Conocimiento (Brain OS v1.6)</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:white; margin-bottom:0.5rem;">Licencia y Créditos</h4>
+        <p>Licencia MIT de Código Abierto (2026).</p>
+        <p style="margin-top:0.35rem;">Universidad de Costa Rica (UCR).</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

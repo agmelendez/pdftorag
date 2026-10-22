@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ciodd-ucr-pdf-intelligence"
+version = "5.2.0"
+description = "Enterprise Research & RAG PDF Intelligence Pipeline from CIOdD-UCR: Zero text loss, cryptographic auditing, table extraction, and multi-index retrieval."
+authors = [
+    { name = "Centro de Investigación Observatorio del Desarrollo (CIOdD) — Universidad de Costa Rica" }
+]
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = [
+    "pymupdf>=1.23.0",
+    "pdfplumber>=0.10.0",
+    "pypdf>=4.0.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "pyarrow>=14.0.0",
+    "duckdb>=0.9.0",
+    "pytesseract>=0.3.10",
+    "Pillow>=10.0.0",
+    "scikit-learn>=1.3.0",
+    "joblib>=1.3.0",
+    "tqdm>=4.66.0",
+    "langdetect>=1.0.9"
+]
+
+[project.optional-dependencies]
+embeddings = [
+    "sentence-transformers>=2.2.0",
+    "faiss-cpu>=1.7.4"
+]
+dev = [
+    "pytest>=7.0.0",
+    "flake8>=6.0.0",
+    "black>=23.0.0"
+]
+
+[project.scripts]
+pdf-intelligence = "pdf_intelligence.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
