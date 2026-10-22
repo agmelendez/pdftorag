@@ -3,45 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CIOdD-UCR PDF Intelligence Pipeline V5.2 — From PDF to RAG & Knowledge Vault</title>
+  <title>Manual Técnico y Metodológico — CIOdD-UCR PDF Intelligence Pipeline V5.2</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- Top Hero Header -->
-  <header>
+  <header class="manual-header">
     <div class="header-container">
-      <div class="badge-pill badge-pass">
-        <span>●</span> Versión 5.2.0 — Research & RAG Edition (Octubre 2026)
+      <div class="kicker-badge">
+        <span>🏛️</span> CENTRO DE INVESTIGACIÓN OBSERVATORIO DEL DESARROLLO · UNIVERSIDAD DE COSTA RICA
       </div>
       <div class="header-title-row">
         <div>
           <h1 class="main-title">CIOdD-UCR <span>PDF Intelligence</span> Pipeline</h1>
           <p class="header-subtitle">
-            Sistema interactivo de ingesta documental, estructuración profunda, auditoría criptográfica SHA-256 e indexación relacional/vectorial. Transforma PDFs heterogéneos en corpus científicos de alta fidelidad para LLMs, sistemas RAG y Bóvedas de Conocimiento (Brain OS).
+            Documentación Técnica de Alto Nivel, Fundamentación Metodológica y Especificación de la Skill de Uso para LLMs y Agentes RAG. Sistema empresarial y de investigación para la ingesta no-destructiva, estructuración profunda y auditoría relacional de documentos PDF heterogéneos.
           </p>
         </div>
         <div class="header-actions">
           <a href="https://github.com" target="_blank" class="btn btn-primary">
-            ⭐ Ver en GitHub
+            📁 Repositorio GitHub
           </a>
-          <a href="#artifacts" class="btn btn-outline" onclick="document.querySelector('[data-tab=artifacts]').click()">
-            🔍 Explorar Corpus
-          </a>
+          <button class="btn btn-outline" onclick="document.querySelector('[data-tab=skill_agente]').click()">
+            🤖 Ver Skill de Uso
+          </button>
         </div>
       </div>
 
       <!-- Feature Badges -->
       <div class="badges-bar">
-        <span class="feature-tag">🛡️ Cero Pérdida de Texto (coverage ≥ 0.995)</span>
-        <span class="feature-tag">📑 Trazabilidad Dual (Pág. PDF + Pág. Impresa)</span>
-        <span class="feature-tag">📊 Extracción y Filtro Heurístico de Tablas</span>
-        <span class="feature-tag">🗄️ DuckDB Relacional + Parquet</span>
-        <span class="feature-tag">🧠 Búsqueda Híbrida: TF-IDF + FAISS</span>
-        <span class="feature-tag">🏛️ Centro de Investigación Observatorio del Desarrollo — UCR</span>
+        <span class="feature-tag">Versión 5.2.0 (Octubre 2026)</span>
+        <span class="feature-tag">Garantía: Cero Pérdida de Texto (coverage ≥ 0.995)</span>
+        <span class="feature-tag">Trazabilidad Dual: Pág. PDF + Pág. Impresa</span>
+        <span class="feature-tag">Clasificador Heurístico de Tablas vs. Prosa</span>
+        <span class="feature-tag">Base Relacional: DuckDB + Parquet</span>
+        <span class="feature-tag">Búsqueda Híbrida: TF-IDF + FAISS</span>
+        <span class="feature-tag">Licencia MIT</span>
       </div>
     </div>
   </header>
@@ -49,29 +50,32 @@
   <!-- Navigation Bar -->
   <nav class="tab-nav">
     <div class="nav-container">
-      <button class="nav-tab active" data-tab="overview">
-        🔄 Arquitectura y 10 Fases
+      <button class="nav-tab active" data-tab="metodologia">
+        📚 1. Metodología y Fundamentación
       </button>
-      <button class="nav-tab" data-tab="artifacts">
-        📦 Explorador de Artefactos
+      <button class="nav-tab" data-tab="fases">
+        🔄 2. Flujo de Trabajo (10 Fases)
       </button>
-      <button class="nav-tab" data-tab="rag_simulator">
-        🤖 Simulador RAG y Prompts
+      <button class="nav-tab" data-tab="skill_agente">
+        🤖 3. Skill de Uso para LLMs / RAG
       </button>
-      <button class="nav-tab" data-tab="brain_os">
-        🧠 Bóveda de Conocimiento (Brain OS)
+      <button class="nav-tab" data-tab="artefactos">
+        📦 4. Especificación de Artefactos
       </button>
-      <button class="nav-tab" data-tab="heuristics">
-        🧪 Laboratorio de Heurísticas
+      <button class="nav-tab" data-tab="depuracion">
+        🧹 5. Ciclos de Depuración
       </button>
-      <button class="nav-tab" data-tab="evolution">
-        📈 Evolución V1.0 → V5.2
+      <button class="nav-tab" data-tab="boveda">
+        🧠 6. Bóveda de Conocimiento (Brain OS)
+      </button>
+      <button class="nav-tab" data-tab="evolucion">
+        📈 7. Evolución V1.0 → V5.2
       </button>
       <button class="nav-tab" data-tab="duckdb">
-        ⚡ DuckDB SQL Studio
+        ⚡ 8. Consultas SQL DuckDB
       </button>
-      <button class="nav-tab" data-tab="documentation">
-        📖 Documentación Técnica
+      <button class="nav-tab" data-tab="guia_codigo">
+        💻 9. Instalación y CLI
       </button>
     </div>
   </nav>
@@ -79,142 +83,326 @@
   <!-- Main Content Area -->
   <main class="content-area">
 
-    <!-- TAB 1: OVERVIEW & 10 PHASES -->
-    <section id="overview" class="tab-pane active">
-      <div class="grid-4" style="margin-bottom: 2rem;">
-        <div class="stat-box">
-          <div class="stat-label">Garantía de Cobertura</div>
-          <div class="stat-value" style="color: var(--success);">≥ 99.5%</div>
-          <div class="stat-sub">Sin descarte de secciones cortas</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-label">Fases Secuenciales</div>
-          <div class="stat-value">10 Fases</div>
-          <div class="stat-sub">Por documento + 4 globales</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-label">Modelos de Recuperación</div>
-          <div class="stat-value">Híbrido</div>
-          <div class="stat-sub">TF-IDF Léxico + FAISS Denso</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-label">Auditoría Automática</div>
-          <div class="stat-value" style="color: var(--accent);">9 Reglas</div>
-          <div class="stat-sub">Integridad y huellas SHA-256</div>
-        </div>
-      </div>
-
+    <!-- SECCIÓN 1: METODOLOGÍA Y FUNDAMENTACIÓN CIENTÍFICA -->
+    <section id="metodologia" class="tab-pane active">
       <div class="card">
         <div class="card-header">
-          <div>
-            <h2 class="card-title">Flujo Integral del Pipeline (Fases 1 a 10)</h2>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">
-              Haz clic en cualquier fase para inspeccionar su módulo en Python, fórmulas matemáticas, entradas y salidas.
+          <span class="badge-pill" style="background:#e0f2fe; color:#0369a1; margin-bottom:0.5rem;">MARCO METODOLÓGICO</span>
+          <h2 class="card-title">¿Qué Hace el Proyecto a Nivel Metodológico y Científico?</h2>
+          <p class="card-subtitle">
+            El problema ontológico del formato PDF y la necesidad de una transformación con trazabilidad matemática inmutable hacia sistemas de Generación Aumentada por Recuperación (RAG).
+          </p>
+        </div>
+
+        <div class="deepdive-section">
+          <h4 class="deepdive-section-heading">1.1. El Problema Ontológico del Formato PDF</h4>
+          <p class="deepdive-text">
+            El formato PDF (Portable Document Format) fue diseñado en 1993 para garantizar la fidelidad de impresión visual sobre papel, <strong>no para la extracción ni la comprensión semántica de datos</strong>. En un PDF, un párrafo de texto no existe como entidad lingüística: es una secuencia de instrucciones de dibujo vectorial (operadores tipográficos con coordenadas <code>x, y</code>) dispersas en el flujo de la página.
+          </p>
+          <p class="deepdive-text" style="margin-top:0.75rem;">
+            Cuando los frameworks convencionales de IA y RAG (como LangChain, LlamaIndex o extractores basados en expresiones regulares simples) intentan convertir PDFs a texto plano para alimentar modelos de lenguaje grande (LLMs), incurren en cuatro patologías metodológicas críticas:
+          </p>
+        </div>
+
+        <div class="grid-2" style="margin: 1.5rem 0;">
+          <div class="deepdive-box" style="border-left: 4px solid var(--danger);">
+            <strong style="color:var(--danger); display:block; margin-bottom:0.25rem;">1. Pérdida Silenciosa de Contenido</strong>
+            <p style="font-size:0.875rem; color:#475569;">
+              Al aplicar filtros arbitrarios de longitud mínima (ej. descartar bloques menores a 60 palabras), se eliminan silenciosamente notas metodológicas cruciales, advertencias estadísticas, fórmulas y párrafos conclusivos breves.
+            </p>
+          </div>
+          <div class="deepdive-box" style="border-left: 4px solid var(--warning);">
+            <strong style="color:var(--warning); display:block; margin-bottom:0.25rem;">2. Contaminación de Citas y Paginación</strong>
+            <p style="font-size:0.875rem; color:#475569;">
+              La técnica de solapamiento entre fragmentos (overlap) comúnmente hereda la etiqueta de la página siguiente, provocando que el LLM cite páginas físicas incorrectas al responder a los usuarios o revisores pares.
+            </p>
+          </div>
+          <div class="deepdive-box" style="border-left: 4px solid var(--accent);">
+            <strong style="color:var(--accent); display:block; margin-bottom:0.25rem;">3. Alucinación de Tablas por Prosa Maquetada</strong>
+            <p style="font-size:0.875rem; color:#475569;">
+              Las herramientas de detección de tablas confunden párrafos justificados en dos o tres columnas con cuadrículas tabulares, fragmentando el texto en celdas rotas como <code>"ap | plies to person | s concerned"</code>.
+            </p>
+          </div>
+          <div class="deepdive-box" style="border-left: 4px solid var(--ucr-blue);">
+            <strong style="color:var(--ucr-blue); display:block; margin-bottom:0.25rem;">4. Destrucción de la Jerarquía por Cabeceras</strong>
+            <p style="font-size:0.875rem; color:#475569;">
+              Las cabeceras y pies de página corridos (ej. <em>"Informe de Desarrollo Humano - Pág. 12"</em>) son interpretados erróneamente como nuevos encabezados o se incorporan al texto de los fragmentos como ruido continuo.
             </p>
           </div>
         </div>
-        
+
+        <div class="deepdive-section">
+          <h4 class="deepdive-section-heading">1.2. Los Cuatro Pilares del CIOdD-UCR PDF Intelligence Pipeline</h4>
+          <p class="deepdive-text">
+            Para resolver de raíz estas patologías, el Centro de Investigación Observatorio del Desarrollo (CIOdD) de la Universidad de Costa Rica estructuró la versión 5.2 sobre cuatro garantías matemáticas y epistemológicas:
+          </p>
+          <ul style="margin: 0.75rem 0 1rem 1.5rem; line-height: 1.8; color:#334155; font-size:0.925rem;">
+            <li><strong>Cero Pérdida de Texto Auditada (<code>chunk_coverage ≥ 0.995</code>)</strong>: Ninguna sección corta se descarta; se absorbe controladamente en el fragmento previo registrando su procedencia.</li>
+            <li><strong>Trazabilidad Bibliográfica Dual</strong>: Cada fragmento separa estrictamente el texto propio (<code>unique_words</code>) del solapamiento (<code>overlap_words</code>), registrando tanto la página PDF (índice 1-based) como la etiqueta impresa original (<code>page_label</code>).</li>
+            <li><strong>Clasificador Heurístico Multivariable de Tablas</strong>: Evaluación de densidad, inicio en minúsculas y área para separar tablas numéricas de prosa fragmentada, aislando las rechazadas en <code>tables_rejected.jsonl</code> para auditoría.</li>
+            <li><strong>Auditoría Criptográfica e Integridad Relacional</strong>: Huellas SHA-256 de todas las entradas y salidas registradas en <code>manifest.json</code>, junto con la verificación automática de 9 reglas de consistencia en <code>integrity_report.json</code>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: FLUJO DE TRABAJO (10 FASES DETALLADAS) -->
+    <section id="fases" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <span class="badge-pill" style="background:#e0f2fe; color:#0369a1; margin-bottom:0.5rem;">INGENIERÍA DEL PIPELINE</span>
+          <h2 class="card-title">Arquitectura y Flujo de Procesamiento en 10 Fases</h2>
+          <p class="card-subtitle">
+            Selecciona cualquiera de las 10 fases secuenciales para inspeccionar su reto metodológico, entradas, salidas, formulación algorítmica y código Python de implementación.
+          </p>
+        </div>
+
         <div class="grid-2">
-          <!-- Flow Column -->
-          <div class="pipeline-flow" id="pipeline-flow-container">
-            <!-- Rendered dynamically by app.js -->
+          <!-- Columna izquierda: Lista de fases -->
+          <div class="phases-sidebar" id="phases-list-container">
+            <!-- Renderizado dinámicamente por app.js -->
           </div>
 
-          <!-- Detail Column -->
+          <!-- Columna derecha: Detalle exhaustivo de la fase seleccionada -->
           <div>
-            <div id="phase-details-content" class="phase-details-panel">
-              <!-- Rendered dynamically by app.js -->
+            <div class="phase-deepdive-panel" id="phase-deepdive-container">
+              <!-- Renderizado dinámicamente por app.js -->
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TAB 2: ARTIFACTS EXPLORER -->
-    <section id="artifacts" class="tab-pane">
+    <!-- SECCIÓN 3: SKILL DE USO PARA LLMS / AGENTES RAG -->
+    <section id="skill_agente" class="tab-pane">
       <div class="card">
+        <div class="skill-hero-box">
+          <span class="badge-pill" style="background:rgba(255,255,255,0.2); color:#ffffff; margin-bottom:0.75rem;">ESPECIFICACIÓN DE AGENTE IA</span>
+          <h2 style="font-size:1.85rem; font-weight:800; line-height:1.25; margin-bottom:0.75rem;">
+            Agent Skill: <code style="color:var(--ucr-gold);">pdf-intelligence-rag</code>
+          </h2>
+          <p style="font-size:1rem; opacity:0.95; max-width:850px; line-height:1.6;">
+            Protocolo y directrices operativas formales para que modelos de lenguaje (Claude, Gemini, OpenAI) y agentes autónomos RAG consulten, validen, recuperen y citen evidencia del corpus estructurado V5.2 sin incurrir en alucinaciones fácticas.
+          </p>
+        </div>
+
         <div class="card-header">
-          <div>
-            <h2 class="card-title">Explorador de Datos y Artefactos del Corpus</h2>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">
-              Visualiza en tiempo real los archivos estructurados generados en <code class="inline-code">/content/pdf_intelligence</code>.
+          <h3 class="card-title">3.1. Principio Rector y Jerarquía de 5 Niveles de Evidencia</h3>
+          <p class="card-subtitle">
+            Regla fundamental: <em>"El índice sirve exclusivamente para localizar candidatos; la evidencia debe validarse siempre contra el contenido estructurado y su trazabilidad documental primaria."</em>
+          </p>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 2rem;">
+          <div class="skill-rule-card" style="border-left-color: #0284c7;">
+            <div class="skill-rule-title">Nivel 1 — Evidencia Primaria Fáctica</div>
+            <p style="font-size:0.875rem; color:#475569; margin-bottom:0.5rem;">
+              Archivos: <code>pages.parquet</code>, <code>tables.parquet</code>.
+            </p>
+            <p style="font-size:0.85rem; color:#334155;">
+              La representación más fidedigna del documento original. Obligatoria para verificar cifras cuantitativas, fórmulas, citas textuales y tablas complejas.
+            </p>
+          </div>
+
+          <div class="skill-rule-card" style="border-left-color: #10b981;">
+            <div class="skill-rule-title">Nivel 2 — Evidencia Estructurada de Contexto</div>
+            <p style="font-size:0.875rem; color:#475569; margin-bottom:0.5rem;">
+              Archivos: <code>sections.parquet</code>, <code>chunks.parquet</code>.
+            </p>
+            <p style="font-size:0.85rem; color:#334155;">
+              Fragmentos y secciones preparadas para RAG. Conservan el contexto discursivo y permiten citar sección y página de manera limpia.
+            </p>
+          </div>
+
+          <div class="skill-rule-card" style="border-left-color: #f59e0b;">
+            <div class="skill-rule-title">Nivel 3 — Metadatos y Perfil del Documento</div>
+            <p style="font-size:0.875rem; color:#475569; margin-bottom:0.5rem;">
+              Archivos: <code>documents.parquet</code>.
+            </p>
+            <p style="font-size:0.85rem; color:#334155;">
+              Identificación del documento, tipo de PDF (digital, escaneado, híbrido), calidad promedio e idioma. Nunca confundir <code>document_id</code> con el nombre de archivo.
+            </p>
+          </div>
+
+          <div class="skill-rule-card" style="border-left-color: #8b5cf6;">
+            <div class="skill-rule-title">Nivel 4 — Calidad y Auditoría de Incertidumbre</div>
+            <p style="font-size:0.875rem; color:#475569; margin-bottom:0.5rem;">
+              Archivos: <code>quality_report.json</code>, <code>integrity_report.json</code>.
+            </p>
+            <p style="font-size:0.85rem; color:#334155;">
+              Alertan sobre páginas dudosas o con bajo OCR que requieren advertencia de incertidumbre antes de ser citadas por el agente.
             </p>
           </div>
         </div>
 
-        <div class="sub-tabs">
-          <button class="sub-tab-btn active" data-artifact="chunks">📄 chunks.jsonl</button>
-          <button class="sub-tab-btn" data-artifact="tables">📊 tables.jsonl</button>
-          <button class="sub-tab-btn" data-artifact="tables_rejected">🚫 tables_rejected.jsonl</button>
-          <button class="sub-tab-btn" data-artifact="sections">📑 sections.jsonl</button>
-          <button class="sub-tab-btn" data-artifact="pages">📖 pages.jsonl</button>
-          <button class="sub-tab-btn" data-artifact="integrity">🛡️ integrity_report.json</button>
+        <div class="card-header">
+          <h3 class="card-title">3.2. Protocolo de Citación Bibliográfica Dual Obligatoria</h3>
+          <p class="card-subtitle">
+            Todo agente que utilice este corpus debe citar obligatoriamente la ubicación física en el archivo PDF junto con la numeración impresa formal.
+          </p>
         </div>
 
-        <div id="artifact-viewer-container">
-          <!-- Rendered dynamically by app.js -->
+        <div class="formula-box" style="margin-bottom:1.5rem;">
+          [{filename}, Sec. "{section_title}", Pág. PDF {page_start}, Pág. Impresa {page_label_start}]
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 2rem;">
+          <div style="background:#f8fafc; padding:1.25rem; border-radius:var(--radius-sm); border:1px solid var(--border);">
+            <strong style="color:var(--primary); font-size:0.9rem; display:block; margin-bottom:0.35rem;">Ejemplo de Citación Textual Válida:</strong>
+            <p style="font-size:0.875rem; color:#334155; font-style:italic;">
+              "El 68% de los docentes consultados afirma utilizar herramientas basadas en LLMs para la planificación didáctica <code>[Informe_IA_Educacion_Ninez_CIOdD_2026.pdf, Sec. '1. Resumen Ejecutivo', Pág. PDF 2, Pág. Impresa ii]</code>."
+            </p>
+          </div>
+          <div style="background:#f8fafc; padding:1.25rem; border-radius:var(--radius-sm); border:1px solid var(--border);">
+            <strong style="color:var(--primary); font-size:0.9rem; display:block; margin-bottom:0.35rem;">Ejemplo de Citación Tabular Válida:</strong>
+            <p style="font-size:0.875rem; color:#334155; font-style:italic;">
+              "En la región Central Occidental, la adopción docente alcanzó el 74.2% <code>[Tabla 1: 'Distribución porcentual de uso de LLM', Pág. PDF 2, ID: tbl_08f91a2bc41029aa]</code>."
+            </p>
+          </div>
+        </div>
+
+        <div class="card-header">
+          <h3 class="card-title">3.3. Cuatro Anti-Patrones Prohibidos para el Modelo de Lenguaje</h3>
+        </div>
+
+        <div class="grid-2">
+          <div class="deepdive-box" style="border-left: 4px solid var(--danger);">
+            <strong style="color:var(--danger); font-size:0.85rem; display:block; margin-bottom:0.25rem;">❌ PROHIBIDO CITAR PÁGINAS POR EL OVERLAP</strong>
+            <p style="font-size:0.85rem; color:#475569;">
+              Las palabras de solapamiento (overlap_words) provienen del chunk anterior. La citación debe reflejar exclusivamente las páginas cubiertas por las palabras propias (unique_words).
+            </p>
+          </div>
+          <div class="deepdive-box" style="border-left: 4px solid var(--danger);">
+            <strong style="color:var(--danger); font-size:0.85rem; display:block; margin-bottom:0.25rem;">❌ PROHIBIDO ASUMIR year_candidates COMO FECHA OFICIAL</strong>
+            <p style="font-size:0.85rem; color:#475569;">
+              Los años inferidos en la portada son candidatos estadísticos de frecuencia (pueden ser metas futuras como "Estrategia 2030"). Citar siempre como "año referenciado en el texto".
+            </p>
+          </div>
+          <div class="deepdive-box" style="border-left: 4px solid var(--danger);">
+            <strong style="color:var(--danger); font-size:0.85rem; display:block; margin-bottom:0.25rem;">❌ PROHIBIDO SUMAR word_count PARA VOLUMEN LÉXICO</strong>
+            <p style="font-size:0.85rem; color:#475569;">
+              Sumar word_count sobrecuenta las palabras por el solapamiento de 80 palabras. Para auditorías de volumen real debe sumarse siempre SUM(unique_words).
+            </p>
+          </div>
+          <div class="deepdive-box" style="border-left: 4px solid var(--danger);">
+            <strong style="color:var(--danger); font-size:0.85rem; display:block; margin-bottom:0.25rem;">❌ PROHIBIDO CONFUNDIR CALIDAD TÉCNICA CON MÉRITO CIENTÍFICO</strong>
+            <p style="font-size:0.85rem; color:#475569;">
+              Un puntaje de average_quality = 0.96 mide fidelidad de la extracción digital, no rigor metodológico de la investigación del autor original.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- TAB 3: RAG SIMULATOR & PROMPT BUILDER -->
-    <section id="rag_simulator" class="tab-pane">
+    <!-- SECCIÓN 4: ESPECIFICACIÓN Y EXPLORADOR DE ARTEFACTOS -->
+    <section id="artefactos" class="tab-pane">
       <div class="card">
         <div class="card-header">
-          <div>
-            <h2 class="card-title">Simulador RAG y Ensamblador de Evidencia para LLMs</h2>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">
-              Recupera fragmentos relevantes del corpus y ensambla bloques de contexto estructurados respetando la jerarquía de evidencia de <code class="inline-code">MANUAL_USO_LLM_CORPUS_PDF_V5.md</code>.
-            </p>
-          </div>
+          <span class="badge-pill" style="background:#e0f2fe; color:#0369a1; margin-bottom:0.5rem;">DICCIONARIO DE DATOS Y VISOR</span>
+          <h2 class="card-title">Especificación Técnica de los Artefactos Generados</h2>
+          <p class="card-subtitle">
+            Inspección detallada de los esquemas de datos y registros reales producidos en <code class="inline-code">/content/pdf_intelligence</code>.
+          </p>
         </div>
 
-        <div class="search-input-box">
-          <input type="text" id="rag-search-input" class="search-input" placeholder="Buscar por palabra clave o concepto (ej. docentes, muestreo, privacidad, inteligencia artificial)..." value="docentes">
-          <button id="rag-search-btn" class="btn btn-primary">🔍 Buscar en Corpus</button>
+        <div class="artifact-sub-nav">
+          <button class="artifact-sub-btn active" data-artifact="chunks">📄 chunks.parquet / .jsonl</button>
+          <button class="artifact-sub-btn" data-artifact="tables">📊 tables.parquet / .jsonl</button>
+          <button class="artifact-sub-btn" data-artifact="tables_rejected">🚫 tables_rejected.jsonl</button>
+          <button class="artifact-sub-btn" data-artifact="sections">📑 sections.parquet / .jsonl</button>
+          <button class="artifact-sub-btn" data-artifact="pages">📖 pages.parquet / .jsonl</button>
+          <button class="artifact-sub-btn" data-artifact="integrity">🛡️ integrity_report.json</button>
         </div>
 
-        <div id="rag-results-container">
-          <!-- Rendered dynamically by app.js -->
+        <div id="artifact-display-container">
+          <!-- Renderizado dinámicamente por app.js (100% offline sin errores CORS) -->
         </div>
       </div>
     </section>
 
-    <!-- TAB 4: BRAIN OS & KNOWLEDGE VAULT -->
-    <section id="brain_os" class="tab-pane">
+    <!-- SECCIÓN 5: CICLOS DE DEPURACIÓN Y SANEAMIENTO -->
+    <section id="depuracion" class="tab-pane">
       <div class="card">
         <div class="card-header">
-          <div>
-            <div class="badge-pill" style="background:#e0f2fe; color:#0369a1;">Arquitectura Jaime Figueres / FAIR.cr</div>
-            <h2 class="card-title">Bóveda de Conocimiento y Sistema Operativo Personal (Brain OS v1.6)</h2>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">
-              Cómo el CIOdD-UCR PDF Intelligence Pipeline sirve como el motor de ingesta fundamental para alimentar Bóvedas de Conocimiento y asistentes autónomos.
+          <span class="badge-pill" style="background:#e0f2fe; color:#0369a1; margin-bottom:0.5rem;">SANEAMIENTO HEURÍSTICO</span>
+          <h2 class="card-title">Los 6 Ciclos de Depuración y Limpieza del Pipeline</h2>
+          <p class="card-subtitle">
+            Cómo el pipeline detecta y neutraliza las anomalías estructurales típicas de los documentos PDF para producir un corpus científicamente íntegro.
+          </p>
+        </div>
+
+        <div class="deepdive-section">
+          <div class="skill-rule-card">
+            <div class="skill-rule-title">Ciclo 1: Inferencia de Bordes con Comodín '#' (<code>infer_repeated_lines</code>)</div>
+            <p class="deepdive-text">
+              Examina las 3 primeras y 3 últimas líneas de cada página. Normaliza los dígitos a <code>#</code> (ej. <code>"Informe 2026 - Pág. 12"</code> $\to$ <code>"informe #### - pág. ##"</code>). Si el patrón se repite en $\ge 35\%$ de las páginas, se elimina <strong>exclusivamente en los bordes</strong>, evitando borrar cifras legítimas dentro del cuerpo del texto.
+            </p>
+          </div>
+
+          <div class="skill-rule-card">
+            <div class="skill-rule-title">Ciclo 2: Democión de Encabezados Repetidos (<code>demote_repeated_headings</code>)</div>
+            <p class="deepdive-text">
+              En documentos de $\ge 8$ páginas, identifica bloques con <code>is_heading = True</code> que se repiten en $\ge 4$ páginas o $\ge 8\%$ del total. Estos bloques son cabeceras corridas o títulos de capítulo repetitivos; se degradan a texto de cuerpo para no fragmentar artificialmente la sección.
+            </p>
+          </div>
+
+          <div class="skill-rule-card">
+            <div class="skill-rule-title">Ciclo 3: Clasificador Heurístico de Tablas vs. Prosa (<code>AdaptiveTableExtractor</code>)</div>
+            <p class="deepdive-text">
+              Evalúa la proporción de celdas que inician en minúscula (<code>lower_start_ratio</code>). Si $\ge 25\%$ inician en minúscula o la rejilla ocupa $\ge 70\%$ del área de la página, se clasifica como prosa fragmentada en columnas y se aísla en <code>tables_rejected.jsonl</code> con su motivo explícito.
+            </p>
+          </div>
+
+          <div class="skill-rule-card">
+            <div class="skill-rule-title">Ciclo 4: Fusión No-Destructiva de Secciones Cortas (<code>ChunkBuilder</code>)</div>
+            <p class="deepdive-text">
+              Toda sección con $< 60$ palabras se fusiona dentro del chunk anterior, registrando <code>merged_section_ids</code> y <code>merged_section_titles</code>. Si no existe chunk anterior, se emite con la bandera <code>short_section = True</code>. Se audita que <code>chunk_coverage ≥ 0.995</code>.
+            </p>
+          </div>
+
+          <div class="skill-rule-card">
+            <div class="skill-rule-title">Ciclo 5: OCR Adaptativo con Doble Disparador (<code>OCRExtractor</code>)</div>
+            <p class="deepdive-text">
+              Solo activa Tesseract OCR (200 DPI, spa+eng) si el texto nativo tiene $< 80$ caracteres, $< 20$ palabras o calidad $< 0.35$. Sustituye al nativo únicamente si aporta $> 20\%$ más palabras legibles.
+            </p>
+          </div>
+
+          <div class="skill-rule-card">
+            <div class="skill-rule-title">Ciclo 6: Auditoría de Consistencia de 9 Reglas (<code>check_integrity</code>)</div>
+            <p class="deepdive-text">
+              Verifica unicidad de IDs, coherencia de páginas extraídas frente al PDF original, integridad referencial de secciones, ausencia de páginas huérfanas y ausencia de colisiones inter-documento en <code>integrity_report.json</code>.
             </p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="grid-2" style="margin-bottom: 1.5rem;">
-          <div style="background:#f8fafc; padding:1.25rem; border-radius:var(--radius-sm); border:1px solid var(--border);">
-            <h4 style="color:var(--primary); margin-bottom:0.5rem;">El Problema que Resuelve</h4>
-            <p style="font-size:0.9rem; color:#475569;">
-              En organizaciones científicas y equipos de investigación, la información crítica vive dispersa en PDFs estáticos, informes anuales y bases de datos tabulares. Los LLMs fallan cuando se les arrojan PDFs crudos porque sufren de alucinación de páginas, tablas rotas y pérdida de párrafos cortos.
-            </p>
-          </div>
-          <div style="background:#f8fafc; padding:1.25rem; border-radius:var(--radius-sm); border:1px solid var(--border);">
-            <h4 style="color:var(--primary); margin-bottom:0.5rem;">La Solución Integrada: Pipeline V5.2 + Brain OS</h4>
-            <p style="font-size:0.9rem; color:#475569;">
-              El PDF Intelligence Pipeline extrae el contenido con cero pérdida y trazabilidad matemática (Layer 0), mientras que Brain OS estructura la memoria operativa, compila vistas interactivas en HTML/Markdown y permite a agentes inteligentes ejecutar flujos de trabajo autónomos sin requerir intervención humana constante.
-            </p>
-          </div>
+    <!-- SECCIÓN 6: BÓVEDA DE CONOCIMIENTO (BRAIN OS V1.6) -->
+    <section id="boveda" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <span class="badge-pill" style="background:#e0f2fe; color:#0369a1; margin-bottom:0.5rem;">ARQUITECTURA DE BÓVEDAS</span>
+          <h2 class="card-title">Integración con Bóvedas de Conocimiento: Brain OS v1.6</h2>
+          <p class="card-subtitle">
+            Cómo el CIOdD-UCR PDF Intelligence Pipeline sirve como el motor de ingesta fundamental para alimentar Bóvedas de Conocimiento y asistentes operativos (Jaime Figueres / FAIR.cr).
+          </p>
         </div>
 
-        <h3 style="color:var(--primary); margin-bottom:1rem; font-size:1.1rem;">Las 4 Capas Funcionales de la Bóveda de Conocimiento</h3>
-        <div class="grid-4">
+        <div class="deepdive-section">
+          <p class="deepdive-text">
+            En la arquitectura de <strong>Brain OS</strong>, la inteligencia artificial no opera como un simple chatbot de conversación, sino como un colaborador operativo que gestiona proyectos, recuerda acuerdos y redacta documentos listos. Sin embargo, el conocimiento institucional se encuentra mayoritariamente bloqueado en archivos PDF estáticos.
+          </p>
+          <p class="deepdive-text" style="margin-top:0.75rem;">
+            El PDF Intelligence Pipeline actúa como la <strong>Capa 0 (Compilador Documental Primario)</strong> que desbloquea este conocimiento y lo traduce a las 4 capas funcionales de Brain OS:
+          </p>
+        </div>
+
+        <div class="grid-4" style="margin: 1.5rem 0;">
           <div class="stat-box" style="border-top: 4px solid #0284c7;">
             <div class="stat-label">Capa 0: Ingesta Cruda</div>
             <div style="font-weight:700; color:var(--primary); margin-top:0.35rem;">PDF Intelligence V5.2</div>
             <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.35rem;">
-              Extracción limpia, OCR adaptativo, bboxes, detección de tablas y generación de Parquet/JSONL.
+              Extracción limpia, OCR adaptativo, bboxes y tablas con huella criptográfica SHA-256 inmutable.
             </p>
           </div>
           <div class="stat-box" style="border-top: 4px solid #10b981;">
@@ -228,7 +416,7 @@
             <div class="stat-label">Capa 2: Memoria</div>
             <div style="font-weight:700; color:var(--primary); margin-top:0.35rem;">Daily Logs & Flush</div>
             <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.35rem;">
-              Memoria de corto plazo (bitácoras diarias) sincronizada con la memoria de largo plazo (biblioteca de claims).
+              Memoria de corto plazo (bitácoras) sincronizada con la biblioteca de claims de largo plazo.
             </p>
           </div>
           <div class="stat-box" style="border-top: 4px solid #8b5cf6;">
@@ -242,233 +430,231 @@
       </div>
     </section>
 
-    <!-- TAB 5: HEURISTICS PLAYGROUND -->
-    <section id="heuristics" class="tab-pane">
+    <!-- SECCIÓN 7: EVOLUCIÓN HISTÓRICA V1.0 VS V5.2 -->
+    <section id="evolucion" class="tab-pane">
       <div class="card">
         <div class="card-header">
-          <div>
-            <h2 class="card-title">Laboratorio Interactivo de Heurísticas de Segmentación</h2>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">
-              Ajusta los hiperparámetros clave y observa en tiempo real cómo impactan la cobertura léxica, el número de chunks y el solapamiento.
-            </p>
-          </div>
+          <span class="badge-pill" style="background:#e0f2fe; color:#0369a1; margin-bottom:0.5rem;">HISTORIA DE INGENIERÍA</span>
+          <h2 class="card-title">Evolución Histórica: De `pdf_to_rac_json.py` (V1.0) a V5.2</h2>
+          <p class="card-subtitle">
+            Comparativa forense entre la versión inicial de hace más de 1 año y el sistema final al 21 de octubre de 2026.
+          </p>
         </div>
 
-        <div class="grid-3" style="margin-bottom: 1.5rem;">
-          <div>
-            <label style="font-weight:600; font-size:0.875rem; color:var(--primary); display:block; margin-bottom:0.25rem;">
-              CHUNK_TARGET_WORDS: <span id="val-target-words" style="color:var(--accent);">550 palabras</span>
-            </label>
-            <input type="range" id="slider-target-words" min="200" max="1000" step="50" value="550" style="width:100%;">
-            <span style="font-size:0.75rem; color:var(--text-muted);">Tamaño objetivo para alimentar la ventana de contexto del LLM.</span>
-          </div>
-
-          <div>
-            <label style="font-weight:600; font-size:0.875rem; color:var(--primary); display:block; margin-bottom:0.25rem;">
-              CHUNK_OVERLAP_WORDS: <span id="val-overlap-words" style="color:var(--accent);">80 palabras</span>
-            </label>
-            <input type="range" id="slider-overlap-words" min="0" max="200" step="10" value="80" style="width:100%;">
-            <span style="font-size:0.75rem; color:var(--text-muted);">Ventana de solapamiento léxico entre chunks consecutivos de la misma sección.</span>
-          </div>
-
-          <div>
-            <label style="font-weight:600; font-size:0.875rem; color:var(--primary); display:block; margin-bottom:0.25rem;">
-              HEADING_FONT_RATIO: <span id="val-font-ratio" style="color:var(--accent);">1.18x mediana</span>
-            </label>
-            <input type="range" id="slider-font-ratio" min="1.0" max="2.0" step="0.05" value="1.18" style="width:100%;">
-            <span style="font-size:0.75rem; color:var(--text-muted);">Proporción mínima de tamaño tipográfico respecto a la mediana de la página.</span>
-          </div>
-        </div>
-
-        <div id="simulation-output">
-          <!-- Rendered dynamically by app.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 6: EVOLUTION V1 TO V5.2 -->
-    <section id="evolution" class="tab-pane">
-      <div class="card">
-        <div class="card-header">
-          <div>
-            <h2 class="card-title">Evolución Histórica: De `pdf_to_rac_json.py` (V1.0) a V5.2</h2>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">
-              Análisis comparativo de los defectos sistemáticos resueltos en la transición hacia un pipeline de nivel de investigación científica.
-            </p>
-          </div>
-        </div>
-
-        <table class="data-table">
+        <table class="manual-table">
           <thead>
             <tr>
-              <th>Dimensión Técnica</th>
-              <th>Versión 1.0 / 4.0 Original (`pdf_to_rac_json.py`)</th>
-              <th>Versión Final 5.2 (`pdf_intelligence`)</th>
+              <th>Dimensión de Ingeniería</th>
+              <th>Versión Original V1.0 / 4.0 (`pdf_to_rac_json.py`)</th>
+              <th>Versión Final V5.2 (`pdf_intelligence`)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Conservación de Texto</strong></td>
-              <td><span style="color:var(--danger);">Pérdida silenciosa</span>: toda sección de &lt; 60 palabras se descartaba por completo.</td>
-              <td><span style="color:var(--success); font-weight:700;">Cero pérdida</span>: secciones cortas se fusionan controladamente; <code class="inline-code">chunk_coverage ≥ 0.995</code>.</td>
+              <td><strong>Conservación del Texto</strong></td>
+              <td><span style="color:var(--danger); font-weight:700;">Pérdida silenciosa</span>: toda sección &lt; 60 palabras se descartaba (596 secciones perdidas en 1 PDF).</td>
+              <td><span style="color:var(--success); font-weight:700;">Cero pérdida</span>: secciones cortas se fusionan con el chunk previo; <code>chunk_coverage ≥ 0.995</code>.</td>
             </tr>
             <tr>
-              <td><strong>Trazabilidad de Páginas</strong></td>
-              <td>El solapamiento entre fragmentos etiquetaba falsamente la página del párrafo adyacente.</td>
-              <td><code class="inline-code">page_start / page_end</code> cubren exclusivamente las palabras propias (<code class="inline-code">unique_words</code>).</td>
+              <td><strong>Procedencia de Página</strong></td>
+              <td>El solapamiento entre fragmentos etiquetaba falsamente la página del párrafo siguiente.</td>
+              <td><code>page_start / page_end</code> cubren exclusivamente las palabras propias (<code>unique_words</code>).</td>
             </tr>
             <tr>
               <td><strong>Encabezados y Secciones</strong></td>
-              <td>Cualquier línea en mayúsculas o con número inicial creaba una nueva "sección" (1.655 falsos positivos).</td>
-              <td>Detector multicriterio (<code class="inline-code">score ≥ 2.0</code>) con descalificadores y degradación de cabeceras repetidas.</td>
+              <td>Cualquier línea en mayúsculas o con número creaba sección falsa (1.655 falsos positivos).</td>
+              <td>Detector por puntaje multicriterio ($\ge 2.0$) con democión de cabeceras repetidas.</td>
             </tr>
             <tr>
               <td><strong>Detección de Tablas</strong></td>
-              <td>Generaba ~1 tabla por página clasificando prosa partida como rejillas numéricas.</td>
-              <td>Clasificador heurístico (<code class="inline-code">AdaptiveTableExtractor</code>) que aísla prosa en <code class="inline-code">tables_rejected.jsonl</code>.</td>
+              <td>~1 tabla falsa por página clasificando prosa partida como cuadrículas numéricas.</td>
+              <td>Clasificador heurístico multivariable que aísla prosa en <code>tables_rejected.jsonl</code>.</td>
             </tr>
             <tr>
               <td><strong>Limpieza de Bordes</strong></td>
-              <td>La limpieza de cabeceras borraba dígitos legítimos en el cuerpo del texto.</td>
-              <td>Normalización a <code class="inline-code">#</code> y recorte exclusivo en las 3 líneas de los bordes (<code class="inline-code">removed_edge_lines</code>).</td>
+              <td>Borrado destructivo global de cadenas que borraba cifras reales del cuerpo del texto.</td>
+              <td>Normalización a comodín <code>#</code> y recorte exclusivo en las 3 líneas de los bordes.</td>
             </tr>
             <tr>
               <td><strong>Páginas OCR</strong></td>
-              <td>Utilizaba bloques de layout nativos ignorando el texto extraído por Tesseract.</td>
-              <td>Las páginas bajo OCR sustituyen y alimentan directamente el texto limpio y las secciones.</td>
+              <td>Utilizaba bloques nativos vacíos ignorando el texto rescatado por Tesseract.</td>
+              <td>El texto OCR sustituye directamente el contenido de la página y alimenta las secciones.</td>
             </tr>
             <tr>
-              <td><strong>Metadatos y Auditoría</strong></td>
-              <td>Sin verificación criptográfica, sin esquemas Parquet ni base DuckDB.</td>
-              <td><code class="inline-code">corpus.duckdb</code>, índices TF-IDF y FAISS, <code class="inline-code">manifest.json</code> con SHA-256 e <code class="inline-code">integrity_report.json</code>.</td>
+              <td><strong>Bases de Datos e Índices</strong></td>
+              <td>Solo archivos JSON básicos sin índices ni relaciones.</td>
+              <td>Base relacional <code>corpus.duckdb</code>, Apache Parquet, TF-IDF local y vectores FAISS.</td>
+            </tr>
+            <tr>
+              <td><strong>Auditoría Criptográfica</strong></td>
+              <td>Ninguna. Imposibilidad de verificar integridad documental.</td>
+              <td><code>manifest.json</code> con SHA-256 e <code>integrity_report.json</code> con 9 reglas automáticas.</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- TAB 7: DUCKDB SQL STUDIO -->
+    <!-- SECCIÓN 8: CONSULTAS SQL DUCKDB -->
     <section id="duckdb" class="tab-pane">
       <div class="card">
         <div class="card-header">
-          <div>
-            <h2 class="card-title">DuckDB SQL Studio — Consultas Analíticas Relacionales</h2>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">
-              Ejecuta consultas analíticas cruzando chunks, tablas, documentos y páginas sin requerir cargar JSONLs en memoria.
-            </p>
-          </div>
+          <span class="badge-pill" style="background:#e0f2fe; color:#0369a1; margin-bottom:0.5rem;">ANALÍTICA RELACIONAL</span>
+          <h2 class="card-title">DuckDB SQL Cookbook — Consultas de Alto Rendimiento</h2>
+          <p class="card-subtitle">
+            Sentencias SQL canónicas para científicos de datos y agentes RAG sobre el archivo <code class="inline-code">corpus.duckdb</code>.
+          </p>
         </div>
 
-        <div style="margin-bottom: 1rem;">
-          <label style="font-weight:600; font-size:0.875rem; color:var(--primary); display:block; margin-bottom:0.35rem;">
-            Seleccionar Consulta Pre-configurada del Cookbook:
-          </label>
-          <select id="duckdb-query-select" style="width:100%; padding:0.6rem 0.8rem; border:1px solid var(--border); border-radius:var(--radius-sm); font-size:0.9rem;">
-            <option value="q1">1. Inventario de documentos con conteo de chunks, cobertura y calidad promedio</option>
-            <option value="q2">2. Fragmentos de alta calidad con paginación impresa exacta</option>
-            <option value="q3">3. Tablas aceptadas con alta confianza y dimensiones</option>
-          </select>
+        <div class="deepdive-section">
+          <h4 class="deepdive-section-heading">Consulta 1: Inventario Documental y Cobertura de Chunks</h4>
+          <pre><code>SELECT 
+    document_id,
+    filename,
+    inferred_title,
+    page_count,
+    total_chunks,
+    SUM(unique_words) AS total_palabras_reales,
+    ROUND(chunk_coverage * 100, 2) AS porcentaje_cobertura
+FROM chunks
+JOIN documents USING (document_id)
+GROUP BY document_id, filename, inferred_title, page_count, total_chunks, chunk_coverage
+ORDER BY total_palabras_reales DESC;</code></pre>
         </div>
 
-        <div style="margin-bottom: 1rem;">
-          <textarea id="duckdb-sql-editor" style="width:100%; height:80px; font-family:var(--font-mono); font-size:0.85rem; padding:0.75rem; border-radius:var(--radius-sm); border:1px solid var(--border); background:#0f172a; color:#f8fafc;" readonly>SELECT document_id, filename, total_chunks, chunk_coverage, average_quality FROM documents ORDER BY average_quality DESC;</textarea>
+        <div class="deepdive-section" style="margin-top:1.5rem;">
+          <h4 class="deepdive-section-heading">Consulta 2: Cruce de Fragmentos de Alta Calidad con Tablas Asociadas</h4>
+          <pre><code>SELECT 
+    c.chunk_id,
+    c.filename,
+    c.section_title,
+    c.page_start,
+    c.page_label_start,
+    c.quality_score,
+    t.table_id,
+    t.caption,
+    t.markdown
+FROM chunks c
+LEFT JOIN tables t 
+    ON c.document_id = t.document_id 
+    AND t.page_number BETWEEN c.page_start AND c.page_end
+WHERE c.quality_score >= 0.85
+  AND c.text ILIKE '%inteligencia artificial%'
+ORDER BY c.quality_score DESC
+LIMIT 10;</code></pre>
         </div>
 
-        <div style="display:flex; justify-content:flex-end; margin-bottom:1.25rem;">
-          <button id="duckdb-run-btn" class="btn btn-primary">⚡ Ejecutar Consulta SQL</button>
-        </div>
-
-        <div>
-          <strong style="font-size:0.85rem; color:var(--primary); display:block; margin-bottom:0.35rem;">Resultados de la Consulta:</strong>
-          <div id="duckdb-result-table">
-            <p style="color:var(--text-muted); font-size:0.85rem;">Presiona "Ejecutar Consulta SQL" para ver los resultados relacionales simulados.</p>
-          </div>
+        <div class="deepdive-section" style="margin-top:1.5rem;">
+          <h4 class="deepdive-section-heading">Consulta 3: Detección de Secciones Cortas Absorbidas</h4>
+          <pre><code>SELECT 
+    chunk_id,
+    filename,
+    section_title AS titulo_principal,
+    merged_section_titles,
+    unique_words,
+    word_count
+FROM chunks
+WHERE array_length(merged_section_ids) > 0
+LIMIT 20;</code></pre>
         </div>
       </div>
     </section>
 
-    <!-- TAB 8: DOCUMENTATION & API -->
-    <section id="documentation" class="tab-pane">
+    <!-- SECCIÓN 9: GUÍA DE INSTALACIÓN Y CLI -->
+    <section id="guia_codigo" class="tab-pane">
       <div class="card">
         <div class="card-header">
-          <div>
-            <h2 class="card-title">Documentación Técnica de la Biblioteca y CLI</h2>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">
-              Guía de instalación rápida, uso en línea de comandos y estructura de módulos.
-            </p>
-          </div>
+          <span class="badge-pill" style="background:#e0f2fe; color:#0369a1; margin-bottom:0.5rem;">DESPLIEGUE EN PRODUCCIÓN</span>
+          <h2 class="card-title">Manual de Instalación y Uso del Paquete `pdf_intelligence`</h2>
+          <p class="card-subtitle">
+            Instrucciones completas para instalar el paquete en entornos locales, servidores y Google Colab.
+          </p>
         </div>
 
-        <h3 style="color:var(--primary); margin-bottom:0.5rem; font-size:1.05rem;">1. Instalación Rápida</h3>
-        <pre><code># Clonar repositorio
+        <div class="deepdive-section">
+          <h4 class="deepdive-section-heading">1. Instalación del Paquete en Modo Desarrollo</h4>
+          <pre><code># Clonar repositorio
 git clone https://github.com/tu-usuario/pdf-to-rag-pipeline.git
 cd pdf-to-rag-pipeline
 
-# Instalar paquete en modo desarrollo
+# Instalar dependencias del sistema (Tesseract OCR bilingüe)
+# En Ubuntu / Debian:
+sudo apt-get install -y tesseract-ocr tesseract-ocr-spa tesseract-ocr-eng
+
+# Instalar paquete Python (PEP 621)
 pip install -e .
 
-# Dependencias opcionales de Embeddings y FAISS
+# Con soporte opcional para Embeddings multilingües y FAISS:
 pip install -e ".[embeddings]"</code></pre>
+        </div>
 
-        <h3 style="color:var(--primary); margin-top:1.5rem; margin-bottom:0.5rem; font-size:1.05rem;">2. Ejecución desde CLI</h3>
-        <pre><code># Procesar lote de PDFs
+        <div class="deepdive-section" style="margin-top:1.5rem;">
+          <h4 class="deepdive-section-heading">2. Comandos de la Interfaz de Línea de Comandos (CLI)</h4>
+          <pre><code># Procesar directorio completo de PDFs
 pdf-intelligence process --input ./data/pdfs --output ./data/pdf_intelligence
 
-# Búsqueda léxica local ultrarrápida con TF-IDF
-pdf-intelligence search "inteligencia artificial educación" --top-k 5
+# Búsqueda léxica offline rápida con TF-IDF (0 tokens consumidos)
+pdf-intelligence search "gobernanza algorítmica" --top-k 5
 
-# Auditar reporte de integridad
+# Auditar reporte de integridad y páginas marcadas
 pdf-intelligence audit --output ./data/pdf_intelligence</code></pre>
+        </div>
 
-        <h3 style="color:var(--primary); margin-top:1.5rem; margin-bottom:0.5rem; font-size:1.05rem;">3. Uso en Python como Módulo</h3>
-        <pre><code>from pdf_intelligence import PipelineConfig, CorpusBuilder, LocalSearch
+        <div class="deepdive-section" style="margin-top:1.5rem;">
+          <h4 class="deepdive-section-heading">3. Uso como Módulo Python en Scripts o Pipelines RAG</h4>
+          <pre><code>from pdf_intelligence import PipelineConfig, CorpusBuilder, LocalSearch
 
-# Configurar pipeline
+# 1. Configurar hiperparámetros
 config = PipelineConfig(
     pdf_directory="./data/pdfs",
     output_directory="./data/pdf_intelligence",
     ocr_enabled=True,
-    chunk_target_words=550
+    chunk_target_words=550,
+    chunk_overlap_words=80
 )
 
-# Ejecutar consolidación completa
+# 2. Ejecutar procesamiento
 builder = CorpusBuilder(config)
 builder.process()
 
-# Búsqueda local sin APIs externas
+# 3. Consultar índice local
 searcher = LocalSearch("./data/pdf_intelligence")
-results = searcher.search_tfidf("gobernanza de datos", top_k=3)</code></pre>
+results = searcher.search_tfidf("desarrollo cognitivo", top_k=3)
+for r in results:
+    print(f"[{r['chunk_id']}] Pág: {r['page_start']} | {r['section_title']}")</code></pre>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Toast Alert -->
+  <!-- Toast Notification -->
   <div id="toast-alert" class="toast"></div>
 
   <!-- Footer -->
-  <footer>
+  <footer class="manual-footer">
     <div class="footer-container">
       <div class="footer-brand">
-        <h3>CIOdD-UCR PDF Intelligence Pipeline</h3>
+        <h3>CIOdD-UCR PDF Intelligence Pipeline V5.2</h3>
         <p>Centro de Investigación Observatorio del Desarrollo — Universidad de Costa Rica</p>
-        <p style="margin-top:0.35rem; font-size:0.8rem; color:#64748b;">
-          Desarrollado para investigación científica auditable y flujos de RAG de alta fidelidad.
+        <p style="margin-top:0.35rem; font-size:0.8rem; color:#94a3b8;">
+          Diseñado para investigación científica auditable, flujos RAG reproducibles y Bóvedas de Conocimiento.
         </p>
       </div>
       <div>
-        <h4 style="color:white; margin-bottom:0.5rem;">Documentos del Proyecto</h4>
+        <h4 style="color:white; margin-bottom:0.5rem;">Estructura del Proyecto</h4>
         <ul style="list-style:none; line-height:1.8;">
-          <li><a href="https://github.com" style="color:#94a3b8; text-decoration:none;">Código Fuente Modular (src/pdf_intelligence)</a></li>
-          <li><a href="https://github.com" style="color:#94a3b8; text-decoration:none;">Monolito Google Colab V5.2</a></li>
-          <li><a href="https://github.com" style="color:#94a3b8; text-decoration:none;">Manual de Uso para LLMs (V5)</a></li>
-          <li><a href="https://github.com" style="color:#94a3b8; text-decoration:none;">Bóveda de Conocimiento (Brain OS v1.6)</a></li>
+          <li><a href="https://github.com" style="color:#94a3b8; text-decoration:none;">Código Modular: <code>src/pdf_intelligence</code></a></li>
+          <li><a href="https://github.com" style="color:#94a3b8; text-decoration:none;">Skill de Uso: <code>skills/pdf-intelligence-rag</code></a></li>
+          <li><a href="https://github.com" style="color:#94a3b8; text-decoration:none;">Monolito Colab: <code>legacy/v5_2_monolith</code></a></li>
+          <li><a href="https://github.com" style="color:#94a3b8; text-decoration:none;">Versión Original: <code>legacy/v1_original</code></a></li>
         </ul>
       </div>
       <div>
-        <h4 style="color:white; margin-bottom:0.5rem;">Licencia y Créditos</h4>
-        <p>Licencia MIT de Código Abierto (2026).</p>
-        <p style="margin-top:0.35rem;">Universidad de Costa Rica (UCR).</p>
+        <h4 style="color:white; margin-bottom:0.5rem;">Licencia y Autoría</h4>
+        <p>Autor Principal: <strong>Agustín Gómez</strong></p>
+        <p style="margin-top:0.25rem;">Licencia de Código Abierto MIT (2026).</p>
+        <p style="margin-top:0.25rem;">Universidad de Costa Rica (UCR).</p>
       </div>
     </div>
   </footer>
