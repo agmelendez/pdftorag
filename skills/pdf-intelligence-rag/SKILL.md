@@ -125,3 +125,13 @@ El agente debe estructurar sus respuestas siguiendo este estándar de citación:
 2. ❌ **PROHIBIDO asumir que `year_candidates` es la fecha de publicación**: Los años inferidos son candidatos estadísticos hallados en las portadas (que pueden referirse a metas como "Visión 2030"). El agente debe indicar: *"año referenciado en el documento"*.
 3. ❌ **PROHIBIDO omitir tablas rechazadas**: Si una consulta pregunta por qué una tabla no aparece en el análisis, el agente debe consultar `tables_rejected.jsonl` y reportar el `reject_reason` (ej. *"rejilla clasificada como prosa en dos columnas"*).
 4. ❌ **PROHIBIDO interpretar `average_quality` como mérito científico**: Una calidad de 0.98 indica únicamente fidelidad de extracción tipográfica, no validez científica de las conclusiones del autor original.
+
+---
+
+## 7. Licencia de Uso y Atribución de la Skill
+
+Esta especificación de habilidad (*Agent Skill*) está protegida bajo la licencia **[Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es)**.
+
+- **Autor:** Agustín Gómez (Centro de Investigación Observatorio del Desarrollo — Universidad de Costa Rica).
+- **Uso Autorizado:** Libre integración en agentes de IA académicos, docentes o de investigación pública.
+- **Restricción:** Prohibida su comercialización directa como producto cerrado o de pago sin autorización previa. Requiere atribución obligatoria en forks y redistribuciones.

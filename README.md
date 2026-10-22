@@ -121,7 +121,7 @@ flowchart TD
 ├── pyproject.toml                       <-- Configuración de empaquetado PEP 621
 ├── requirements.txt                     <-- Dependencias de producción
 ├── requirements-dev.txt                 <-- Dependencias de desarrollo
-├── LICENSE                              <-- Licencia MIT
+├── LICENSE                              <-- Licencia Dual: No Comercial + CC BY-NC-SA 4.0
 └── README.md                            <-- Documentación principal
 ```
 
@@ -200,6 +200,32 @@ python3 tests/test_pipeline.py
 
 ---
 
-## 📜 Licencia y Créditos
+## 📜 Licencia de Uso, No Comercialización y Atribución
 
-Este proyecto está liberado bajo la **[Licencia MIT](LICENSE)**. Desarrollado en el **Centro de Investigación Observatorio del Desarrollo (CIOdD)** de la **Universidad de Costa Rica (UCR)**.
+Este proyecto opera bajo un esquema de **Doble Licenciamiento No Comercial con Atribución Obligatoria** para preservar los derechos del autor e impulsar la investigación abierta:
+
+1. **Código Fuente y Software (`src/`, `notebooks/`, `tests/`)**:
+   - **Permitido**: Clonar, ejecutar, auditar, adaptar y modificar el código para fines académicos, científicos, docentes o personales.
+   - **Prohibido**: **Comercializar, vender, revender o sublicenciar** el software o cualquier producto comercial derivado sin autorización previa por escrito del autor.
+   - **Atribución Obligatoria**: Si clonas o creas un *fork* de este repositorio, debes mantener visible e inalterable el aviso de autoría original:
+     > *"Basado en el CIOdD-UCR PDF Intelligence Pipeline V5.2, desarrollado por Agustín Gómez — Centro de Investigación Observatorio del Desarrollo (CIOdD), Universidad de Costa Rica."*
+
+2. **Documentación, Metodología y Skill de Agente (`docs/`, `skills/`)**:
+   - Licenciado bajo **[Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es)**.
+
+Consulta los términos jurídicos completos en el archivo **[`LICENSE`](LICENSE)**.
+
+### ✍️ Citación Científica Canónica
+
+Si utilizas este pipeline en tus investigaciones, publicaciones, tesis o benchmarks RAG, por favor cita formalmente:
+
+```bibtex
+@software{gomez2026_pdf_intelligence,
+  author       = {G{\'o}mez, Agust{\'i}n},
+  title        = {{CIOdD-UCR PDF Intelligence Pipeline V5.2: Ingesta no-destructiva, estructuraci{\'o}n profunda y auditor{\'i}a relacional de documentos PDF para RAG}},
+  year         = {2026},
+  publisher    = {Centro de Investigaci{\'o}n Observatorio del Desarrollo, Universidad de Costa Rica},
+  url          = {https://github.com/tu-usuario/pdf-to-rag-pipeline},
+  note         = {Licencia Dual: C{\'o}digo No Comercial con Atribuci{\'o}n / Documentaci{\'o}n CC BY-NC-SA 4.0}
+}
+```

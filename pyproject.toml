@@ -7,10 +7,11 @@ name = "ciodd-ucr-pdf-intelligence"
 version = "5.2.0"
 description = "Enterprise Research & RAG PDF Intelligence Pipeline from CIOdD-UCR: Zero text loss, cryptographic auditing, table extraction, and multi-index retrieval."
 authors = [
+    { name = "Agustín Gómez", email = "agustin.gomez@ucr.ac.cr" },
     { name = "Centro de Investigación Observatorio del Desarrollo (CIOdD) — Universidad de Costa Rica" }
 ]
 readme = "README.md"
-license = { text = "MIT" }
+license = { text = "CC BY-NC-SA 4.0 / PolyForm Noncommercial 1.0.0" }
 requires-python = ">=3.9"
 dependencies = [
     "pymupdf>=1.23.0",

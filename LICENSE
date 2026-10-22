@@ -1,21 +1,67 @@
-MIT License
+# Licencia de Uso del Software y la Documentación
+## CIOdD-UCR PDF Intelligence Pipeline V5.2
 
-Copyright (c) 2026 Centro de Investigación Observatorio del Desarrollo (CIOdD) — Universidad de Costa Rica (UCR)
+Copyright (c) 2026 Agustín Gómez
+Centro de Investigación Observatorio del Desarrollo (CIOdD) — Universidad de Costa Rica (UCR)
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Este repositorio opera bajo un esquema de **Doble Licenciamiento No Comercial con Atribución Obligatoria**:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+---
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+### 1. Código Fuente y Software (`src/`, `notebooks/`, `tests/`, `legacy/`)
+**Licencia de Código Fuente No Comercial con Atribución (Non-Commercial Open Source License)**
+
+Se concede permiso, libre de cargos, a cualquier persona u organización para obtener una copia de este software y los archivos de código fuente asociados para:
+- **Clonar, ejecutar y estudiar** el código fuente en entornos locales, servidores y plataformas de nube.
+- **Modificar, adaptar e integrar** el software en proyectos de investigación académica, docencia, auditoría pública o uso personal.
+
+**Condiciones y Restricciones Obligatorias:**
+1. **NO COMERCIALIZACIÓN (Non-Commercial Restriction)**:
+   Queda expresamente **prohibido vender, sublicenciar, comercializar o lucrar** de manera directa con este software, sus módulos derivados o cualquier producto o servicio comercial empaquetado basado en este código, sin un acuerdo de licenciamiento comercial previo y por escrito otorgado por el titular de los derechos de autor (Agustín Gómez / CIOdD-UCR).
+2. **ATRIBUCIÓN OBLIGATORIA (Attribution)**:
+   Toda persona, entidad o repositorio que clone, bifurque (fork), redistribuya o publique una versión derivada de este código **debe conservar de forma íntegra y visible este aviso de copyright y la mención de autoría original**:
+   > *"Basado en el CIOdD-UCR PDF Intelligence Pipeline V5.2, desarrollado por Agustín Gómez — Centro de Investigación Observatorio del Desarrollo (CIOdD), Universidad de Costa Rica."*
+   Se debe incluir obligatoriamente el enlace al repositorio original en todo fork público o publicación técnica.
+3. **COMPARTIR BAJO CONDICIONES EQUIVALENTES (Share-Alike)**:
+   Cualquier derivado o modificación pública de este código debe mantenerse bajo esta misma restricción no comercial y de atribución abierta.
+
+---
+
+### 2. Documentación, Metodología, Especificaciones y Skill de Agente (`docs/`, `skills/`, `manuales/`)
+**Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)**
+
+La documentación técnica, el marco metodológico, las especificaciones de artefactos, los ciclos de depuración y la especificación del Skill de Agente (`skills/pdf-intelligence-rag/SKILL.md`) están licenciados bajo Creative Commons:
+
+- **BY (Atribución)**: Debes reconocer adecuadamente la autoría de Agustín Gómez y CIOdD-UCR, proporcionar un enlace a la licencia e indicar si se han realizado cambios.
+- **NC (No Comercial)**: No puedes hacer uso del material con propósitos comerciales.
+- **SA (Compartir Igual)**: Si remezclas, transformas o creas a partir del material, debes distribuir tus contribuciones bajo la misma licencia del original.
+
+Texto completo de la licencia Creative Commons:
+https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es
+
+---
+
+### 3. Formato Canónico de Citación y Atribución
+
+Si utilizas este software o su metodología en una investigación científica, tesis, publicación o proyecto, debes citarlo en el siguiente formato:
+
+#### Formato APA 7ma Edición:
+> Gómez, A. (2026). *CIOdD-UCR PDF Intelligence Pipeline V5.2: Ingesta no-destructiva, estructuración profunda y auditoría relacional de documentos PDF para RAG*. Centro de Investigación Observatorio del Desarrollo, Universidad de Costa Rica. San José, Costa Rica.
+
+#### Formato BibTeX:
+```bibtex
+@software{gomez2026_pdf_intelligence,
+  author       = {G{\'o}mez, Agust{\'i}n},
+  title        = {{CIOdD-UCR PDF Intelligence Pipeline V5.2: Ingesta no-destructiva, estructuraci{\'o}n profunda y auditor{\'i}a relacional de documentos PDF para RAG}},
+  year         = {2026},
+  publisher    = {Centro de Investigaci{\'o}n Observatorio del Desarrollo, Universidad de Costa Rica},
+  url          = {https://github.com/tu-usuario/pdf-to-rag-pipeline},
+  note         = {Licencia Dual: C{\'o}digo No Comercial con Atribuci{\'o}n / Documentaci{\'o}n CC BY-NC-SA 4.0}
+}
+```
+
+---
+
+### 4. Cláusula de Exención de Responsabilidad (Disclaimer)
+
+EL SOFTWARE Y LA DOCUMENTACIÓN SE PROPORCIONAN "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA, INCLUYENDO PERO SIN LIMITARSE A GARANTÍAS DE COMERCIABILIDAD, IDONEIDAD PARA UN PROPÓSITO PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO EL AUTOR O EL CENTRO DE INVESTIGACIÓN OBSERVATORIO DEL DESARROLLO (CIODD-UCR) SERÁN RESPONSABLES DE NINGÚN RECLAMO, DAÑO U OTRA RESPONSABILIDAD DERIVADA DEL USO, MODIFICACIÓN O REDISTRIBUCIÓN DEL SOFTWARE.
