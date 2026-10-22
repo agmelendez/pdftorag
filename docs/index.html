@@ -28,7 +28,7 @@
           <a href="https://github.com" target="_blank" class="btn btn-primary">
             📁 Repositorio GitHub
           </a>
-          <button class="btn btn-outline" onclick="document.querySelector('[data-tab=skill_agente]').click()">
+          <button class="btn btn-outline" onclick="switchTab('skill_agente')">
             🤖 Ver Skill de Uso
           </button>
         </div>
@@ -50,31 +50,31 @@
   <!-- Navigation Bar -->
   <nav class="tab-nav">
     <div class="nav-container">
-      <button class="nav-tab active" data-tab="metodologia">
+      <button class="nav-tab active" data-tab="metodologia" onclick="switchTab('metodologia')">
         📚 1. Metodología y Fundamentación
       </button>
-      <button class="nav-tab" data-tab="fases">
+      <button class="nav-tab" data-tab="fases" onclick="switchTab('fases')">
         🔄 2. Flujo de Trabajo (10 Fases)
       </button>
-      <button class="nav-tab" data-tab="skill_agente">
+      <button class="nav-tab" data-tab="skill_agente" onclick="switchTab('skill_agente')">
         🤖 3. Skill de Uso para LLMs / RAG
       </button>
-      <button class="nav-tab" data-tab="artefactos">
+      <button class="nav-tab" data-tab="artefactos" onclick="switchTab('artefactos')">
         📦 4. Especificación de Artefactos
       </button>
-      <button class="nav-tab" data-tab="depuracion">
+      <button class="nav-tab" data-tab="depuracion" onclick="switchTab('depuracion')">
         🧹 5. Ciclos de Depuración
       </button>
-      <button class="nav-tab" data-tab="boveda">
+      <button class="nav-tab" data-tab="boveda" onclick="switchTab('boveda')">
         🧠 6. Bóveda de Conocimiento (Brain OS)
       </button>
-      <button class="nav-tab" data-tab="evolucion">
+      <button class="nav-tab" data-tab="evolucion" onclick="switchTab('evolucion')">
         📈 7. Evolución V1.0 → V5.2
       </button>
-      <button class="nav-tab" data-tab="duckdb">
+      <button class="nav-tab" data-tab="duckdb" onclick="switchTab('duckdb')">
         ⚡ 8. Consultas SQL DuckDB
       </button>
-      <button class="nav-tab" data-tab="guia_codigo">
+      <button class="nav-tab" data-tab="guia_codigo" onclick="switchTab('guia_codigo')">
         💻 9. Instalación y CLI
       </button>
     </div>
@@ -143,6 +143,17 @@
             <li><strong>Auditoría Criptográfica e Integridad Relacional</strong>: Huellas SHA-256 de todas las entradas y salidas registradas en <code>manifest.json</code>, junto con la verificación automática de 9 reglas de consistencia en <code>integrity_report.json</code>.</li>
           </ul>
         </div>
+
+        <div style="margin-top:2rem; padding:1.5rem; background:#f8fafc; border:1px solid var(--border); border-radius:var(--radius-md); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <strong style="color:var(--primary); font-size:1.05rem; display:block;">¿Listo para profundizar en el código y la arquitectura?</strong>
+            <span style="font-size:0.875rem; color:var(--text-muted);">Examina la descomposición técnica del pipeline en sus 10 fases algorítmicas o revisa el protocolo del Skill de Agente.</span>
+          </div>
+          <div style="display:flex; gap:0.75rem;">
+            <button class="btn btn-primary" onclick="switchTab('fases')">🔄 Ver las 10 Fases del Pipeline →</button>
+            <button class="btn btn-outline" onclick="switchTab('skill_agente')">🤖 Protocolo Skill de Agente →</button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -168,6 +179,17 @@
             <div class="phase-deepdive-panel" id="phase-deepdive-container">
               <!-- Renderizado dinámicamente por app.js -->
             </div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem; padding:1.5rem; background:#f8fafc; border:1px solid var(--border); border-radius:var(--radius-md); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <strong style="color:var(--primary); font-size:1.05rem; display:block;">Paso Siguiente: Inspección y Consumo de Datos</strong>
+            <span style="font-size:0.875rem; color:var(--text-muted);">Revisa las directrices del Skill de Agente o inspecciona los artefactos y esquemas generados.</span>
+          </div>
+          <div style="display:flex; gap:0.75rem;">
+            <button class="btn btn-primary" onclick="switchTab('skill_agente')">🤖 Protocolo Skill de Agente →</button>
+            <button class="btn btn-outline" onclick="switchTab('artefactos')">📦 Especificación de Artefactos →</button>
           </div>
         </div>
       </div>
@@ -306,12 +328,12 @@
         </div>
 
         <div class="artifact-sub-nav">
-          <button class="artifact-sub-btn active" data-artifact="chunks">📄 chunks.parquet / .jsonl</button>
-          <button class="artifact-sub-btn" data-artifact="tables">📊 tables.parquet / .jsonl</button>
-          <button class="artifact-sub-btn" data-artifact="tables_rejected">🚫 tables_rejected.jsonl</button>
-          <button class="artifact-sub-btn" data-artifact="sections">📑 sections.parquet / .jsonl</button>
-          <button class="artifact-sub-btn" data-artifact="pages">📖 pages.parquet / .jsonl</button>
-          <button class="artifact-sub-btn" data-artifact="integrity">🛡️ integrity_report.json</button>
+          <button class="artifact-sub-btn active" data-artifact="chunks" onclick="switchArtifactTab('chunks')">📄 chunks.parquet / .jsonl</button>
+          <button class="artifact-sub-btn" data-artifact="tables" onclick="switchArtifactTab('tables')">📊 tables.parquet / .jsonl</button>
+          <button class="artifact-sub-btn" data-artifact="tables_rejected" onclick="switchArtifactTab('tables_rejected')">🚫 tables_rejected.jsonl</button>
+          <button class="artifact-sub-btn" data-artifact="sections" onclick="switchArtifactTab('sections')">📑 sections.parquet / .jsonl</button>
+          <button class="artifact-sub-btn" data-artifact="pages" onclick="switchArtifactTab('pages')">📖 pages.parquet / .jsonl</button>
+          <button class="artifact-sub-btn" data-artifact="integrity" onclick="switchArtifactTab('integrity')">🛡️ integrity_report.json</button>
         </div>
 
         <div id="artifact-display-container">

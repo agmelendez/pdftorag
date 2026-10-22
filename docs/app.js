@@ -148,7 +148,7 @@ const SAMPLE_CORPUS = {
     {
       table_id: "tbl_08f91a2bc41029aa",
       document_id: "doc_8f3a91b2c4e57d01",
-      page_number": 2,
+      page_number: 2,
       strategy: "lines",
       bbox: [72.0, 310.5, 520.0, 480.0],
       rows: 3,
@@ -168,7 +168,7 @@ const SAMPLE_CORPUS = {
     {
       table_id: "tbl_8f3a91b2_cuadro1",
       document_id: "doc_8f3a91b2c4e57d01",
-      page_number": 4,
+      page_number: 4,
       strategy: "lines",
       bbox: [72.0, 180.0, 520.0, 320.0],
       rows: 2,
@@ -190,7 +190,7 @@ const SAMPLE_CORPUS = {
     {
       table_id: "tbl_rej_00192837",
       document_id: "doc_8f3a91b2c4e57d01",
-      page_number": 6,
+      page_number: 6,
       strategy: "text",
       bbox: [54.0, 120.0, 540.0, 720.0],
       reject_reason: "ocupa casi toda la página (prosa en 2 columnas, no tabla numérica)",
@@ -526,20 +526,70 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Navegación entre Pestañas Principales
+function switchTab(targetId) {
+  if (!targetId) return;
+  targetId = targetId.replace(/^#/, '');
+
+  const tabs = document.querySelectorAll(".nav-tab");
+  const panes = document.querySelectorAll(".tab-pane");
+  const targetPane = document.getElementById(targetId);
+
+  if (!targetPane) return;
+
+  tabs.forEach(t => {
+    const isTarget = t.getAttribute("data-tab") === targetId || t.getAttribute("href") === `#${targetId}`;
+    t.classList.toggle("active", isTarget);
+  });
+
+  panes.forEach(p => {
+    p.classList.toggle("active", p.id === targetId);
+  });
+
+  if (history.replaceState) {
+    history.replaceState(null, null, `#${targetId}`);
+  }
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 function setupNavigation() {
   const tabs = document.querySelectorAll(".nav-tab");
   tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      tabs.forEach(t => t.classList.remove("active"));
-      tab.classList.add("active");
-      const targetId = tab.getAttribute("data-tab");
-      document.querySelectorAll(".tab-pane").forEach(pane => pane.classList.remove("active"));
-      const activePane = document.getElementById(targetId);
-      if (activePane) activePane.classList.add("active");
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    tab.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = tab.getAttribute("data-tab") || (tab.getAttribute("href") ? tab.getAttribute("href").replace(/^#/, '') : null);
+      if (targetId) switchTab(targetId);
     });
   });
+
+  document.querySelectorAll("[data-switch-tab]").forEach(el => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = el.getAttribute("data-switch-tab");
+      if (targetId) switchTab(targetId);
+    });
+  });
+
+  if (window.location.hash) {
+    const initialTab = window.location.hash.replace(/^#/, '');
+    if (document.getElementById(initialTab)) {
+      switchTab(initialTab);
+    }
+  }
+
+  window.addEventListener("hashchange", () => {
+    if (window.location.hash) {
+      const currentTab = window.location.hash.replace(/^#/, '');
+      if (document.getElementById(currentTab)) {
+        switchTab(currentTab);
+      }
+    }
+  });
 }
+
+window.switchTab = switchTab;
+window.selectPipelinePhase = selectPipelinePhase;
+window.copyEvidenceSnippet = copyEvidenceSnippet;
 
 // Configuración de las 10 Fases del Pipeline
 function setupPipelinePhases() {
@@ -611,19 +661,27 @@ function renderPhaseDeepDive(phase) {
 }
 
 // Configuración del Explorador de Artefactos (100% Offline con SAMPLE_CORPUS)
+function switchArtifactTab(artifact) {
+  const subTabButtons = document.querySelectorAll(".artifact-sub-btn");
+  subTabButtons.forEach(btn => {
+    btn.classList.toggle("active", btn.getAttribute("data-artifact") === artifact);
+  });
+  renderArtifactDetails(artifact);
+}
+
 function setupArtifactExplorer() {
   const subTabButtons = document.querySelectorAll(".artifact-sub-btn");
   subTabButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-      subTabButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
       const artifact = btn.getAttribute("data-artifact");
-      renderArtifactDetails(artifact);
+      switchArtifactTab(artifact);
     });
   });
 
   renderArtifactDetails("chunks");
 }
+
+window.switchArtifactTab = switchArtifactTab;
 
 function renderArtifactDetails(artifactName) {
   const container = document.getElementById("artifact-display-container");
