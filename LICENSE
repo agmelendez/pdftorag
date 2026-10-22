@@ -55,7 +55,7 @@ Si utilizas este software o su metodología en una investigación científica, t
   title        = {{CIOdD-UCR PDF Intelligence Pipeline V5.2: Ingesta no-destructiva, estructuraci{\'o}n profunda y auditor{\'i}a relacional de documentos PDF para RAG}},
   year         = {2026},
   publisher    = {Centro de Investigaci{\'o}n Observatorio del Desarrollo, Universidad de Costa Rica},
-  url          = {https://github.com/tu-usuario/pdf-to-rag-pipeline},
+  url          = {https://github.com/agmelendez/pdftorag},
   note         = {Licencia Dual: C{\'o}digo No Comercial con Atribuci{\'o}n / Documentaci{\'o}n CC BY-NC-SA 4.0}
 }
 ```

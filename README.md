@@ -1,7 +1,7 @@
 # CIOdD-UCR PDF Intelligence Pipeline (V5.2) — From PDF to RAG & Knowledge Vault
 
-[![Version](https://img.shields.io/badge/version-5.2.0-blue.svg)](https://github.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-5.2.0-blue.svg)](https://github.com/agmelendez/pdftorag)
+[![License: CC BY-NC-SA 4.0 / Non-Commercial](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0%20%2F%20Non--Commercial-yellow.svg)](LICENSE)
 [![Zero Text Loss](https://img.shields.io/badge/Text%20Loss-Zero%20(coverage%20%E2%89%A5%2099.5%25)-success.svg)](docs/ARCHITECTURE.md)
 [![Database](https://img.shields.io/badge/Relational-DuckDB%20%2B%20Parquet-orange.svg)](docs/COOKBOOK_DUCKDB.md)
 [![Search](https://img.shields.io/badge/Search-TF--IDF%20%2B%20FAISS-purple.svg)](src/pdf_intelligence/search.py)
@@ -13,20 +13,22 @@
 
 ---
 
-## 🌟 Interfaz Interactiva en Vivo (GitHub Pages)
+## 🌟 Interfaz Metodológica y Portal en Vivo (GitHub Pages)
 
-Accede a la interfaz interactiva alojada en GitHub Pages para explorar el pipeline, visualizar artefactos en tiempo real, simular consultas RAG y probar el laboratorio de heurísticas:
+Accede a la interfaz interactiva y manual metodológico de alto nivel alojado en GitHub Pages para explorar el pipeline, comprender las 10 fases algorítmicas, estudiar la Skill de Agente y verificar los artefactos:
 
-👉 **[Abrir Portal Interactivo GitHub Pages (`/docs`)](https://tu-usuario.github.io/pdf-to-rag-pipeline/)** *(O abrir localmente [`docs/index.html`](file:///Users/agustingomez/Downloads/0.%20FROM%20PDF%20to%20RAG/docs/index.html) en tu navegador)*.
+👉 **[Abrir Portal Metodológico GitHub Pages (`/docs`)](https://agmelendez.github.io/pdftorag/)** *(O abrir localmente [`docs/index.html`](file:///Users/agustingomez/Downloads/0.%20FROM%20PDF%20to%20RAG/docs/index.html) en tu navegador)*.
 
-### ¿Qué puedes hacer en la interfaz interactiva?
-- 🔄 **Explorar las 10 Fases**: Flujo visual de procesamiento con inspección de código Python y fórmulas matemáticas.
-- 📦 **Inspeccionar Artefactos**: Visualizador en vivo de `chunks.jsonl`, `tables.jsonl`, `tables_rejected.jsonl`, `sections.jsonl`, `pages.jsonl` e `integrity_report.json`.
-- 🤖 **Simulador RAG y Prompts**: Búsqueda léxica, ensamblaje automático de evidencia con tablas vinculadas y botón para copiar al portapapeles.
-- 🧠 **Bóveda de Conocimiento (Brain OS)**: Visualizador de las 4 capas funcionales para sistemas operativos personales de IA.
-- 🧪 **Laboratorio de Heurísticas**: Controles deslizantes para ajustar tamaño de chunks, solapamiento y ratios tipográficos en tiempo real.
-- 📈 **Matriz de Evolución**: Comparativa forense entre el script original V1.0 (`pdf_to_rac_json.py`) y la versión V5.2.
-- ⚡ **DuckDB SQL Studio**: Ejecutor de consultas relacionales sobre el corpus.
+### Contenidos del Portal Web:
+- 📚 **Metodología y Fundamentación**: El problema ontológico del PDF y los 4 pilares epistemológicos del CIOdD-UCR.
+- 🔄 **Flujo de Trabajo (10 Fases)**: Inspección de retos, entradas, salidas, formulación algorítmica y código Python de cada fase.
+- 🤖 **Skill de Uso para LLMs / RAG**: Protocolo formal (`skills/pdf-intelligence-rag/SKILL.md`) con jerarquía de evidencia de 5 niveles y reglas anti-alucinación.
+- 📦 **Especificación de Artefactos**: Diccionario de datos y visor de esquemas canónicos de referencia para `chunks`, `tables`, `tables_rejected`, `sections`, `pages` e `integrity_report`.
+- 🧹 **Ciclos de Depuración**: Explicación de los 6 filtros heurísticos de saneamiento.
+- 🧠 **Bóveda de Conocimiento (Brain OS)**: Integración en 4 capas para memoria de largo plazo en Obsidian y agentes de IA.
+- 📈 **Evolución V1.0 → V5.2**: Matriz comparativa forense entre el script original y el pipeline moderno.
+- ⚡ **Consultas SQL DuckDB**: Cookbook analítico para analistas de datos y LLMs sobre `corpus.duckdb`.
+- 💻 **Instalación y CLI**: Guía de despliegue en producción y régimen de licencia no comercial.
 
 ---
 
@@ -131,8 +133,8 @@ flowchart TD
 
 ### 1. Clonar el Repositorio
 ```bash
-git clone https://github.com/tu-usuario/pdf-to-rag-pipeline.git
-cd pdf-to-rag-pipeline
+git clone https://github.com/agmelendez/pdftorag.git
+cd pdftorag
 ```
 
 ### 2. Instalar Dependencias
@@ -225,7 +227,7 @@ Si utilizas este pipeline en tus investigaciones, publicaciones, tesis o benchma
   title        = {{CIOdD-UCR PDF Intelligence Pipeline V5.2: Ingesta no-destructiva, estructuraci{\'o}n profunda y auditor{\'i}a relacional de documentos PDF para RAG}},
   year         = {2026},
   publisher    = {Centro de Investigaci{\'o}n Observatorio del Desarrollo, Universidad de Costa Rica},
-  url          = {https://github.com/tu-usuario/pdf-to-rag-pipeline},
+  url          = {https://github.com/agmelendez/pdftorag},
   note         = {Licencia Dual: C{\'o}digo No Comercial con Atribuci{\'o}n / Documentaci{\'o}n CC BY-NC-SA 4.0}
 }
 ```
