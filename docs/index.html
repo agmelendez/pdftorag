@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manual Técnico y Metodológico — CIOdD-UCR PDF Intelligence Pipeline V5.2</title>
+  <title>Manual Técnico y Metodológico — CIOdD-UCR PDF Intelligence Pipeline V5.6</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,10 +36,10 @@
 
       <!-- Feature Badges -->
       <div class="badges-bar">
-        <span class="feature-tag">Versión 5.2.0 (Octubre 2026)</span>
+        <span class="feature-tag">Versión 5.6.0 (Octubre 2026)</span>
         <span class="feature-tag">Garantía: Cero Pérdida de Texto (coverage ≥ 0.995)</span>
-        <span class="feature-tag">Trazabilidad Dual: Pág. PDF + Pág. Impresa</span>
-        <span class="feature-tag">Clasificador Heurístico de Tablas vs. Prosa</span>
+        <span class="feature-tag" style="background:#dcfce7; color:#15803d; font-weight:700;">Blindaje Post-Bug V5.5 (Fix is_numbered)</span>
+        <span class="feature-tag">Filtro Dual de Tablas y Micro-área (&lt; 0.03)</span>
         <span class="feature-tag">Base Relacional: DuckDB + Parquet</span>
         <span class="feature-tag">Búsqueda Híbrida: TF-IDF + FAISS</span>
         <span class="feature-tag" style="background:#fef3c7; color:#92400e; font-weight:700;">Licencia: CC BY-NC-SA 4.0 + No Comercial</span>
@@ -69,13 +69,16 @@
         🧠 6. Bóveda de Conocimiento (Brain OS)
       </button>
       <button class="nav-tab" data-tab="evolucion" onclick="switchTab('evolucion')">
-        📈 7. Evolución V1.0 → V5.2
+        📈 7. Evolución V1.0 → V5.6
+      </button>
+      <button class="nav-tab" data-tab="historial" onclick="switchTab('historial')">
+        📊 8. Comparativa y Versiones (V5.2 → V5.6)
       </button>
       <button class="nav-tab" data-tab="duckdb" onclick="switchTab('duckdb')">
-        ⚡ 8. Consultas SQL DuckDB
+        ⚡ 9. Consultas SQL DuckDB
       </button>
       <button class="nav-tab" data-tab="guia_codigo" onclick="switchTab('guia_codigo')">
-        💻 9. Instalación y CLI
+        💻 10. Instalación y CLI
       </button>
     </div>
   </nav>
@@ -204,7 +207,7 @@
             Agent Skill: <code style="color:var(--ucr-gold);">pdf-intelligence-rag</code>
           </h2>
           <p style="font-size:1rem; opacity:0.95; max-width:850px; line-height:1.6;">
-            Protocolo y directrices operativas formales para que modelos de lenguaje (Claude, Gemini, OpenAI) y agentes autónomos RAG consulten, validen, recuperen y citen evidencia del corpus estructurado V5.2 sin incurrir en alucinaciones fácticas.
+            Protocolo y directrices operativas formales para que modelos de lenguaje (Claude, Gemini, OpenAI) y agentes autónomos RAG consulten, validen, recuperen y citen evidencia del corpus estructurado V5.6 sin incurrir en alucinaciones fácticas.
           </p>
         </div>
 
@@ -363,7 +366,7 @@
 
             <div class="deepdive-box" style="border-left: 4px solid var(--primary);">
               <strong style="color:var(--primary); display:block; font-size:0.95rem; margin-bottom:0.35rem;">
-                Paso 2: Ejecución del Pipeline V5.2
+                Paso 2: Ejecución del Pipeline V5.6
               </strong>
               <p style="font-size:0.875rem; color:#475569; line-height:1.5;">
                 Lanza el procesamiento a través de la CLI del paquete:
@@ -574,7 +577,7 @@
         <div class="grid-4" style="margin: 1.5rem 0;">
           <div class="stat-box" style="border-top: 4px solid #0284c7;">
             <div class="stat-label">Capa 0: Ingesta Cruda</div>
-            <div style="font-weight:700; color:var(--primary); margin-top:0.35rem;">PDF Intelligence V5.2</div>
+            <div style="font-weight:700; color:var(--primary); margin-top:0.35rem;">PDF Intelligence V5.6</div>
             <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.35rem;">
               Extracción limpia, OCR adaptativo, bboxes y tablas con huella criptográfica SHA-256 inmutable.
             </p>
@@ -604,23 +607,24 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 7: EVOLUCIÓN HISTÓRICA V1.0 VS V5.2 -->
+    <!-- SECCIÓN 7: EVOLUCIÓN HISTÓRICA V1.0 A V5.6 -->
     <section id="evolucion" class="tab-pane">
       <div class="card">
         <div class="card-header">
           <span class="badge-pill" style="background:#e0f2fe; color:#0369a1; margin-bottom:0.5rem;">HISTORIA DE INGENIERÍA</span>
-          <h2 class="card-title">Evolución Histórica: De `pdf_to_rac_json.py` (V1.0) a V5.2</h2>
+          <h2 class="card-title">Evolución Histórica: De `pdf_to_rac_json.py` (V1.0) a V5.6 Definitiva</h2>
           <p class="card-subtitle">
-            Comparativa forense entre la versión inicial de hace más de 1 año y el sistema final al 21 de octubre de 2026.
+            Trayectoria de ingeniería desde el prototipo script original de hace más de 1 año hasta la arquitectura modular y blindada V5.6 con verificación empírica de cero pérdidas.
           </p>
         </div>
 
         <table class="manual-table">
           <thead>
             <tr>
-              <th>Dimensión de Ingeniería</th>
-              <th>Versión Original V1.0 / 4.0 (`pdf_to_rac_json.py`)</th>
-              <th>Versión Final V5.2 (`pdf_intelligence`)</th>
+              <th style="width:20%;">Dimensión de Ingeniería</th>
+              <th style="width:25%;">Versión Original V1.0 / 4.0 (`pdf_to_rac_json.py`)</th>
+              <th style="width:25%;">Versión Base V5.2 (`pdf_intelligence` inicial)</th>
+              <th style="width:30%; background:#f0fdf4; color:#166534;">Versión Definitiva V5.6 (`pdf_intelligence` producción)</th>
             </tr>
           </thead>
           <tbody>
@@ -628,48 +632,724 @@
               <td><strong>Conservación del Texto</strong></td>
               <td><span style="color:var(--danger); font-weight:700;">Pérdida silenciosa</span>: toda sección &lt; 60 palabras se descartaba (596 secciones perdidas en 1 PDF).</td>
               <td><span style="color:var(--success); font-weight:700;">Cero pérdida</span>: secciones cortas se fusionan con el chunk previo; <code>chunk_coverage ≥ 0.995</code>.</td>
+              <td><span style="color:var(--success); font-weight:700;">Blindaje empírico total</span>: 100% de 85.378 palabras recuperadas en 4 PDFs de estrés; corrección del bug de títulos que en V5.5 perdía 88% en Colab.</td>
             </tr>
             <tr>
               <td><strong>Procedencia de Página</strong></td>
               <td>El solapamiento entre fragmentos etiquetaba falsamente la página del párrafo siguiente.</td>
               <td><code>page_start / page_end</code> cubren exclusivamente las palabras propias (<code>unique_words</code>).</td>
+              <td>Doble trazabilidad persistente con <code>page_label</code> impresa y procedencia dual nativa/OCR (<code>blocks_source</code>).</td>
             </tr>
             <tr>
               <td><strong>Encabezados y Secciones</strong></td>
               <td>Cualquier línea en mayúsculas o con número creaba sección falsa (1.655 falsos positivos).</td>
-              <td>Detector por puntaje multicriterio ($\ge 2.0$) con democión de cabeceras repetidas.</td>
+              <td>Detector por puntaje multicriterio ($\ge 2.0$, máx 20 palabras) con democión de cabeceras repetidas.</td>
+              <td>Límite estricto máx 16 palabras / 180 chars, orden corregido de <code>is_numbered</code>, sanitización <code>clean_title()</code> y fusión vertical controlada ($\le 18$ pt).</td>
             </tr>
             <tr>
               <td><strong>Detección de Tablas</strong></td>
               <td>~1 tabla falsa por página clasificando prosa partida como cuadrículas numéricas.</td>
               <td>Clasificador heurístico multivariable que aísla prosa en <code>tables_rejected.jsonl</code>.</td>
+              <td><strong>Filtro dual avanzado</strong>: rechazo de prosa por ratio de líneas horizontales (<code>max_area=0.85</code>) y eliminación de microtablas residuales (<code>min_area=0.03</code>).</td>
             </tr>
             <tr>
-              <td><strong>Limpieza de Bordes</strong></td>
+              <td><strong>Limpieza de Bordes y Ruido</strong></td>
               <td>Borrado destructivo global de cadenas que borraba cifras reales del cuerpo del texto.</td>
               <td>Normalización a comodín <code>#</code> y recorte exclusivo en las 3 líneas de los bordes.</td>
+              <td>Recorte perimetral exacto más descarte seguro de chunks residuales de portada &lt; 20 palabras sin alterar cobertura fáctica.</td>
             </tr>
             <tr>
               <td><strong>Páginas OCR</strong></td>
               <td>Utilizaba bloques nativos vacíos ignorando el texto rescatado por Tesseract.</td>
               <td>El texto OCR sustituye directamente el contenido de la página y alimenta las secciones.</td>
+              <td>OCR condicional transparente con rescate íntegro en DuckDB y trazabilidad explícita por bloque.</td>
             </tr>
             <tr>
               <td><strong>Bases de Datos e Índices</strong></td>
               <td>Solo archivos JSON básicos sin índices ni relaciones.</td>
               <td>Base relacional <code>corpus.duckdb</code>, Apache Parquet, TF-IDF local y vectores FAISS.</td>
+              <td>Esquema canónico relacional optimizado, vistas analíticas, exportación Parquet y consultas SQL multi-documento.</td>
             </tr>
             <tr>
-              <td><strong>Auditoría Criptográfica</strong></td>
+              <td><strong>Auditoría Criptográfica y Logs</strong></td>
               <td>Ninguna. Imposibilidad de verificar integridad documental.</td>
               <td><code>manifest.json</code> con SHA-256 e <code>integrity_report.json</code> con 9 reglas automáticas.</td>
+              <td>Auditoría criptográfica completa, 0 bytes en <code>errors.jsonl</code> y suite de tests de regresión continua.</td>
+            </tr>
+            <tr>
+              <td><strong>Resiliencia y Ejecución</strong></td>
+              <td>Script único para Colab sin manejo de fallos.</td>
+              <td>Ejecución local en lote por CLI.</td>
+              <td>Paquete modular instalable (<code>src/</code>), soporte dual Colab/Local, checkpoints por documento (<code>checkpoint.json</code>) y flags <code>--dry-run</code> / <code>--max-pages</code>.</td>
             </tr>
           </tbody>
         </table>
+
+        <!-- Banner de enlace a la Matriz Comparativa Detallada V5.2 a V5.6 -->
+        <div style="background:linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%); border:2px solid #93c5fd; border-radius:var(--radius-md); padding:1.5rem 1.75rem; margin-top:2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.25rem;">
+          <div style="max-width:720px;">
+            <span class="badge-pill" style="background:#2563eb; color:#ffffff; font-size:0.75rem; margin-bottom:0.5rem;">CONTINUIDAD DE INGENIERÍA (V5.2 → V5.6)</span>
+            <h3 style="font-size:1.15rem; font-weight:800; color:var(--primary); margin:0 0 0.4rem;">
+              📊 ¿Deseas ver la Matriz Comparativa Detallada versión a versión (V5.2 vs V5.3 vs V5.4 vs V5.5 vs V5.6)?
+            </h3>
+            <p style="font-size:0.875rem; color:#334155; margin:0; line-height:1.55;">
+              Hemos documentado paso a paso el benchmark forense sobre 4 PDFs de prueba (257 páginas), la anatomía del bug silencioso de V5.5 y los enlaces directos a los cuadernos de código Colab y archivos ZIP generados en <code class="inline-code">Grok/</code>.
+            </p>
+          </div>
+          <button class="btn btn-primary" onclick="switchTab('historial')" style="padding:0.75rem 1.5rem; font-size:0.95rem; font-weight:700; white-space:nowrap; box-shadow:0 4px 6px -1px rgba(37,99,235,0.25); cursor:pointer;">
+            Ver Matriz Comparativa V5.2 - V5.6 (Pestaña 8) →
+          </button>
+        </div>
       </div>
     </section>
 
-    <!-- SECCIÓN 8: CONSULTAS SQL DUCKDB -->
+    <!-- SECCIÓN 8: HISTORIAL DE CAMBIOS Y AUDITORÍA FORENSE (V5.2 A V5.6) -->
+    <section id="historial" class="tab-pane">
+      <div class="card">
+        <div class="card-header">
+          <span class="badge-pill" style="background:#dcfce7; color:#15803d; margin-bottom:0.5rem;">BITÁCORA FORENSE Y AUDITORÍA EMPÍRICA (V5.2 → V5.6)</span>
+          <h2 class="card-title">Historial de Cambios y Comparativa de Versiones: De V5.2 a V5.6</h2>
+          <p class="card-subtitle">
+            Trayectoria de auditoría empírica y optimización continua sobre un corpus de estrés de 4 documentos altamente heterogéneos (257 páginas físicas) ejecutados en Google Colab (<code class="inline-code">Grok/</code>).
+          </p>
+        </div>
+
+        <!-- BARRA DE ACCESO DIRECTO RÁPIDO -->
+        <div class="subnav-quick-bar" style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:var(--radius-md); padding:0.85rem 1.25rem; margin-bottom:2rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.75rem;">
+          <div style="font-weight:700; color:var(--primary); font-size:0.875rem; display:flex; align-items:center; gap:0.4rem;">
+            <span>🧭</span> Índice Rápido de la Sección:
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+            <a href="#matriz-comparativa" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.8rem; background:#ffffff;">📊 1. Matriz Comparativa (V5.2 - V5.6)</a>
+            <a href="#benchmark-interactivo" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.8rem; background:#ffffff;">📈 2. Benchmark Interactivo</a>
+            <a href="#estudio-bug-v55" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.8rem; background:#ffffff;">🔍 3. Anatomía del Bug V5.5</a>
+            <a href="#cronologia-versiones" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.8rem; background:#ffffff;">📅 4. Cronología de Versiones</a>
+            <a href="#centro-recursos-grok" class="btn btn-outline" style="padding:0.4rem 0.8rem; font-size:0.8rem; background:#ffffff;">📂 5. PDFs y Códigos Grok</a>
+          </div>
+        </div>
+
+<!-- SECCIÓN COMPARATIVA EXHAUSTIVA DE VERSIONES (V5.2 A V5.6) -->
+        <div id="matriz-comparativa" style="margin-bottom:2.5rem; scroll-margin-top:100px;">
+          <h3 style="font-size:1.2rem; font-weight:800; color:var(--primary); margin-bottom:0.5rem;">
+            📊 Matriz Comparativa Exhaustiva: De V5.2 a V5.6
+          </h3>
+          <p style="font-size:0.925rem; color:#475569; line-height:1.6; margin-bottom:1.25rem;">
+            Comparación sistemática de las dimensiones algorítmicas, heurísticas de calidad y resiliencia operacional desarrolladas a lo largo de las 5 versiones del pipeline:
+          </p>
+
+          <div style="overflow-x:auto;">
+            <table class="manual-table comp-matrix-table">
+              <thead>
+                <tr>
+                  <th style="width:20%;">Dimensión de Ingeniería</th>
+                  <th style="width:16%;">V5.2 (Base Modular)</th>
+                  <th style="width:16%;">V5.3 (Cloud & Checkpoint)</th>
+                  <th style="width:16%;">V5.4 (Control Prosa)</th>
+                  <th style="width:16%;">V5.5 (Tipografía & Bug)</th>
+                  <th style="width:16%; background:#f0fdf4; color:#166534;">V5.6 (Producción Final)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Entorno de Ejecución</td>
+                  <td>Local / Scripts Python</td>
+                  <td>Google Colab + Google Drive opcional</td>
+                  <td>Google Colab</td>
+                  <td>Google Colab</td>
+                  <td><span class="matrix-check">✓</span> Modular (`src/`) y Google Colab</td>
+                </tr>
+                <tr>
+                  <td>Tolerancia a Desconexión</td>
+                  <td><span class="matrix-cross">✗</span> Sin checkpointing</td>
+                  <td><span class="matrix-check">✓</span> <code style="font-size:0.75rem;">checkpoint.json</code> por documento</td>
+                  <td><span class="matrix-check">✓</span> Checkpoint incremental</td>
+                  <td><span class="matrix-check">✓</span> Checkpoint incremental</td>
+                  <td><span class="matrix-check">✓</span> Checkpointing + CLI flags (<code style="font-size:0.75rem;">--max-pages</code>)</td>
+                </tr>
+                <tr>
+                  <td>Detección de Headings</td>
+                  <td>Máx 20 palabras, 200 caracteres</td>
+                  <td>Máx 20 palabras</td>
+                  <td>Máx 20 palabras</td>
+                  <td><span class="matrix-warn">!</span> Máx 16 palabras / 180 chars (Bug de orden)</td>
+                  <td><span class="matrix-check">✓</span> <strong>Máx 16 palabras blindado</strong> (sin UnboundLocalError)</td>
+                </tr>
+                <tr>
+                  <td>Sanitización de Títulos</td>
+                  <td>Normalización Unicode simple</td>
+                  <td>Normalización simple</td>
+                  <td>Normalización simple</td>
+                  <td><code style="font-size:0.75rem;">clean_title()</code> elimina <code style="font-size:0.75rem;">▒</code> y <code style="font-size:0.75rem;">■</code></td>
+                  <td><span class="matrix-check">✓</span> <strong><code style="font-size:0.75rem;">clean_title()</code></strong> automático en secciones y chunks</td>
+                </tr>
+                <tr>
+                  <td>Fusión de Títulos Consecutivos</td>
+                  <td>Distancia vertical &lt; 24 pt (muy agresivo)</td>
+                  <td>Distancia vertical &lt; 24 pt</td>
+                  <td>Distancia vertical &lt; 24 pt</td>
+                  <td>Distancia &lt; 18 pt, títulos cortos (&le;8w y &le;6w)</td>
+                  <td><span class="matrix-check">✓</span> <strong>Fusión controlada</strong> (evita unir título + subtítulo largo)</td>
+                </tr>
+                <tr>
+                  <td>Filtro de Tablas con Prosa</td>
+                  <td><span class="matrix-cross">✗</span> Celdas en minúscula (70% área)</td>
+                  <td><span class="matrix-cross">✗</span> IoU sin filtro de área completa</td>
+                  <td><span class="matrix-check">✓</span> <code style="font-size:0.75rem;">table_lines_max_area = 0.85</code> (elimina 5 falsas tablas)</td>
+                  <td><span class="matrix-check">✓</span> Mantiene filtro de prosa</td>
+                  <td><span class="matrix-check">✓</span> <strong>Filtro dual estricto</strong> (líneas y texto)</td>
+                </tr>
+                <tr>
+                  <td>Filtro de Microtablas Residuales</td>
+                  <td><span class="matrix-cross">✗</span> Aceptaba tablas de área &lt; 1%</td>
+                  <td><span class="matrix-cross">✗</span> Aceptaba 9 tablas (7 residuos)</td>
+                  <td><span class="matrix-cross">✗</span> Aceptaba 4 tablas (2 residuos)</td>
+                  <td><code style="font-size:0.75rem;">table_min_area = 0.03</code></td>
+                  <td><span class="matrix-check">✓</span> <strong><code style="font-size:0.75rem;">table_min_area = 0.03</code></strong> (solo 2 tablas reales aceptadas)</td>
+                </tr>
+                <tr>
+                  <td>Descarte de Chunks Residuales</td>
+                  <td><span class="matrix-cross">✗</span> Chunks de portada de 3 palabras</td>
+                  <td><span class="matrix-cross">✗</span> Sin descarte</td>
+                  <td><span class="matrix-cross">✗</span> Sin descarte</td>
+                  <td><code style="font-size:0.75rem;">min_chunk_words_discard = 20</code></td>
+                  <td><span class="matrix-check">✓</span> <strong>Descarte de chunks &lt; 20 palabras</strong> (sin romper cobertura)</td>
+                </tr>
+                <tr>
+                  <td>Trazabilidad de Secciones</td>
+                  <td>Solo ID previo</td>
+                  <td><span class="matrix-check">✓</span> Campo <code style="font-size:0.75rem;">merged_section_titles</code></td>
+                  <td><span class="matrix-check">✓</span> <code style="font-size:0.75rem;">merged_section_titles</code></td>
+                  <td><span class="matrix-check">✓</span> <code style="font-size:0.75rem;">merged_section_titles</code></td>
+                  <td><span class="matrix-check">✓</span> <strong>Trazabilidad completa</strong> en chunks y DuckDB</td>
+                </tr>
+                <tr>
+                  <td>Trazabilidad de Bloques OCR</td>
+                  <td>Texto plano nativo</td>
+                  <td><span class="matrix-check">✓</span> Campo <code style="font-size:0.75rem;">blocks_source</code></td>
+                  <td><span class="matrix-check">✓</span> <code style="font-size:0.75rem;">blocks_source</code></td>
+                  <td><span class="matrix-check">✓</span> <code style="font-size:0.75rem;">blocks_source</code></td>
+                  <td><span class="matrix-check">✓</span> <strong>Trazabilidad dual</strong> nativa y OCR</td>
+                </tr>
+                <tr>
+                  <td>Pérdida de Texto en Benchmark</td>
+                  <td>0% (datos sintéticos)</td>
+                  <td>0% (85.378 palabras)</td>
+                  <td>0% (85.378 palabras)</td>
+                  <td><strong style="color:var(--danger);">-88.1% en Paris Peace Forum</strong> (-10.017 palabras)</td>
+                  <td><strong style="color:var(--success);">0% (100% de 85.378 palabras recuperadas)</strong></td>
+                </tr>
+                <tr>
+                  <td>Estado en <code style="font-size:0.75rem;">errors.jsonl</code></td>
+                  <td>Limpio</td>
+                  <td>Limpio</td>
+                  <td>Limpio</td>
+                  <td><span class="matrix-warn">!</span> Excepciones en extracción</td>
+                  <td><strong style="color:var(--success);"><span class="matrix-check">✓</span> 0 bytes (Cero Errores)</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Benchmark Selector Interactivo -->
+        <div id="benchmark-interactivo" style="background:#f8fafc; border:1px solid var(--border); border-radius:var(--radius-md); padding:1.25rem 1.5rem; margin-bottom:2rem; scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.5rem;">
+            <h4 style="color:var(--primary); font-size:1.05rem; margin:0;">📊 Benchmark Forense Interactivo entre Versiones</h4>
+            <span class="badge-pill" style="background:#e0f2fe; color:#0369a1; font-size:0.75rem;">Datos Reales de Ejecución</span>
+          </div>
+          <p style="font-size:0.875rem; color:var(--text-muted); margin-bottom:1rem;">
+            Selecciona un documento para comparar en tiempo real el comportamiento algorítmico, el rescate de palabras perdidas por el bug de V5.5 y el filtro de falsas tablas:
+          </p>
+
+          <div class="benchmark-selector-bar" id="benchmark-selector-container">
+            <button class="benchmark-btn active" onclick="selectBenchmarkDoc(0)">Corpus Consolidado (4 PDFs · 257 págs)</button>
+            <button class="benchmark-btn" onclick="selectBenchmarkDoc(1)">Paris Peace Forum / INTAiC (21 págs)</button>
+            <button class="benchmark-btn" onclick="selectBenchmarkDoc(2)">Anthropic Benefit Report (20 págs)</button>
+            <button class="benchmark-btn" onclick="selectBenchmarkDoc(3)">SAFE AI Foundation AISM (22 págs)</button>
+            <button class="benchmark-btn" onclick="selectBenchmarkDoc(4)">La era de la IA (194 págs · OCR)</button>
+          </div>
+
+          <!-- Live Metric Display Cards -->
+          <div class="benchmark-metric-cards" id="benchmark-metric-cards-container">
+            <!-- Rendered dynamically by app.js -->
+          </div>
+
+          <!-- Comparative Matrix Table -->
+          <div style="overflow-x:auto; margin-top:1rem;">
+            <table class="manual-table" id="benchmark-table-display">
+              <!-- Rendered dynamically by app.js -->
+            </table>
+          </div>
+        </div>
+
+        <!-- Estudio Forense: Anatomía del Bug V5.5 vs Solución V5.6 -->
+        <div id="estudio-bug-v55" style="margin-bottom:2.5rem; scroll-margin-top:100px;">
+          <h3 style="font-size:1.2rem; font-weight:800; color:var(--primary); margin-bottom:0.5rem;">
+            🔍 Estudio de Caso Forense: El Bug Silencioso de V5.5 y su Rescate en V5.6
+          </h3>
+          <p style="font-size:0.925rem; color:#475569; line-height:1.6;">
+            Durante el desarrollo de V5.5 se introdujo un filtro para descalificar párrafos con puntos internos como títulos de sección. Por un error en el orden de asignación de variables en Python, <code class="inline-code">is_numbered</code> e <code class="inline-code">is_standard</code> se evaluaron <strong>antes</strong> de ser declaradas. En tiempo de ejecución en Colab, esto disparó silenciosamente una excepción <code class="inline-code">UnboundLocalError</code> que abortaba la extracción de bloques en páginas con títulos, reduciendo el texto del informe <em>Paris Peace Forum</em> de 8.349 a solo 995 palabras (<strong>pérdida del 88.1%</strong>).
+          </p>
+
+          <div class="diff-container">
+            <div class="diff-box bug">
+              <div class="diff-header">❌ V5.5 (Bug Crítico de Regresión — UnboundLocalError)</div>
+              <pre class="diff-body"><code># En HeadingDetector.detect (V5.5):
+text = single_line(block.get("text", ""))
+n = len(text.split())
+
+<span class="diff-line-del"># ERROR: is_numbered e is_standard no están asignados aún!</span>
+<span class="diff-line-del">if n > 10 and "." in text[:-1] and not is_numbered and not is_standard:</span>
+<span class="diff-line-del">    return result  # -> Dispara UnboundLocalError y aborta extracción!</span>
+
+is_standard = bool(self.standard.match(text.strip(" .:-")))
+is_numbered = bool(self.numbered.match(text)) and n &lt;= 16</code></pre>
+            </div>
+
+            <div class="diff-box fix">
+              <div class="diff-header">✅ V5.6 (Corrección y Blindaje Inmutable)</div>
+              <pre class="diff-body"><code># En HeadingDetector.detect (V5.6 Estable):
+text = clean_title(single_line(block.get("text", "")))
+n = len(text.split())
+
+<span class="diff-line-add"># CORRECCIÓN: Asignación segura previa obligatoria</span>
+<span class="diff-line-add">is_standard = bool(self.standard.match(text.strip(" .:-")))</span>
+<span class="diff-line-add">is_numbered = bool(self.numbered.match(text)) and n &lt;= 16</span>
+
+<span class="diff-line-add"># Filtro seguro de oraciones con puntos internos:</span>
+<span class="diff-line-add">if n > 10 and "." in text[:-1] and not is_numbered and not is_standard:</span>
+<span class="diff-line-add">    return result  # -> Ejecuta sin errores, 100% texto recuperado</span></code></pre>
+            </div>
+          </div>
+
+          <div class="deepdive-box" style="border-left:4px solid var(--success); margin-top:1rem;">
+            <strong style="color:var(--success); font-size:0.95rem; display:block; margin-bottom:0.25rem;">
+              🛡️ Lección Metodológica para RAG Científico
+            </strong>
+            <p style="font-size:0.875rem; color:#334155; margin:0;">
+              Ningún pipeline de extracción de documentos para LLMs debe confiar únicamente en que el script "termine sin lanzar una excepción visible". La regla de oro del CIOdD-UCR es validar la métrica inmutable <code class="inline-code">chunk_coverage ≥ 0.995</code> y comparar los conteos de palabras absolutas entre versiones. En V5.6, la suite de pruebas unitarias incluye <code class="inline-code">test_v56_regression.py</code> que garantiza la ausencia de regresiones en <code class="inline-code">HeadingDetector</code>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Línea de Tiempo de Versiones -->
+        <div id="cronologia-versiones" style="scroll-margin-top:100px;"></div>
+        <h3 style="font-size:1.2rem; font-weight:800; color:var(--primary); margin-bottom:1rem;">
+          📅 Cronología Técnica de Versiones (V5.2 → V5.6)
+        </h3>
+
+        <div class="timeline-container">
+          <!-- V5.6 -->
+          <div class="timeline-item">
+            <div class="timeline-dot success">✓</div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h4 class="timeline-title">Versión 5.6.0 — Entrega de Producción Estable</h4>
+                  <span class="timeline-date">23 de Octubre, 2026</span>
+                </div>
+                <span class="v-badge v-badge-stable">PRODUCCIÓN ESTABLE</span>
+              </div>
+              <p style="font-size:0.875rem; color:#475569; margin-bottom:0.75rem;">
+                Corrección crítica de regresión algorítmica y estabilización integral de heurísticas de calidad sobre los 4 documentos de prueba.
+              </p>
+              <ul style="font-size:0.85rem; color:#334155; padding-left:1.25rem; line-height:1.6;">
+                <li><strong>Hotfix de asignación de variables</strong>: Se corrigió el orden de <code class="inline-code">is_numbered</code> en <code class="inline-code">heading.py</code>. Recuperación del 100% de cobertura léxica en <em>Paris Peace Forum</em> (~8.349 palabras).</li>
+                <li><strong>Búsqueda insensible a mayúsculas</strong>: Detección uniforme de extensiones <code class="inline-code">.pdf</code> y <code class="inline-code">.PDF</code>.</li>
+                <li><strong>Control de argumentos CLI</strong>: Incorporación de <code class="inline-code">--dry-run</code> y <code class="inline-code">--max-pages</code> para perfiles rápidos y entornos de memoria restringida.</li>
+                <li><strong>Auditoría Cero Errores</strong>: Archivo <code class="inline-code">errors.jsonl</code> con 0 bytes en los 4 documentos auditados.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- V5.5 -->
+          <div class="timeline-item">
+            <div class="timeline-dot danger">!</div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h4 class="timeline-title">Versión 5.5.0 — Refinamiento Estilístico y Detección de Regresión</h4>
+                  <span class="timeline-date">22 de Octubre, 2026</span>
+                </div>
+                <span class="v-badge v-badge-bug">DEFECTO DE REGRESIÓN</span>
+              </div>
+              <p style="font-size:0.875rem; color:#475569; margin-bottom:0.75rem;">
+                Diseñada para limpiar títulos ruidosos y descartar tablas minúsculas, pero afectada por el fallo de orden de variables en Google Colab.
+              </p>
+              <ul style="font-size:0.85rem; color:#334155; padding-left:1.25rem; line-height:1.6;">
+                <li><strong>Limpieza de títulos (<code class="inline-code">clean_title</code>)</strong>: Eliminación de caracteres especiales de caja (<code class="inline-code">▒</code>, <code class="inline-code">■</code>, etc.) en títulos detectados.</li>
+                <li><strong>Headings estrictos</strong>: Reducción del límite de palabras de 20 a 16 y rechazo de oraciones con puntos.</li>
+                <li><strong>Filtro de microtablas (<code class="inline-code">table_min_area = 0.03</code>)</strong>: Descarte de fragmentos de tablas menores al 3% de la página (eliminó 2 tablas residuales de agradecimientos).</li>
+                <li><strong>Descarte de chunks ultracortos</strong>: Chunks con &lt; 20 palabras descartados para evitar portadas aisladas.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- V5.4 -->
+          <div class="timeline-item">
+            <div class="timeline-dot warning">⚡</div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h4 class="timeline-title">Versión 5.4.0 — Supresión de Falsas Tablas de Página Completa</h4>
+                  <span class="timeline-date">22 de Octubre, 2026</span>
+                </div>
+                <span class="v-badge v-badge-cloud">HEURÍSTICA TABULAR</span>
+              </div>
+              <p style="font-size:0.875rem; color:#475569; margin-bottom:0.75rem;">
+                Introdujo filtros geométricos avanzados para rechazar páginas completas de prosa justificadas en columnas que pdfplumber clasificaba erróneamente como tablas de estrategia <code class="inline-code">lines</code>.
+              </p>
+              <ul style="font-size:0.85rem; color:#334155; padding-left:1.25rem; line-height:1.6;">
+                <li><strong>Parámetros <code class="inline-code">table_lines_max_area = 0.85</code> y <code class="inline-code">table_lines_max_avg_words = 15.0</code></strong>: Descartó 5 páginas completas de prosa en el informe <em>Paris Peace Forum</em>.</li>
+                <li><strong>Cobertura exacta</strong>: Fijada en 1.0000 para evitar desajustes numéricos en la auditoría.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- V5.3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot info">☁️</div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h4 class="timeline-title">Versión 5.3.0 — Optimización para Google Colab y Trazabilidad</h4>
+                  <span class="timeline-date">22 de Octubre, 2026</span>
+                </div>
+                <span class="v-badge v-badge-cloud">GOOGLE COLAB EDITION</span>
+              </div>
+              <p style="font-size:0.875rem; color:#475569; margin-bottom:0.75rem;">
+                Primera versión optimizada para ejecución en la nube con tolerancia a fallas de red y desconexiones de runtime.
+              </p>
+              <ul style="font-size:0.85rem; color:#334155; padding-left:1.25rem; line-height:1.6;">
+                <li><strong>Checkpointing (<code class="inline-code">checkpoint.json</code>)</strong>: Permitió reanudar lotes largos sin reprocesar documentos completados.</li>
+                <li><strong>Campo <code class="inline-code">merged_section_titles</code></strong>: Trazabilidad inmutable de títulos de secciones cortas absorbidas.</li>
+                <li><strong>Embeddings opcionales</strong>: Desactivados por defecto para evitar caídas por límite de RAM en Colab gratuito.</li>
+                <li><strong>Estrategias de tablas con IoU</strong>: Evaluación concurrente de estrategias <code class="inline-code">lines</code> y <code class="inline-code">text</code> con deduplicación por solapamiento geométrico.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CENTRO DE RECURSOS, ARCHIVOS PDF, CÓDIGOS Y RESULTADOS (GROK/) -->
+        <div id="centro-recursos-grok" style="background:#f8fafc; border:1px solid var(--border); border-radius:var(--radius-md); padding:1.25rem 1.5rem; margin-top:2.5rem; margin-bottom:2rem; scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.5rem;">
+            <h3 style="color:var(--primary); font-size:1.15rem; font-weight:800; margin:0;">
+              📂 Centro de Recursos de Auditoría y Ejemplos Reales (<code class="inline-code" style="font-size:1rem;">Grok/</code>)
+            </h3>
+            <span class="badge-pill" style="background:#e0f2fe; color:#0369a1; font-size:0.75rem;">Acceso Directo a Archivos y Salidas</span>
+          </div>
+          <p style="font-size:0.875rem; color:var(--text-muted); margin-bottom:1.25rem;">
+            Todos los materiales utilizados en la auditoría están disponibles localmente en la carpeta <code class="inline-code">Grok/</code> (enlazada en <code class="inline-code">docs/grok/</code>). Puedes abrir directamente los 4 PDFs originales, los cuadernos Jupyter con el código de cada ejecución, los paquetes ZIP con los datos extraídos y las especificaciones técnicas:
+          </p>
+
+          <!-- 1. Los 4 PDFs de Prueba -->
+          <h4 style="font-size:0.95rem; font-weight:700; color:var(--primary); margin:1rem 0 0.5rem; display:flex; align-items:center; gap:0.4rem;">
+            <span>📄</span> 1. Documentos PDF de Prueba del Benchmark (Corpus Heterogéneo de 257 Páginas)
+          </h4>
+          <div class="grok-resource-grid" style="margin-bottom:1.5rem;">
+            <div class="grok-resource-card">
+              <div class="grok-card-top">
+                <div class="grok-card-header-row">
+                  <span class="grok-card-icon">🏛️</span>
+                  <span class="badge-pill" style="background:#fee2e2; color:#991b1b; font-size:0.7rem;">CASO CRÍTICO V5.5</span>
+                </div>
+                <div class="grok-card-title">Paris Peace Forum / INTAiC</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">file_33C69A65...pdf</code><br>
+                  Páginas: <strong>21</strong> | Palabras: <strong>8.349</strong> | Idioma: <strong>Inglés</strong><br>
+                  Reto: Maquetación multi-columna, tablas numéricas genuinas y pseudotablas de prosa.
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/file_33C69A65-A12A-41A9-B48C-DB4B9EBA2561.pdf" target="_blank" class="grok-btn grok-btn-primary">
+                  📄 Abrir PDF
+                </a>
+              </div>
+            </div>
+
+            <div class="grok-resource-card">
+              <div class="grok-card-top">
+                <div class="grok-card-header-row">
+                  <span class="grok-card-icon">🤖</span>
+                  <span class="badge-pill" style="background:#e0f2fe; color:#0369a1; font-size:0.7rem;">TITULARES LARGOS</span>
+                </div>
+                <div class="grok-card-title">Anthropic 2026 Public Benefit Report</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">Anthropic 2026 Public...pdf</code><br>
+                  Páginas: <strong>20</strong> | Palabras: <strong>6.750</strong> | Idioma: <strong>Inglés</strong><br>
+                  Reto: Títulos de alto diseño, fusiones agresivas de títulos y subtítulos.
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/Anthropic%202026%20%20Public%20Benefit%20Report%20Taking%20stock%20of%20our%20progress%20%20toward%20our%20charter.pdf" target="_blank" class="grok-btn grok-btn-primary">
+                  📄 Abrir PDF
+                </a>
+              </div>
+            </div>
+
+            <div class="grok-resource-card">
+              <div class="grok-card-top">
+                <div class="grok-card-header-row">
+                  <span class="grok-card-icon">🛡️</span>
+                  <span class="badge-pill" style="background:#fef3c7; color:#92400e; font-size:0.7rem;">RUIDO TIPOGRÁFICO</span>
+                </div>
+                <div class="grok-card-title">SAFE AI Foundation — AI Safety Model</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">AI Safety Model Elaborated...pdf</code><br>
+                  Páginas: <strong>22</strong> | Palabras: <strong>5.693</strong> | Idioma: <strong>Inglés</strong><br>
+                  Reto: Presencia de caracteres decorativos (<code style="font-size:0.75rem;">▒</code>, <code style="font-size:0.75rem;">■</code>) y jerarquía numerada.
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/AI%20Safety%20Model%20Elaborated-%20%20The%20SAFE%20AI%20Foundation%E2%80%99s%20AI%20Safety%20Model%20(AISM)%20.pdf" target="_blank" class="grok-btn grok-btn-primary">
+                  📄 Abrir PDF
+                </a>
+              </div>
+            </div>
+
+            <div class="grok-resource-card">
+              <div class="grok-card-top">
+                <div class="grok-card-header-row">
+                  <span class="grok-card-icon">📚</span>
+                  <span class="badge-pill" style="background:#dcfce7; color:#15803d; font-size:0.7rem;">OCR CONDICIONAL</span>
+                </div>
+                <div class="grok-card-title">La era de la IA y nuestro futuro</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">La era de la IA y nuestro futuro.pdf</code><br>
+                  Páginas: <strong>194</strong> | Palabras: <strong>64.586</strong> | Idioma: <strong>Español</strong><br>
+                  Reto: Gran volumen de prosa continua, 3 páginas escaneadas tratadas con OCR.
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/La%20era%20de%20la%20IA%20y%20nuestro%20futuro.pdf" target="_blank" class="grok-btn grok-btn-primary">
+                  📄 Abrir PDF
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Cuadernos de Ejecución y Códigos Fuente -->
+          <h4 style="font-size:0.95rem; font-weight:700; color:var(--primary); margin:1rem 0 0.5rem; display:flex; align-items:center; gap:0.4rem;">
+            <span>💻</span> 2. Cuadernos Jupyter y Código de Cada Iteración (Google Colab / Local)
+          </h4>
+          <div class="grok-resource-grid" style="margin-bottom:1.5rem;">
+            <div class="grok-resource-card">
+              <div class="grok-card-top">
+                <div class="grok-card-header-row">
+                  <span class="v-badge v-badge-cloud">V5.3</span>
+                  <span style="font-size:0.75rem; color:var(--text-muted);">66 KB</span>
+                </div>
+                <div class="grok-card-title">Cuaderno Pipeline V5.3</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">ciodd_ucr_pdf_intelligence_pipeline_v5_3.ipynb</code><br>
+                  Hito: Checkpointing por documento, Google Drive opcional y campo <code style="font-size:0.75rem;">merged_section_titles</code>.
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/ciodd_ucr_pdf_intelligence_pipeline_v5_3.ipynb" download class="grok-btn grok-btn-outline">
+                  📥 Descargar .ipynb
+                </a>
+              </div>
+            </div>
+
+            <div class="grok-resource-card">
+              <div class="grok-card-top">
+                <div class="grok-card-header-row">
+                  <span class="v-badge v-badge-cloud">V5.4</span>
+                  <span style="font-size:0.75rem; color:var(--text-muted);">65 KB</span>
+                </div>
+                <div class="grok-card-title">Cuaderno Pipeline V5.4</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">ciodd_ucr_pdf_intelligence_pipeline_v5_4.ipynb</code><br>
+                  Hito: Filtro de páginas completas de prosa en tablas (<code style="font-size:0.75rem;">table_lines_max_area = 0.85</code>).
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/ciodd_ucr_pdf_intelligence_pipeline_v5_4.ipynb" download class="grok-btn grok-btn-outline">
+                  📥 Descargar .ipynb
+                </a>
+              </div>
+            </div>
+
+            <div class="grok-resource-card">
+              <div class="grok-card-top">
+                <div class="grok-card-header-row">
+                  <span class="v-badge v-badge-bug">V5.5 (Bug)</span>
+                  <span style="font-size:0.75rem; color:var(--text-muted);">67 KB</span>
+                </div>
+                <div class="grok-card-title">Cuaderno Pipeline V5.5</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">ciodd_ucr_pdf_intelligence_pipeline_v5_5.ipynb</code><br>
+                  Hito: Registro del fallo <code style="font-size:0.75rem;">UnboundLocalError</code> en <code style="font-size:0.75rem;">HeadingDetector</code> que causó pérdida léxica.
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/ciodd_ucr_pdf_intelligence_pipeline_v5_5.ipynb" download class="grok-btn grok-btn-outline">
+                  📥 Descargar .ipynb
+                </a>
+              </div>
+            </div>
+
+            <div class="grok-resource-card" style="border: 2px solid var(--success);">
+              <div class="grok-card-top">
+                <div class="grok-card-header-row">
+                  <span class="v-badge v-badge-stable">V5.6 (Final)</span>
+                  <span style="font-size:0.75rem; color:var(--text-muted);">69 KB</span>
+                </div>
+                <div class="grok-card-title">Cuaderno Pipeline V5.6</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">ciodd_ucr_pdf_intelligence_pipeline_v5_6.ipynb</code><br>
+                  Hito: Versión final de Colab corregida. Rescate de 100% de palabras y 0 errores.
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/ciodd_ucr_pdf_intelligence_pipeline_v5_6.ipynb" download class="grok-btn grok-btn-primary">
+                  📥 Descargar .ipynb
+                </a>
+                <a href="https://github.com/agmelendez/pdftorag/tree/main/src/pdf_intelligence" target="_blank" class="grok-btn grok-btn-outline">
+                  📦 Código Modular
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Paquetes de Salida y Artefactos (.zip) -->
+          <h4 style="font-size:0.95rem; font-weight:700; color:var(--primary); margin:1rem 0 0.5rem; display:flex; align-items:center; gap:0.4rem;">
+            <span>📦</span> 3. Paquetes de Salida y Artefactos de Ejecución Completos (.ZIP)
+          </h4>
+          <div class="grok-resource-grid" style="margin-bottom:0.5rem;">
+            <div class="grok-resource-card">
+              <div class="grok-card-top">
+                <div class="grok-card-title">Salida V5.3 (200 Chunks · 9 Tablas)</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">pdf_intelligence_V53.zip</code> (6.2 MB)<br>
+                  Incluye: <code style="font-size:0.75rem;">corpus.duckdb</code>, <code style="font-size:0.75rem;">chunks.parquet</code>, <code style="font-size:0.75rem;">tables.jsonl</code>, TF-IDF.
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/pdf_intelligence_V53.zip" download class="grok-btn grok-btn-outline">
+                  📦 Descargar ZIP (6.2 MB)
+                </a>
+              </div>
+            </div>
+
+            <div class="grok-resource-card">
+              <div class="grok-card-top">
+                <div class="grok-card-title">Salida V5.4 (200 Chunks · 4 Tablas)</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">pdf_intelligence_V54.zip</code> (6.2 MB)<br>
+                  Incluye: 5 tablas falsas de prosa reclasificadas a <code style="font-size:0.75rem;">tables_rejected</code>.
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/pdf_intelligence_V54.zip" download class="grok-btn grok-btn-outline">
+                  📦 Descargar ZIP (6.2 MB)
+                </a>
+              </div>
+            </div>
+
+            <div class="grok-resource-card">
+              <div class="grok-card-top">
+                <div class="grok-card-title">Salida V5.5 (171 Chunks · 1 Tabla · Bug)</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">pdf_intelligence_V55.zip</code> (5.4 MB)<br>
+                  Evidencia física de la pérdida del 88% de texto en Paris Peace Forum.
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/pdf_intelligence_V55.zip" download class="grok-btn grok-btn-outline">
+                  📦 Descargar ZIP (5.4 MB)
+                </a>
+              </div>
+            </div>
+
+            <div class="grok-resource-card" style="border: 2px solid var(--success);">
+              <div class="grok-card-top">
+                <div class="grok-card-title">Salida V5.6 Final (200 Chunks · 2 Tablas · PASS)</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">pdf_intelligence_V56.zip</code> (6.2 MB)<br>
+                  Base canónica: 85.378 palabras, 2 tablas reales, 266 rechazadas justificadamente, 0 errores.
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/pdf_intelligence_V56.zip" download class="grok-btn grok-btn-primary">
+                  📦 Descargar ZIP V5.6 (6.2 MB)
+                </a>
+              </div>
+            </div>
+          </div>
+        
+          <!-- 4. Especificaciones Técnicas y Guía de Auditoría Completa -->
+          <h4 style="font-size:0.95rem; font-weight:700; color:var(--primary); margin:1.5rem 0 0.5rem; display:flex; align-items:center; gap:0.4rem;">
+            <span>📋</span> 4. Especificaciones Técnicas y Guía Completa de Mejoras (Grok/)
+          </h4>
+          <div class="grok-resource-grid">
+            <div class="grok-resource-card" style="border: 2px solid var(--accent);">
+              <div class="grok-card-top">
+                <div class="grok-card-title">Guía de Mejoras Pipeline V5.6 Completa</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">guia_mejoras_pipeline_v5.6_completa.md</code><br>
+                  Guía maestra de auditoría forense, optimizaciones empíricas de V5.2 a V5.6 y recomendaciones operativas.
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/guia_mejoras_pipeline_v5.6_completa.md" target="_blank" class="grok-btn grok-btn-primary">
+                  📄 Abrir Guía V5.6
+                </a>
+              </div>
+            </div>
+
+            <div class="grok-resource-card">
+              <div class="grok-card-top">
+                <div class="grok-card-title">Documentación Técnica V5.6</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">Documentacion_Tecnica_V5.6.md</code><br>
+                  Bitácora de rescate del 88% de texto en Paris Peace Forum y cierre del benchmark.
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/Documentacion_Tecnica_V5.6.md" target="_blank" class="grok-btn grok-btn-outline">
+                  📄 Abrir Doc V5.6
+                </a>
+              </div>
+            </div>
+
+            <div class="grok-resource-card">
+              <div class="grok-card-top">
+                <div class="grok-card-title">Documentación Técnica V5.5</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">Documentacion_Tecnica_V5.5.md</code><br>
+                  Bitácora del análisis de tipografías y registro del comportamiento del bug.
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/Documentacion_Tecnica_V5.5.md" target="_blank" class="grok-btn grok-btn-outline">
+                  📄 Abrir Doc V5.5
+                </a>
+              </div>
+            </div>
+
+            <div class="grok-resource-card">
+              <div class="grok-card-top">
+                <div class="grok-card-title">Documentación Técnica V5.3</div>
+                <div class="grok-card-meta">
+                  Archivo: <code style="font-size:0.75rem;">Documentacion_Tecnica_V5.3.md</code><br>
+                  Especificación de checkpointing y adaptaciones para Google Colab.
+                </div>
+              </div>
+              <div class="grok-btn-row">
+                <a href="grok/Documentacion_Tecnica_V5.3.md" target="_blank" class="grok-btn grok-btn-outline">
+                  📄 Abrir Doc V5.3
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 9: CONSULTAS SQL DUCKDB -->
     <section id="duckdb" class="tab-pane">
       <div class="card">
         <div class="card-header">
@@ -755,17 +1435,26 @@ cd pdftorag
 # En Ubuntu / Debian:
 sudo apt-get install -y tesseract-ocr tesseract-ocr-spa tesseract-ocr-eng
 
-# Instalar paquete Python (PEP 621)
-pip install -e .
+# Instalar dependencias base (Core ligero)
+pip install -r requirements.txt
 
-# Con soporte opcional para Embeddings multilingües y FAISS:
-pip install -e ".[embeddings]"</code></pre>
+# (Opcional) Instalar embeddings multilingües y FAISS
+pip install -r requirements-embeddings.txt
+
+# Instalar paquete en modo desarrollo
+pip install -e .</code></pre>
         </div>
 
         <div class="deepdive-section" style="margin-top:1.5rem;">
-          <h4 class="deepdive-section-heading">2. Comandos de la Interfaz de Línea de Comandos (CLI)</h4>
+          <h4 class="deepdive-section-heading">2. Comandos de la Interfaz de Línea de Comandos (CLI V5.6)</h4>
           <pre><code># Procesar directorio completo de PDFs
 pdf-intelligence process --input ./data/pdfs --output ./data/pdf_intelligence
+
+# Perfilado rápido sin escribir corpus completo (Dry Run)
+pdf-intelligence process --input ./data/pdfs --output ./data/pdf_intelligence --dry-run
+
+# Limitar procesamiento a un número máximo de páginas por documento
+pdf-intelligence process --input ./data/pdfs --output ./data/pdf_intelligence --max-pages 50
 
 # Búsqueda léxica offline rápida con TF-IDF (0 tokens consumidos)
 pdf-intelligence search "gobernanza algorítmica" --top-k 5
@@ -778,13 +1467,16 @@ pdf-intelligence audit --output ./data/pdf_intelligence</code></pre>
           <h4 class="deepdive-section-heading">3. Uso como Módulo Python en Scripts o Pipelines RAG</h4>
           <pre><code>from pdf_intelligence import PipelineConfig, CorpusBuilder, LocalSearch
 
-# 1. Configurar hiperparámetros
+# 1. Configurar hiperparámetros V5.6
 config = PipelineConfig(
     pdf_directory="./data/pdfs",
     output_directory="./data/pdf_intelligence",
     ocr_enabled=True,
     chunk_target_words=550,
-    chunk_overlap_words=80
+    chunk_overlap_words=80,
+    heading_max_words=16,          # V5.6: control estricto de encabezados
+    table_min_area=0.03,           # V5.6: descartar microtablas residuales (< 3%)
+    min_chunk_words_discard=20     # V5.6: omitir chunks aislados de portada
 )
 
 # 2. Ejecutar procesamiento
@@ -832,7 +1524,7 @@ for r in results:
             </strong>
             <p style="font-size:0.875rem; color:#1e3a8a; line-height:1.6; margin:0;">
               Si clonas o haces un <em>fork</em> de este repositorio en GitHub o en cualquier plataforma pública, debes mantener de manera visible e inalterable el aviso de copyright y la autoría original:
-              <br><code style="display:block; margin-top:0.4rem; padding:0.5rem; background:#ffffff; border:1px solid #cbd5e1; border-radius:4px; font-size:0.85rem; color:#0f172a;">"Basado en el CIOdD-UCR PDF Intelligence Pipeline V5.2, desarrollado por Agustín Gómez — Centro de Investigación Observatorio del Desarrollo (CIOdD), Universidad de Costa Rica."</code>
+              <br><code style="display:block; margin-top:0.4rem; padding:0.5rem; background:#ffffff; border:1px solid #cbd5e1; border-radius:4px; font-size:0.85rem; color:#0f172a;">"Basado en el CIOdD-UCR PDF Intelligence Pipeline V5.6, desarrollado por Agustín Gómez — Centro de Investigación Observatorio del Desarrollo (CIOdD), Universidad de Costa Rica."</code>
             </p>
           </div>
 
@@ -842,7 +1534,7 @@ for r in results:
             </strong>
             <pre><code>@software{gomez2026_pdf_intelligence,
   author    = {G{\'o}mez, Agust{\'i}n},
-  title     = {{CIOdD-UCR PDF Intelligence Pipeline V5.2: Ingesta no-destructiva, estructuraci{\'o}n profunda y auditor{\'i}a relacional de documentos PDF para RAG}},
+  title     = {{CIOdD-UCR PDF Intelligence Pipeline V5.6: Ingesta no-destructiva, estructuraci{\'o}n profunda y auditor{\'i}a relacional de documentos PDF para RAG}},
   year      = {2026},
   publisher = {Centro de Investigaci{\'o}n Observatorio del Desarrollo, Universidad de Costa Rica},
   note      = {Licencia Dual: C{\'o}digo No Comercial con Atribuci{\'o}n / Documentaci{\'o}n CC BY-NC-SA 4.0}
@@ -861,7 +1553,7 @@ for r in results:
   <footer class="manual-footer">
     <div class="footer-container">
       <div class="footer-brand">
-        <h3>CIOdD-UCR PDF Intelligence Pipeline V5.2</h3>
+        <h3>CIOdD-UCR PDF Intelligence Pipeline V5.6</h3>
         <p>Centro de Investigación Observatorio del Desarrollo — Universidad de Costa Rica</p>
         <p style="margin-top:0.35rem; font-size:0.8rem; color:#94a3b8;">
           Diseñado para investigación científica auditable, flujos RAG reproducibles y Bóvedas de Conocimiento.

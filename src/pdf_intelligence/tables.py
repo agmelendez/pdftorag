@@ -114,7 +114,16 @@ class AdaptiveTableExtractor:
         if rows < 2 or cols < 2:
             return False, "menos de 2 filas o 2 columnas"
 
+        # Discard tiny residual fragments (V5.5+)
+        min_area = getattr(cfg, "table_min_area", 0.03) if cfg else 0.03
+        if feats.get("page_area_share", 1.0) < min_area:
+            return False, "área demasiado pequeña (residuo)"
+
         if strategy == "lines":
+            lines_max_area = getattr(cfg, "table_lines_max_area", 0.85) if cfg else 0.85
+            lines_max_avg_words = getattr(cfg, "table_lines_max_avg_words", 15.0) if cfg else 15.0
+            if feats["page_area_share"] >= lines_max_area and feats["avg_words_per_cell"] > lines_max_avg_words:
+                return False, "página completa con prosa (falso positivo)"
             if feats["filled_ratio"] < lines_min_filled:
                 return False, "celdas mayormente vacías"
             if feats["fragment_ratio"] >= lines_max_fragment:

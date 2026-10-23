@@ -1,6 +1,6 @@
 # Guía de Uso del Corpus para LLMs, Agentes RAG y Sistemas de Citación
 
-Este manual establece las directrices operativas que un Modelo de Lenguaje (LLM), agente autónomo o sistema de Generación Aumentada por Recuperación (RAG) debe seguir para consultar, razonar y citar la información extraída por el pipeline CIOdD-UCR PDF Intelligence V5.2.
+Este manual establece las directrices operativas que un Modelo de Lenguaje (LLM), agente autónomo o sistema de Generación Aumentada por Recuperación (RAG) debe seguir para consultar, razonar y citar la información extraída por el pipeline CIOdD-UCR PDF Intelligence V5.6.
 
 ---
 

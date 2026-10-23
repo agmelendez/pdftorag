@@ -47,6 +47,12 @@ data/pdf_intelligence/
 *.zip
 *.tar.gz
 
+# Grok benchmark outputs and zip distributions
+!Grok/*.zip
+!docs/grok/*.zip
+Grok/pdf_intelligence_V5*/
+docs/grok/pdf_intelligence_V5*/
+
 # Tests & coverage
 .pytest_cache/
 .coverage

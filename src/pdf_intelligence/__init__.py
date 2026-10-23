@@ -1,4 +1,4 @@
-"""CIOdD-UCR PDF Intelligence Pipeline V5.2 (Research & RAG Edition).
+"""CIOdD-UCR PDF Intelligence Pipeline V5.6 (Research & RAG Edition).
 
 A robust, zero-loss, auditable document processing pipeline transforming heterogeneous
 PDFs into structured JSONL, Parquet, DuckDB, and vector search indices for LLMs.
@@ -15,8 +15,9 @@ from .quality import QualityAssessor, infer_repeated_lines, remove_repeated_line
 from .search import LocalSearch
 from .structure import ChunkBuilder, SectionBuilder
 from .tables import AdaptiveTableExtractor
+from .utils import clean_title
 
-__version__ = "5.2.0"
+__version__ = "5.6.0"
 __author__ = "Centro de Investigación Observatorio del Desarrollo (CIOdD) — UCR"
 __all__ = [
     "PipelineConfig",
@@ -32,6 +33,7 @@ __all__ = [
     "CorpusBuilder",
     "LocalSearch",
     "DATA_DICTIONARY",
+    "clean_title",
     "demote_repeated_headings",
     "infer_repeated_lines",
     "remove_repeated_lines",

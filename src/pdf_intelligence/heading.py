@@ -6,7 +6,7 @@ from collections import defaultdict
 from typing import Any, Dict, List, Optional
 
 from .config import PipelineConfig
-from .utils import single_line
+from .utils import clean_title, single_line
 
 
 class HeadingDetector:
@@ -73,11 +73,11 @@ class HeadingDetector:
             "heading_signals": [],
         }
 
-        text = single_line(block.get("text", ""))
+        text = clean_title(single_line(block.get("text", "")))
         words = text.split()
         n = len(words)
 
-        if not text or n > 20 or len(text) > 200:
+        if not text or n > 16 or len(text) > 180:
             return result
 
         alnum = [c for c in text if c.isalnum()]
@@ -104,6 +104,10 @@ class HeadingDetector:
 
         is_standard = bool(self.standard.match(text.strip(" .:-"))) or bool(self.prefixed.match(text))
         is_numbered = bool(self.numbered.match(text)) and n <= 16
+
+        # Reject long sentence-like blocks that are not numbered/standard (V5.5+ check safely after assignments)
+        if n > 10 and "." in text[:-1] and not is_numbered and not is_standard:
+            return result
 
         if words[0][:1].islower() and not is_numbered:
             return result

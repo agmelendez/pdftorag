@@ -184,7 +184,14 @@ class DocumentExtractor:
                         "error": str(e),
                     })
 
-            for page_index in range(len(pdf)):
+            total_pages = len(pdf)
+            page_limit = (
+                min(total_pages, self.config.max_pages)
+                if self.config.max_pages is not None and self.config.max_pages > 0
+                else total_pages
+            )
+
+            for page_index in range(page_limit):
                 page_number = page_index + 1
                 page = pdf[page_index]
                 try:

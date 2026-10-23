@@ -1,6 +1,6 @@
-# CIOdD-UCR PDF Intelligence Pipeline (V5.2) — From PDF to RAG & Knowledge Vault
+# CIOdD-UCR PDF Intelligence Pipeline (V5.6) — From PDF to RAG & Knowledge Vault
 
-[![Version](https://img.shields.io/badge/version-5.2.0-blue.svg)](https://github.com/agmelendez/pdftorag)
+[![Version](https://img.shields.io/badge/version-5.6.0-blue.svg)](https://github.com/agmelendez/pdftorag)
 [![License: CC BY-NC-SA 4.0 / Non-Commercial](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0%20%2F%20Non--Commercial-yellow.svg)](LICENSE)
 [![Zero Text Loss](https://img.shields.io/badge/Text%20Loss-Zero%20(coverage%20%E2%89%A5%2099.5%25)-success.svg)](docs/ARCHITECTURE.md)
 [![Database](https://img.shields.io/badge/Relational-DuckDB%20%2B%20Parquet-orange.svg)](docs/COOKBOOK_DUCKDB.md)
@@ -15,7 +15,7 @@
 
 ## 🌟 Interfaz Metodológica y Portal en Vivo (GitHub Pages)
 
-Accede a la interfaz interactiva y manual metodológico de alto nivel alojado en GitHub Pages para explorar el pipeline, comprender las 10 fases algorítmicas, estudiar la Skill de Agente y verificar los artefactos:
+Accede a la interfaz interactiva y manual metodológico de alto nivel alojado en GitHub Pages para explorar el pipeline, comprender las 10 fases algorítmicas, estudiar la Skill de Agente, explorar los artefactos reales y auditar la comparativa de versiones V5.2 → V5.6:
 
 👉 **[Abrir Portal Metodológico GitHub Pages (`/docs`)](https://agmelendez.github.io/pdftorag/)** *(O abrir localmente [`docs/index.html`](file:///Users/agustingomez/Downloads/0.%20FROM%20PDF%20to%20RAG/docs/index.html) en tu navegador)*.
 
@@ -23,10 +23,11 @@ Accede a la interfaz interactiva y manual metodológico de alto nivel alojado en
 - 📚 **Metodología y Fundamentación**: El problema ontológico del PDF y los 4 pilares epistemológicos del CIOdD-UCR.
 - 🔄 **Flujo de Trabajo (10 Fases)**: Inspección de retos, entradas, salidas, formulación algorítmica y código Python de cada fase.
 - 🤖 **Skill de Uso para LLMs / RAG**: Protocolo formal (`skills/pdf-intelligence-rag/SKILL.md`) con jerarquía de evidencia de 5 niveles y reglas anti-alucinación.
-- 📦 **Especificación de Artefactos**: Diccionario de datos y visor de esquemas canónicos de referencia para `chunks`, `tables`, `tables_rejected`, `sections`, `pages` e `integrity_report`.
-- 🧹 **Ciclos de Depuración**: Explicación de los 6 filtros heurísticos de saneamiento.
+- 📦 **Especificación de Artefactos**: Diccionario de datos y visor de esquemas canónicos con datos reales del corpus auditado para `chunks`, `tables`, `tables_rejected`, `sections`, `pages` e `integrity_report`.
+- 🧹 **Ciclos de Depuración**: Explicación de los filtros heurísticos de saneamiento y microtablas residuales.
 - 🧠 **Bóveda de Conocimiento (Brain OS)**: Integración en 4 capas para memoria de largo plazo en Obsidian y agentes de IA.
-- 📈 **Evolución V1.0 → V5.2**: Matriz comparativa forense entre el script original y el pipeline moderno.
+- 📈 **Evolución V1.0 → V5.6**: Matriz de evolución arquitectónica desde el script original V1.0 hasta la versión modular V5.6.
+- 📊 **Comparativa y Versiones (V5.2 → V5.6)**: Matriz comparativa exhaustiva versión por versión, bitácora forense de auditoría empírica, anatomía del bug V5.5 y benchmark interactivo sobre 4 PDFs reales, cuadernos Colab y resultados descargables (`Grok/`).
 - ⚡ **Consultas SQL DuckDB**: Cookbook analítico para analistas de datos y LLMs sobre `corpus.duckdb`.
 - 💻 **Instalación y CLI**: Guía de despliegue en producción y régimen de licencia no comercial.
 
@@ -34,9 +35,9 @@ Accede a la interfaz interactiva y manual metodológico de alto nivel alojado en
 
 ## 📖 Descripción del Proyecto
 
-El **CIOdD-UCR PDF Intelligence Pipeline V5.2** es una solución integral de ingeniería documental diseñada para transformar bibliotecas heterogéneas de archivos PDF (digitales nativos, escaneados o híbridos) en un **corpus científico estructurado, auditable y con cero pérdida de información**. 
+El **CIOdD-UCR PDF Intelligence Pipeline V5.6** es una solución integral de ingeniería documental diseñada para transformar bibliotecas heterogéneas de archivos PDF (digitales nativos, escaneados o híbridos) en un **corpus científico estructurado, auditable y con cero pérdida de información**. 
 
-A diferencia de los frameworks RAG genéricos que sufren de alucinaciones de páginas, pérdida silenciosa de secciones cortas y falsas tablas por prosa en columnas, este pipeline implementa un estricto protocolo de 10 fases con verificación criptográfica SHA-256 y trazabilidad dual de páginas (índice físico del PDF + etiqueta impresa original).
+A diferencia de los frameworks RAG genéricos que sufren de alucinaciones de páginas, pérdida silenciosa de secciones cortas y falsas tablas por prosa en columnas, este pipeline implementa un estricto protocolo de 10 fases con verificación criptográfica SHA-256, trazabilidad dual de páginas (índice físico del PDF + etiqueta impresa original) y sanitización tipográfica avanzada (`clean_title`).
 
 ---
 
@@ -78,34 +79,45 @@ flowchart TD
 
 ```text
 ├── src/
-│   └── pdf_intelligence/                <-- Paquete modular de producción
-│       ├── __init__.py                  <-- Exportaciones y versionado v5.2.0
-│       ├── config.py                    <-- Dataclass PipelineConfig con hiperparámetros
+│   └── pdf_intelligence/                <-- Paquete modular de producción (V5.6)
+│       ├── __init__.py                  <-- Exportaciones y versionado v5.6.0
+│       ├── config.py                    <-- Dataclass PipelineConfig con hiperparámetros V5.6
 │       ├── profiler.py                  <-- PDFProfiler (hash SHA-256 y metadatos)
 │       ├── layout.py                    <-- LayoutExtractor (bloques, tipografía, bboxes)
-│       ├── heading.py                   <-- HeadingDetector y demote_repeated_headings
+│       ├── heading.py                   <-- HeadingDetector blindado y demote_repeated_headings
 │       ├── ocr.py                       <-- OCRExtractor (Tesseract OCR adaptativo)
-│       ├── tables.py                    <-- AdaptiveTableExtractor (filtro heurístico y markdown)
+│       ├── tables.py                    <-- AdaptiveTableExtractor (filtro heurístico y microtablas)
 │       ├── quality.py                   <-- QualityAssessor y recorte de líneas de borde
-│       ├── structure.py                 <-- SectionBuilder y ChunkBuilder (cero pérdida)
-│       ├── document.py                  <-- DocumentExtractor (orquestador de 10 fases)
+│       ├── structure.py                 <-- SectionBuilder y ChunkBuilder (cero pérdida y clean_title)
+│       ├── document.py                  <-- DocumentExtractor (orquestador de 10 fases con max_pages)
 │       ├── corpus.py                    <-- CorpusBuilder (Parquet, DuckDB, TF-IDF, auditoría)
 │       ├── search.py                    <-- LocalSearch (búsqueda rápida sin APIs externas)
-│       ├── utils.py                     <-- Normalizadores, hashes y serialización
-│       └── cli.py                       <-- Interfaz de línea de comandos (CLI)
+│       ├── utils.py                     <-- Normalizadores, clean_title, hashes y serialización
+│       └── cli.py                       <-- Interfaz de línea de comandos CLI (dry-run, max-pages)
+├── Grok/                                <-- Auditoría empírica, cuadernos e iteraciones V5.3–V5.6
+│   ├── ciodd_ucr_pdf_intelligence_pipeline_v5_3.ipynb  <-- Cuaderno Colab V5.3 (Checkpointing)
+│   ├── ciodd_ucr_pdf_intelligence_pipeline_v5_4.ipynb  <-- Cuaderno Colab V5.4 (Filtro Prosa)
+│   ├── ciodd_ucr_pdf_intelligence_pipeline_v5_5.ipynb  <-- Cuaderno Colab V5.5 (Caso Bug)
+│   ├── ciodd_ucr_pdf_intelligence_pipeline_v5_6.ipynb  <-- Cuaderno Colab V5.6 (Final Estable)
+│   ├── Documentacion_Tecnica_V5.3.md / V5.5.md / V5.6.md <-- Documentación técnica por versión
+│   ├── guia_mejoras_pipeline_v5.6_completa.md          <-- Especificación de portabilidad modular
+│   ├── pdf_intelligence_V53/ .. V56/                   <-- Resultados y artefactos generados
+│   └── *.pdf                                          <-- 4 PDFs de prueba (257 páginas reales)
 ├── docs/                                <-- Interfaz Interactiva en GitHub Pages y Guías
-│   ├── index.html                       <-- Aplicación web interactiva (Single-Page App)
-│   ├── app.js                           <-- Lógica reactiva, simuladores y explorador
+│   ├── index.html                       <-- Aplicación web interactiva con Historial V5.6
+│   ├── app.js                           <-- Lógica reactiva, benchmark y explorador de artefactos
 │   ├── styles.css                       <-- Sistema de diseño limpio con identidad UCR
+│   ├── grok/                            <-- Enlace simbólico de acceso directo a Grok/
+│   ├── LIMITACIONES_CONOCIDAS.md        <-- Fronteras metodológicas y casos de borde
 │   ├── data/
-│   │   └── sample_corpus.json           <-- Datos de demostración interactiva
+│   │   └── sample_corpus.json           <-- Datos de demostración reales del corpus V5.6
 │   ├── ARCHITECTURE.md                  <-- Arquitectura técnica y fórmulas a fondo
 │   ├── CODE_REFERENCE.md                <-- Referencia de clases, funciones y métodos
 │   ├── OUTPUT_SPECIFICATION.md          <-- Diccionario de datos y especificación de salidas
-│   ├── CLEANING_AND_DEBUGGING_CYCLES.md <-- Los 6 ciclos de depuración explicados
+│   ├── CLEANING_AND_DEBUGGING_CYCLES.md <-- Los ciclos de depuración explicados
 │   ├── LLM_AND_RAG_GUIDE.md             <-- Guía de uso, prompts y citación para LLMs
 │   ├── BRAIN_OS_INTEGRATION.md          <-- Integración con Bóvedas de Conocimiento (v1.6)
-│   ├── EVOLUTION_V1_TO_V5.md            <-- Comparativa histórica V1.0 vs V5.2
+│   ├── EVOLUTION_V1_TO_V5.md            <-- Comparativa histórica V1.0 vs V5.2 vs V5.6
 │   └── COOKBOOK_DUCKDB.md               <-- Recetas SQL para consultas analíticas
 ├── legacy/
 │   ├── v1_original/
@@ -114,14 +126,11 @@ flowchart TD
 │   └── v5_2_monolith/
 │       ├── ciodd_ucr_pdf_intelligence_pipeline_v5_2.py  <-- Monolito Colab Octubre 2026
 │       └── README.md
-├── notebooks/
-│   └── ciodd_pdf_intelligence_v5_2_colab.ipynb  <-- Notebook listo para Google Colab
 ├── tests/
-│   └── test_pipeline.py                 <-- Pruebas unitarias automatizadas
-├── .github/workflows/
-│   └── deploy-pages.yml                 <-- Despliegue automático a GitHub Pages
-├── pyproject.toml                       <-- Configuración de empaquetado PEP 621
-├── requirements.txt                     <-- Dependencias de producción
+│   ├── test_pipeline.py                 <-- Pruebas unitarias base
+│   └── test_v56_regression.py          <-- Pruebas de regresión y blindaje V5.6
+├── requirements.txt                     <-- Dependencias de producción core (ligeras)
+├── requirements-embeddings.txt          <-- Dependencias opcionales (embeddings + FAISS)
 ├── requirements-dev.txt                 <-- Dependencias de desarrollo
 ├── LICENSE                              <-- Licencia Dual: No Comercial + CC BY-NC-SA 4.0
 └── README.md                            <-- Documentación principal
@@ -195,9 +204,9 @@ Consulta la guía completa en [`docs/BRAIN_OS_INTEGRATION.md`](docs/BRAIN_OS_INT
 
 ## 🧪 Pruebas Unitarias
 
-Para ejecutar el conjunto de pruebas unitarias automatizadas:
+Para ejecutar el conjunto completo de pruebas unitarias y de regresión automatizadas:
 ```bash
-python3 tests/test_pipeline.py
+PYTHONPATH=src python3 -m unittest discover tests
 ```
 
 ---
@@ -206,11 +215,11 @@ python3 tests/test_pipeline.py
 
 Este proyecto opera bajo un esquema de **Doble Licenciamiento No Comercial con Atribución Obligatoria** para preservar los derechos del autor e impulsar la investigación abierta:
 
-1. **Código Fuente y Software (`src/`, `notebooks/`, `tests/`)**:
+1. **Código Fuente y Software (`src/`, `Grok/`, `tests/`)**:
    - **Permitido**: Clonar, ejecutar, auditar, adaptar y modificar el código para fines académicos, científicos, docentes o personales.
    - **Prohibido**: **Comercializar, vender, revender o sublicenciar** el software o cualquier producto comercial derivado sin autorización previa por escrito del autor.
    - **Atribución Obligatoria**: Si clonas o creas un *fork* de este repositorio, debes mantener visible e inalterable el aviso de autoría original:
-     > *"Basado en el CIOdD-UCR PDF Intelligence Pipeline V5.2, desarrollado por Agustín Gómez — Centro de Investigación Observatorio del Desarrollo (CIOdD), Universidad de Costa Rica."*
+     > *"Basado en el CIOdD-UCR PDF Intelligence Pipeline V5.6, desarrollado por Agustín Gómez — Centro de Investigación Observatorio del Desarrollo (CIOdD), Universidad de Costa Rica."*
 
 2. **Documentación, Metodología y Skill de Agente (`docs/`, `skills/`)**:
    - Licenciado bajo **[Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es)**.
@@ -224,7 +233,7 @@ Si utilizas este pipeline en tus investigaciones, publicaciones, tesis o benchma
 ```bibtex
 @software{gomez2026_pdf_intelligence,
   author       = {G{\'o}mez, Agust{\'i}n},
-  title        = {{CIOdD-UCR PDF Intelligence Pipeline V5.2: Ingesta no-destructiva, estructuraci{\'o}n profunda y auditor{\'i}a relacional de documentos PDF para RAG}},
+  title        = {{CIOdD-UCR PDF Intelligence Pipeline V5.6: Ingesta no-destructiva, estructuraci{\'o}n profunda y auditor{\'i}a relacional de documentos PDF para RAG}},
   year         = {2026},
   publisher    = {Centro de Investigaci{\'o}n Observatorio del Desarrollo, Universidad de Costa Rica},
   url          = {https://github.com/agmelendez/pdftorag},

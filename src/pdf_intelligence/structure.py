@@ -6,7 +6,7 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 import numpy as np
 
 from .config import PipelineConfig
-from .utils import detect_language, normalize_text, sha256_text, single_line, word_count
+from .utils import clean_title, detect_language, normalize_text, sha256_text, single_line, word_count
 
 
 class SectionBuilder:
@@ -75,20 +75,24 @@ class SectionBuilder:
                 bbox = block.get("bbox") or [0, 0, 0, 0]
 
                 if block.get("is_heading"):
-                    title = single_line(text)
+                    title = clean_title(single_line(text))
                     conf = float(block.get("heading_confidence", 0) or 0)
                     level = block.get("heading_level")
                     cur = state["current"]
 
                     if cur is not None and not cur["paragraphs"]:
-                        # Consecutive headings without body text: merge as multiline or hierarchy path
+                        # Consecutive headings without body text: merge only if both are short and adjacent
                         adjacent = (
                             state["last_page"] == pn
                             and state["last_bottom"] is not None
-                            and (bbox[1] - state["last_bottom"]) < 24
+                            and (bbox[1] - state["last_bottom"]) < 18
                         )
-                        cur["title"] = (cur["title"] + (" " if adjacent else " › ") + title)[:300]
-                        cur["heading_confidence"] = max(cur["heading_confidence"], conf)
+                        if adjacent and len(title.split()) <= 6 and len(cur["title"].split()) <= 8:
+                            cur["title"] = (cur["title"] + " " + title)[:300]
+                            cur["heading_confidence"] = max(cur["heading_confidence"], conf)
+                        else:
+                            close()
+                            state["current"] = start(title[:300], pn, "detected", conf, level)
                     else:
                         close()
                         state["current"] = start(title[:300], pn, "detected", conf, level)
@@ -315,6 +319,14 @@ class ChunkBuilder:
 
         for chunk in chunks:
             chunk.pop("_pages", None)
+
+        # Drop extremely short chunks (title-only / isolated noise, V5.5+)
+        min_w = getattr(self.config, "min_chunk_words_discard", 20)
+        if min_w > 0 and len(chunks) > 1:
+            chunks = [
+                c for c in chunks
+                if c.get("unique_words", 0) >= min_w or c.get("word_count", 0) >= min_w
+            ]
 
         return chunks
 

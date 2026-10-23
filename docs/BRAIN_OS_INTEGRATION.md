@@ -1,6 +1,6 @@
 # Integración con Bóvedas de Conocimiento: Brain OS v1.6 & PDF Intelligence
 
-Este documento explica cómo el **CIOdD-UCR PDF Intelligence Pipeline V5.2** se integra de manera nativa con la arquitectura de **Brain OS (Manual v1.6 por Jaime Figueres para FAIR.cr)**, convirtiéndose en el motor de ingesta y compilación para sistemas personales y organizacionales de inteligencia operativa con IA.
+Este documento explica cómo el **CIOdD-UCR PDF Intelligence Pipeline V5.6** se integra de manera nativa con la arquitectura de **Brain OS (Manual v1.6 por Jaime Figueres para FAIR.cr)**, convirtiéndose en el motor de ingesta y compilación para sistemas personales y organizacionales de inteligencia operativa con IA.
 
 ---
 
@@ -14,7 +14,7 @@ El PDF Intelligence Pipeline actúa como el **Compilador Documental Primario (Ca
 
 ```text
 [PDFs Heterogéneos]
-        ↓  (Fases 1–10: PDF Intelligence V5.2)
+        ↓  (Fases 1–10: PDF Intelligence V5.6)
 [chunks.parquet / tables.jsonl / corpus.duckdb]
         ↓  (Capa de Ingesta Brain OS)
 [Territorio de Acceso del Vault (Obsidian / Markdown)]
@@ -28,7 +28,7 @@ El PDF Intelligence Pipeline actúa como el **Compilador Documental Primario (Ca
 
 El Manual v1.6 de Brain OS define 4 capas funcionales. A continuación se detalla cómo se alimentan con las salidas del pipeline:
 
-### Capa 0: Ingesta y Evidencia Primaria (Pipeline V5.2)
+### Capa 0: Ingesta y Evidencia Primaria (Pipeline V5.6)
 - **Artefactos**: `pages.parquet`, `tables.parquet`, `manifest.json`.
 - **Función en Brain OS**: Proporciona el repositorio inmutable de evidencia. Cada afirmación en el sistema se respalda en una huella SHA-256 y coordenadas de página exactas.
 

@@ -1,4 +1,4 @@
-# Arquitectura Técnica del Pipeline: CIOdD-UCR PDF Intelligence V5.2
+# Arquitectura Técnica del Pipeline: CIOdD-UCR PDF Intelligence V5.6
 
 ## 1. Principios Fundamentales de Diseño
 El pipeline fue concebido para resolver los defectos sistémicos que afectan a los frameworks comunes de ingestión RAG (como LangChain, LlamaIndex o extractores básicos de PDF) cuando procesan literatura científica, informes técnicos gubernamentales y documentos corporativos heterogéneos:

@@ -1,11 +1,11 @@
 ---
 name: pdf-intelligence-rag
-description: Protocolo metodológico y reglas operativas para que modelos de lenguaje (LLMs), agentes autónomos y sistemas RAG consulten, validen, recuperen y citen evidencia del corpus estructurado generado por el CIOdD-UCR PDF Intelligence Pipeline V5.2.
+description: Protocolo metodológico y reglas operativas para que modelos de lenguaje (LLMs), agentes autónomos y sistemas RAG consulten, validen, recuperen y citen evidencia del corpus estructurado generado por el CIOdD-UCR PDF Intelligence Pipeline V5.6.
 ---
 
 # Agent Skill: CIOdD-UCR PDF Intelligence & RAG Retrieval Protocol
 
-Esta habilidad define cómo un modelo de lenguaje (LLM), agente autónomo o sistema de Generación Aumentada por Recuperación (RAG) debe interactuar con el corpus documental generado por el **CIOdD-UCR PDF Intelligence Pipeline V5.2**.
+Esta habilidad define cómo un modelo de lenguaje (LLM), agente autónomo o sistema de Generación Aumentada por Recuperación (RAG) debe interactuar con el corpus documental generado por el **CIOdD-UCR PDF Intelligence Pipeline V5.6**.
 
 ## 1. Principio Rector de Operación
 > **"El índice sirve exclusivamente para localizar candidatos; la evidencia debe validarse siempre contra el contenido estructurado y su trazabilidad documental primaria."**

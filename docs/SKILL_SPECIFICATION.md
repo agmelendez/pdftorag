@@ -1,6 +1,6 @@
 # Especificación de la Skill de Uso para Agentes LLM: `pdf-intelligence-rag`
 
-Esta especificación detalla el diseño, la estructura y las directrices de la **Skill de Uso** diseñada para que Modelos de Lenguaje Grande (LLMs) y sistemas RAG interactúen con el corpus generado por el **CIOdD-UCR PDF Intelligence Pipeline V5.2**.
+Esta especificación detalla el diseño, la estructura y las directrices de la **Skill de Uso** diseñada para que Modelos de Lenguaje Grande (LLMs) y sistemas RAG interactúen con el corpus generado por el **CIOdD-UCR PDF Intelligence Pipeline V5.6**.
 
 El archivo formal de la Skill se encuentra en:
 [`skills/pdf-intelligence-rag/SKILL.md`](file:///Users/agustingomez/Downloads/0.%20FROM%20PDF%20to%20RAG/skills/pdf-intelligence-rag/SKILL.md)

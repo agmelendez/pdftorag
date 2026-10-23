@@ -27,6 +27,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
+      - name: Prepare Grok assets for Pages
+        run: |
+          rm -rf docs/grok
+          mkdir -p docs/grok
+          cp Grok/*.pdf docs/grok/ 2>/dev/null || true
+          cp Grok/*.zip docs/grok/ 2>/dev/null || true
+          cp Grok/*.ipynb docs/grok/ 2>/dev/null || true
+          cp Grok/*.md docs/grok/ 2>/dev/null || true
+
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:

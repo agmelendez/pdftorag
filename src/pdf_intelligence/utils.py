@@ -52,6 +52,19 @@ def single_line(text: Optional[str]) -> str:
     return re.sub(r"\s+", " ", normalize_unicode(text or "")).strip()
 
 
+def clean_title(text: Optional[str]) -> str:
+    """Remove control characters, box drawing, and decorative symbols from titles (V5.5+)."""
+    if not text:
+        return ""
+    text = normalize_unicode(text)
+    # Remove box-drawing, bullet, and decorative characters
+    text = re.sub(r"[▒■□▪▫●○◆◇★☆►▶◀◄→←↑↓·\x00-\x1f\x7f]+", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    # Collapse repeated punctuation
+    text = re.sub(r"([.:;])\1+", r"\1", text)
+    return text
+
+
 def word_count(text: Optional[str]) -> int:
     """Count words supporting Latin and accented Unicode characters."""
     return len(re.findall(r"\b[\wÀ-ÿ]+\b", text or "", flags=re.UNICODE))

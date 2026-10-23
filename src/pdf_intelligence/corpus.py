@@ -32,7 +32,7 @@ from .utils import (
 
 DATA_DICTIONARY: Dict[str, Any] = {
     "_nota": (
-        "Diccionario de datos del corpus V5.2. 'page_number' es el índice 1-based del PDF; "
+        "Diccionario de datos del corpus V5.6. 'page_number' es el índice 1-based del PDF; "
         "'page_label' es la etiqueta impresa (puede diferir). Citar siempre documento + página."
     ),
     "documents": {

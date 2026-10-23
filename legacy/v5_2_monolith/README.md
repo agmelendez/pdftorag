@@ -1,3 +1,7 @@
+> **AVISO**: Este archivo es una versión monolítica histórica (octubre 2026, V5.2).  
+> La fuente de verdad actual es el paquete modular en `src/pdf_intelligence/` (V5.6).  
+> No se recomienda modificar este monolito.
+
 # Legacy Monolithic Notebook Script: `ciodd_ucr_pdf_intelligence_pipeline_v5_2.py`
 
 Esta carpeta contiene el archivo monolítico exportado directamente del notebook de Google Colab al 21 de octubre de 2026:

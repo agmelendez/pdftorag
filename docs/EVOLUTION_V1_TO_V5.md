@@ -1,4 +1,4 @@
-# Evolución Histórica: De `pdf_to_rac_json.py` (V1.0) a V5.2
+# Evolución Histórica: De `pdf_to_rac_json.py` (V1.0) a V5.2 y V5.6 Estable
 
 Este documento documenta la trayectoria de ingeniería que transformó un prototipo elemental de extracción en un pipeline de nivel de investigación científica para el Centro de Investigación Observatorio del Desarrollo (CIOdD) de la Universidad de Costa Rica.
 
@@ -101,18 +101,24 @@ classDiagram
 
 ---
 
-## 3. Matriz Comparativa Detallada
+## 3. Matriz Comparativa Detallada: V1.0 vs V5.2 vs V5.6
 
-| Característica | Versión 1.0 (`pdf_to_rac_json.py`) | Versión 5.2 (`pdf_intelligence`) |
-|---|---|---|
-| **Líneas de Código** | 497 líneas (monolito) | 2.773 líneas (monolito) / Paquete modular `src/` |
-| **Clases de Procesamiento** | 3 clases básicas | 10 clases especializadas |
-| **Garantía de Cobertura** | Descarte silencioso ($< 60$ palabras) | **Cero pérdida** (`chunk_coverage >= 0.995`) |
-| **Paginación** | Página aproximada contaminada por overlap | Paginación exacta sobre palabras propias (`unique_words`) |
-| **Etiqueta Impresa** | No disponible | Doble trazabilidad (`page_number` e índice impreso `page_label`) |
-| **Extracción de Tablas** | Cuadrículas crudas sin clasificar | Clasificador heurístico + versión Markdown + `tables_rejected.jsonl` |
-| **Limpieza de Bordes** | Borrado global de cadenas | Patrones con comodín `#` aplicados **solo en bordes** |
-| **Soporte de Base de Datos** | Ninguno (solo archivos JSON) | Base relacional indexada `corpus.duckdb` y Apache Parquet |
-| **Búsqueda Integrada** | Ninguna | Búsqueda léxica TF-IDF + Búsqueda densa FAISS (384 dim) |
-| **Auditoría e Integridad** | No disponible | `manifest.json` (SHA-256) e `integrity_report.json` (9 reglas) |
-| **Interfaz de Usuario** | Ninguna | Interfaz interactiva completa en GitHub Pages |
+| Característica | Versión 1.0 (`pdf_to_rac_json.py`) | Versión 5.2 (`pdf_intelligence` inicial) | Versión Definitiva 5.6 (`pdf_intelligence` estabilizada) |
+|---|---|---|---|
+| **Líneas de Código** | 497 líneas (monolito) | 2.773 líneas (monolito) / Paquete modular `src/` | Paquete modular robusto `src/` + suite de regresión |
+| **Clases de Procesamiento** | 3 clases básicas | 10 clases especializadas | 10 clases especializadas + validación estricta |
+| **Garantía de Cobertura** | Descarte silencioso ($< 60$ palabras) | **Cero pérdida** (`chunk_coverage >= 0.995`) | **Cero pérdida blindada** (100% de 85.378 palabras en benchmark) |
+| **Paginación** | Página aproximada contaminada por overlap | Paginación exacta sobre palabras propias (`unique_words`) | Paginación exacta con trazabilidad de bloques OCR |
+| **Etiqueta Impresa** | No disponible | Doble trazabilidad (`page_number` e índice impreso `page_label`) | Doble trazabilidad persistida en DuckDB y Parquet |
+| **Extracción de Tablas** | Cuadrículas crudas sin clasificar | Clasificador heurístico + `tables_rejected.jsonl` | **Filtro dual**: prosa (`max_area=0.85`) + microtablas (`min_area=0.03`) |
+| **Detección de Títulos** | Mayúsculas o números sin límite | Detector heurístico $\ge 2.0$ (máx 20 palabras) | **Máx 16 palabras**, sanitización `clean_title` y corrección de orden |
+| **Limpieza de Bordes** | Borrado global de cadenas | Patrones con comodín `#` aplicados en bordes | Patrones con comodín `#` aplicados solo en las 3 líneas extremas |
+| **Soporte de Base de Datos** | Ninguno (solo archivos JSON) | Base relacional indexada `corpus.duckdb` y Apache Parquet | `corpus.duckdb` optimizado con campos de trazabilidad dual |
+| **Búsqueda Integrada** | Ninguna | Búsqueda léxica TF-IDF + Búsqueda densa FAISS (384 dim) | Búsqueda híbrida validada con consultas analíticas SQL |
+| **Auditoría e Integridad** | No disponible | `manifest.json` (SHA-256) e `integrity_report.json` (9 reglas) | `manifest.json` + `integrity_report.json` + 0 errores en `errors.jsonl` |
+| **Resiliencia Operacional** | Sin checkpoints | Ejecución batch básica | Checkpointing incremental por documento y flags CLI (`--max-pages`, `--dry-run`) |
+
+---
+
+## 4. Evolución Detallada V5.2 → V5.6
+Para la comparativa detallada paso a paso de las versiones intermedias de optimización empírica (V5.2 → V5.3 → V5.4 → V5.5 → V5.6), el análisis forense del bug de encabezados y los 4 casos de estudio reales, consulta el portal web en la **Pestaña 8: Comparativa y Versiones (V5.2 → V5.6)** o el archivo de especificación en `docs/LIMITACIONES_CONOCIDAS.md`.

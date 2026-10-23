@@ -1,6 +1,6 @@
 # Ciclos de Depuración, Limpieza y Heurísticas del Pipeline
 
-El procesamiento de documentos PDF heterogéneos presenta múltiples patologías que los convertidores convencionales no manejan adecuadamente. En esta sección se explican a fondo los **6 ciclos de depuración y saneamiento** implementados en el pipeline CIOdD-UCR V5.2.
+El procesamiento de documentos PDF heterogéneos presenta múltiples patologías que los convertidores convencionales no manejan adecuadamente. En esta sección se explican a fondo los **ciclos de depuración y saneamiento** implementados en el pipeline CIOdD-UCR V5.6.
 
 ---
 
@@ -11,7 +11,7 @@ En informes y libros extensos, cada página incluye cabeceras y pies con numerac
 1. Tratan esas líneas como párrafos legítimos dentro del texto, contaminando los chunks con ruido repetitivo.
 2. O bien intentan un reemplazo ingenuo de cadenas, borrando números legítimos dentro del cuerpo del texto (ej. borrar `"28"` de una fecha o estadística).
 
-### La Solución en V5.2
+### La Solución en V5.6
 1. **Inspección Focalizada**: Se analizan exclusivamente las $k = 3$ primeras y $k = 3$ últimas líneas de cada página.
 2. **Normalización a Patrones con Dígitos Comodín (`#`)**:
    $$\text{normalize\_pattern}(\text{"Informe Anual 2026 - Pág. 14"}) \to \text{"informe anual #### - pág. ##"}$$
@@ -26,7 +26,7 @@ En informes y libros extensos, cada página incluye cabeceras y pies con numerac
 ### El Problema
 Muchos documentos sitúan el título del capítulo o el nombre del ministerio en la parte superior de cada página con una tipografía en negrita o ligeramente mayor a la mediana. Si un detector de encabezados evalúa cada página de forma aislada, creará una nueva "sección" en cada página física, despedazando párrafos continuos en fragmentos diminutos.
 
-### La Solución en V5.2
+### La Solución en V5.6
 1. Tras evaluar todas las páginas del PDF (en documentos de $\ge 8$ páginas), se contabiliza en cuántas páginas distintas aparece cada texto marcado como `is_heading = True`.
 2. Si un encabezado aparece en:
    $$\text{páginas} \ge \max(4, \lceil 0.08 \cdot N \rceil)$$
@@ -44,7 +44,7 @@ Muchos documentos sitúan el título del capítulo o el nombre del ministerio en
 ### El Problema
 Herramientas como `pdfplumber` basadas en la estrategia `"text"` buscan alineaciones verticales de palabras. En páginas con texto justificado en 2 o 3 columnas, casi cualquier bloque de prosa puede ser interpretado erróneamente como una tabla con decenas de celdas que contienen fragmentos como `"ap | plies to person | s concerned"`.
 
-### La Solución en V5.2
+### La Solución en V5.6
 Se diseñó un clasificador multivariable que evalúa cinco propiedades geométricas y lingüísticas de cada cuadrícula candidata:
 1. **Razón de Inicio en Minúscula (`lower_start_ratio`)**:
    En una tabla genuina, las celdas contienen cifras numéricas, códigos o sustantivos que inician en mayúscula. Si $\ge 25\%$ de las celdas inician en minúscula, es inequívocamente prosa partida.
@@ -68,7 +68,7 @@ Los pipelines convencionales descartan cualquier sección con menos de 60 palabr
 - Conclusiones y recomendaciones redactadas en una o dos frases contundentes.
 - Páginas completas que quedan sin ningún chunk indexado.
 
-### La Solución en V5.2
+### La Solución en V5.6
 1. Cuando una sección contiene $< 60$ palabras (`CHUNK_MIN_WORDS`), **nunca se descarta**.
 2. Se intenta fusionar (`absorb`) dentro del chunk inmediatamente anterior, siempre que la suma de palabras no exceda el límite máximo (`CHUNK_MAX_WORDS = 800`).
 3. El chunk receptor registra:
@@ -85,7 +85,7 @@ Los pipelines convencionales descartan cualquier sección con menos de 60 palabr
 ### El Problema
 Aplicar OCR con Tesseract a todas las páginas de una biblioteca de cientos de PDFs ralentiza enormemente el procesamiento (hasta 10x) y degrada la calidad tipográfica en páginas digitales nativas. Por otro lado, no aplicar OCR deja en blanco documentos escaneados o páginas con fuentes vectoriales no embebidas.
 
-### La Solución en V5.2
+### La Solución en V5.6
 1. Se evalúa primero el texto nativo y su métrica técnica `text_quality_score`.
 2. Se ejecuta OCR únicamente si:
    - Longitud $< 80$ caracteres, o

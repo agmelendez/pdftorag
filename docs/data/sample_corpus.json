@@ -1,333 +1,1768 @@
 {
   "summary": {
-    "pipeline_version": "5.2",
-    "schema_version": "5.2.0",
-    "total_documents": 2,
-    "total_pages": 24,
-    "total_sections": 18,
-    "total_chunks": 42,
-    "total_tables": 6,
-    "total_tables_rejected": 4,
-    "average_quality": 0.884,
+    "pipeline_version": "5.6",
+    "schema_version": "5.6.0",
+    "total_documents": 4,
+    "total_pages": 257,
+    "total_words": 85378,
+    "total_sections": 102,
+    "total_chunks": 200,
+    "total_tables": 2,
+    "total_tables_rejected": 266,
+    "average_quality": 0.948,
     "integrity_status": "PASS"
   },
   "documents": [
     {
-      "document_id": "doc_8f3a91b2c4e57d01",
-      "filename": "Informe_IA_Educacion_Ninez_CIOdD_2026.pdf",
-      "sha256": "8f3a91b2c4e57d018b4e7239a01f92e457cb1d0923e4f71a098bcda4923e8172",
-      "inferred_title": "Inteligencia Artificial y Desarrollo Cognitivo en la Niñez: Oportunidades y Riesgos Éticos en Costa Rica",
-      "title_source": "largest_font_cover",
-      "year_candidates": ["2026", "2025"],
-      "document_language": "es",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "sha256": "f6b1a8c086f568816725974dfe88bce7839fc6898cca62c6132eae5c8a20c94f",
+      "inferred_title": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) ",
+      "title_source": "filename",
+      "year_candidates": [
+        "2026"
+      ],
+      "document_language": "en",
       "profile_type": "digital",
       "profile_type_observed": "digital",
-      "page_count": 16,
-      "extracted_pages": 16,
-      "total_words": 8450,
-      "total_tables": 4,
-      "tables_rejected": 2,
-      "total_sections": 11,
-      "sections_with_detected_title": 9,
-      "total_chunks": 26,
+      "page_count": 22,
+      "extracted_pages": 22,
+      "total_words": 5693,
+      "total_tables": 0,
+      "tables_rejected": 21,
+      "total_sections": 9,
+      "total_chunks": 18,
       "ocr_pages": 0,
-      "low_text_pages": 1,
-      "chunk_coverage": 0.9982,
-      "average_quality": 0.892,
-      "average_extraction_quality": 0.941
+      "chunk_coverage": 1.0,
+      "average_quality": 0.962
     },
     {
-      "document_id": "doc_e12b489c77da31fa",
-      "filename": "Marco_Regulatorio_Gobernanza_Algoritmica_UCR.pdf",
-      "sha256": "e12b489c77da31fa4358a912c980debc49a71239bcda018274efbca928374182",
-      "inferred_title": "Marco Regulatorio para la Gobernanza Algorítmica y la Protección de Datos en el Sector Público",
-      "title_source": "pdf_metadata",
-      "year_candidates": ["2026", "2024"],
+      "document_id": "doc_8eb0dff067e7b615",
+      "filename": "Anthropic 2026  Public Benefit Report Taking stock of our progress  toward our charter.pdf",
+      "sha256": "1b3f5b38489a2f4245a584b62f3be8b05c04545acda0e23a87f73c611ac1ab8c",
+      "inferred_title": "Anthropic 2026  Public Benefit Report Taking stock of our progress  toward our charter",
+      "title_source": "filename",
+      "year_candidates": [
+        "2026"
+      ],
+      "document_language": "en",
+      "profile_type": "digital",
+      "profile_type_observed": "digital",
+      "page_count": 20,
+      "extracted_pages": 20,
+      "total_words": 6750,
+      "total_tables": 0,
+      "tables_rejected": 20,
+      "total_sections": 12,
+      "total_chunks": 16,
+      "ocr_pages": 0,
+      "chunk_coverage": 1.0,
+      "average_quality": 0.954
+    },
+    {
+      "document_id": "doc_dab7ef33ba3406ff",
+      "filename": "La era de la IA y nuestro futuro.pdf",
+      "sha256": "630e163c7dfa65ae8b22e7b0a99e28d41ba143ce4c90b5505f06873d8daeceba",
+      "inferred_title": "La era de la IA y nuestro futuro",
+      "title_source": "filename",
+      "year_candidates": [
+        "2026"
+      ],
       "document_language": "es",
       "profile_type": "hybrid",
       "profile_type_observed": "hybrid",
-      "page_count": 8,
-      "extracted_pages": 8,
-      "total_words": 4120,
+      "page_count": 194,
+      "extracted_pages": 194,
+      "total_words": 64586,
+      "total_tables": 0,
+      "tables_rejected": 189,
+      "total_sections": 52,
+      "total_chunks": 137,
+      "ocr_pages": 3,
+      "chunk_coverage": 1.0,
+      "average_quality": 0.938
+    },
+    {
+      "document_id": "doc_3170e3515ee0b6cb",
+      "filename": "file_33C69A65-A12A-41A9-B48C-DB4B9EBA2561.pdf",
+      "sha256": "574f6562bc1ca9067e25e603ca1d8f81e9c9dfe637a273dbea3204a9a2816002",
+      "inferred_title": "file_33C69A65-A12A-41A9-B48C-DB4B9EBA2561",
+      "title_source": "filename",
+      "year_candidates": [
+        "2026"
+      ],
+      "document_language": "en",
+      "profile_type": "digital",
+      "profile_type_observed": "digital",
+      "page_count": 21,
+      "extracted_pages": 21,
+      "total_words": 8349,
       "total_tables": 2,
-      "tables_rejected": 2,
-      "total_sections": 7,
-      "sections_with_detected_title": 6,
-      "total_chunks": 16,
-      "ocr_pages": 1,
-      "low_text_pages": 0,
-      "chunk_coverage": 0.9965,
-      "average_quality": 0.871,
-      "average_extraction_quality": 0.915
+      "tables_rejected": 36,
+      "total_sections": 29,
+      "total_chunks": 29,
+      "ocr_pages": 0,
+      "chunk_coverage": 1.0,
+      "average_quality": 0.941
     }
   ],
-  "chunks": [
-    {
-      "chunk_id": "doc_8f3a91b2c4e57d01_C00001",
-      "document_id": "doc_8f3a91b2c4e57d01",
-      "filename": "Informe_IA_Educacion_Ninez_CIOdD_2026.pdf",
-      "section_id": "doc_8f3a91b2c4e57d01_S0001",
-      "section_title": "1. Resumen Ejecutivo y Alcance del Estudio",
-      "section_title_source": "detected",
-      "section_title_reliable": true,
-      "merged_section_ids": [],
-      "merged_section_titles": [],
-      "short_section": false,
-      "text": "El Observatorio del Desarrollo (CIOdD) de la Universidad de Costa Rica presenta esta investigación integral sobre el impacto de los sistemas generativos de inteligencia artificial en el entorno escolar costarricense. El estudio analizó una muestra representativa de 45 centros educativos en las siete provincias del país durante el primer semestre de 2026.\n\nLos hallazgos revelan que el 68% de los docentes incorpora herramientas basadas en LLMs para la preparación didáctica, mientras que el 42% del estudiantado de secundaria emplea agentes conversacionales como tutores extracurriculares. Sin embargo, persisten brechas críticas en alfabetización algorítmica y privacidad de datos sensibles.",
-      "overlap_words": 0,
-      "unique_words": 105,
-      "word_count": 105,
-      "page_start": 2,
-      "page_end": 2,
-      "page_label_start": "ii",
-      "page_label_end": "ii",
-      "related_table_ids": ["tbl_08f91a2bc41029aa"],
-      "quality_score": 0.9125,
-      "language": "es",
-      "text_sha256": "1a8b92c4e5781a029384756bcdae01928374650192837465abcdae0192837465"
-    },
-    {
-      "chunk_id": "doc_8f3a91b2c4e57d01_C00002",
-      "document_id": "doc_8f3a91b2c4e57d01",
-      "filename": "Informe_IA_Educacion_Ninez_CIOdD_2026.pdf",
-      "section_id": "doc_8f3a91b2c4e57d01_S0002",
-      "section_title": "2. Marco Metodológico y Muestreo Territorial",
-      "section_title_source": "detected",
-      "section_title_reliable": true,
-      "merged_section_ids": [],
-      "merged_section_titles": [],
-      "short_section": false,
-      "text": "Sin embargo, persisten brechas críticas en alfabetización algorítmica y privacidad de datos sensibles.\n\nLa recolección de datos primarios se estructuró mediante un diseño cuasi-experimental estratificado por región socioeconómica (Central, Chorotega, Pacífico Central, Brunca, Huetar Caribe y Huetar Norte). Se aplicaron 1.250 cuestionarios estructurados y 35 entrevistas en profundidad con comités pedagógicos locales.\n\nLa evaluación psicométrica de interacción humano-IA consideró tres variables dependientes: retención conceptual a largo plazo, pensamiento crítico analítico y autonomía resolutiva frente a problemas no estructurados.",
-      "overlap_words": 15,
-      "unique_words": 82,
-      "word_count": 97,
-      "page_start": 3,
-      "page_end": 4,
-      "page_label_start": "1",
-      "page_label_end": "2",
-      "related_table_ids": ["tbl_8f3a91b2_cuadro1"],
-      "quality_score": 0.895,
-      "language": "es",
-      "text_sha256": "4b7e8912c980debc49a71239bcda018274efbca928374182901a8b92c4e5781a"
-    },
-    {
-      "chunk_id": "doc_8f3a91b2c4e57d01_C00003",
-      "document_id": "doc_8f3a91b2c4e57d01",
-      "filename": "Informe_IA_Educacion_Ninez_CIOdD_2026.pdf",
-      "section_id": "doc_8f3a91b2c4e57d01_S0003",
-      "section_title": "3. Recomendaciones Regulatorias y Políticas Públicas",
-      "section_title_source": "detected",
-      "section_title_reliable": true,
-      "merged_section_ids": ["doc_8f3a91b2c4e57d01_S0004"],
-      "merged_section_titles": ["Nota Técnica sobre Consentimiento Informado"],
-      "short_section": false,
-      "text": "Se formula una propuesta de política institucional para regular el despliegue de sistemas de recomendación y tutores sintéticos en el aula pública. Es perentorio establecer protocolos de auditoría de sesgos algorítmicos cada seis meses y prohibir explícitamente el perfilamiento psicométrico de menores con fines publicitarios o comerciales.\n\nNota Técnica sobre Consentimiento Informado: Todo tratamiento de metadatos de voz, patrones de escritura o métricas biométricas infantiles requerirá autorización expresa de los tutores legales bajo el principio de proporcionalidad de la Ley 8968.",
-      "overlap_words": 0,
-      "unique_words": 86,
-      "word_count": 86,
-      "page_start": 8,
-      "page_end": 8,
-      "page_label_start": "6",
-      "page_label_end": "6",
-      "related_table_ids": [],
-      "quality_score": 0.942,
-      "language": "es",
-      "text_sha256": "77da31fa4358a912c980debc49a71239bcda018274efbca928374182901a8b92"
-    }
-  ],
-  "tables": [
-    {
-      "table_id": "tbl_08f91a2bc41029aa",
-      "document_id": "doc_8f3a91b2c4e57d01",
-      "page_number": 2,
-      "strategy": "lines",
-      "bbox": [72.0, 310.5, 520.0, 480.0],
-      "rows": 3,
-      "columns": 4,
-      "table_confidence": "high",
-      "caption": "Tabla 1. Distribución porcentual de uso de herramientas LLM en docentes por región",
-      "quality_features": {
-        "filled_ratio": 0.92,
-        "fragment_ratio": 0.05,
-        "lower_start_ratio": 0.08,
-        "avg_words_per_cell": 2.8,
-        "page_area_share": 0.18
+  "version_comparison": {
+    "versions": [
+      "V5.3",
+      "V5.4",
+      "V5.5 (Bug is_numbered)",
+      "V5.6 (Estable)"
+    ],
+    "documents": [
+      {
+        "name": "Paris Peace Forum / INTAiC",
+        "filename": "file_33C69A65-A12A-41A9-B48C-DB4B9EBA2561.pdf",
+        "pages": 21,
+        "metrics": {
+          "V5.3": {
+            "words": 8349,
+            "chunks": 200,
+            "tables_acc": 4,
+            "tables_rej": 30,
+            "status": "PASS",
+            "notes": "Falsas tablas por prosa"
+          },
+          "V5.4": {
+            "words": 8349,
+            "chunks": 200,
+            "tables_acc": 4,
+            "tables_rej": 34,
+            "status": "PASS",
+            "notes": "Filtro table_lines_max_area"
+          },
+          "V5.5": {
+            "words": 995,
+            "chunks": 171,
+            "tables_acc": 1,
+            "tables_rej": 25,
+            "status": "FAIL (88% texto perdido)",
+            "notes": "UnboundLocalError en HeadingDetector"
+          },
+          "V5.6": {
+            "words": 8349,
+            "chunks": 200,
+            "tables_acc": 2,
+            "tables_rej": 36,
+            "status": "PASS (100% recuperado)",
+            "notes": "table_min_area=0.03 descarta 2 microtablas"
+          }
+        }
       },
-      "markdown": "| Región Educativa | Docentes que usan LLM (%) | Frecuencia Semanal Promedio | Nivel de Capacitación Formal (%) |\n|---|---|---|---|\n| Central Occidental | 74.2% | 4.8 días | 28.5% |\n| Huetar Norte | 58.1% | 2.9 días | 14.2% |\n| Chorotega | 63.4% | 3.5 días | 19.8% |",
-      "headers": ["Región Educativa", "Docentes que usan LLM (%)", "Frecuencia Semanal Promedio", "Nivel de Capacitación Formal (%)"],
-      "records": [
-        {"Región Educativa": "Central Occidental", "Docentes que usan LLM (%)": "74.2%", "Frecuencia Semanal Promedio": "4.8 días", "Nivel de Capacitación Formal (%)": "28.5%"},
-        {"Región Educativa": "Huetar Norte", "Docentes que usan LLM (%)": "58.1%", "Frecuencia Semanal Promedio": "2.9 días", "Nivel de Capacitación Formal (%)": "14.2%"},
-        {"Región Educativa": "Chorotega", "Docentes que usan LLM (%)": "63.4%", "Frecuencia Semanal Promedio": "3.5 días", "Nivel de Capacitación Formal (%)": "19.8%"}
-      ]
-    },
-    {
-      "table_id": "tbl_8f3a91b2_cuadro1",
-      "document_id": "doc_8f3a91b2c4e57d01",
-      "page_number": 4,
-      "strategy": "lines",
-      "bbox": [72.0, 180.0, 520.0, 320.0],
-      "rows": 2,
-      "columns": 3,
-      "table_confidence": "high",
-      "caption": "Cuadro 2. Dimensiones psicométricas evaluadas en cohortes escolares",
-      "quality_features": {
-        "filled_ratio": 1.0,
-        "fragment_ratio": 0.0,
-        "lower_start_ratio": 0.0,
-        "avg_words_per_cell": 4.1,
-        "page_area_share": 0.14
+      {
+        "name": "Anthropic Public Benefit Report",
+        "filename": "Anthropic 2026 Public Benefit Report.pdf",
+        "pages": 20,
+        "metrics": {
+          "V5.3": {
+            "words": 6750,
+            "chunks": 200,
+            "tables_acc": 0,
+            "tables_rej": 20,
+            "status": "PASS",
+            "notes": "Fusión agresiva de títulos"
+          },
+          "V5.4": {
+            "words": 6750,
+            "chunks": 200,
+            "tables_acc": 0,
+            "tables_rej": 20,
+            "status": "PASS",
+            "notes": "Títulos concatenados (Pillar + subtítulo)"
+          },
+          "V5.5": {
+            "words": 5218,
+            "chunks": 171,
+            "tables_acc": 0,
+            "tables_rej": 18,
+            "status": "FAIL (23% texto perdido)",
+            "notes": "Afectado por bug en páginas con headings"
+          },
+          "V5.6": {
+            "words": 6750,
+            "chunks": 200,
+            "tables_acc": 0,
+            "tables_rej": 20,
+            "status": "PASS (100% recuperado)",
+            "notes": "Fusión controlada (máx 2 títulos cortos)"
+          }
+        }
       },
-      "markdown": "| Dimensión Cognitiva | Instrumento de Medición | Confiabilidad Alpha de Cronbach |\n|---|---|---|\n| Retención Conceptual | Batería CIOdD-Test V2 | α = 0.89 |\n| Pensamiento Crítico | Escala Watson-Glaser Adaptada | α = 0.92 |",
-      "headers": ["Dimensión Cognitiva", "Instrumento de Medición", "Confiabilidad Alpha de Cronbach"],
-      "records": [
-        {"Dimensión Cognitiva": "Retención Conceptual", "Instrumento de Medición": "Batería CIOdD-Test V2", "Confiabilidad Alpha de Cronbach": "α = 0.89"},
-        {"Dimensión Cognitiva": "Pensamiento Crítico", "Instrumento de Medición": "Escala Watson-Glaser Adaptada", "Confiabilidad Alpha de Cronbach": "α = 0.92"}
-      ]
-    }
-  ],
-  "tables_rejected": [
-    {
-      "table_id": "tbl_rej_00192837",
-      "document_id": "doc_8f3a91b2c4e57d01",
-      "page_number": 6,
-      "strategy": "text",
-      "bbox": [54.0, 120.0, 540.0, 720.0],
-      "reject_reason": "ocupa casi toda la página (prosa en 2 columnas, no tabla)",
-      "table_confidence": "low",
-      "quality_features": {
-        "filled_ratio": 0.65,
-        "fragment_ratio": 0.28,
-        "lower_start_ratio": 0.42,
-        "avg_words_per_cell": 11.4,
-        "page_area_share": 0.74
+      {
+        "name": "SAFE AI Foundation (AISM)",
+        "filename": "AI Safety Model Elaborated (AISM).pdf",
+        "pages": 22,
+        "metrics": {
+          "V5.3": {
+            "words": 5693,
+            "chunks": 200,
+            "tables_acc": 0,
+            "tables_rej": 21,
+            "status": "PASS",
+            "notes": "Caracteres de bloque ▒ en títulos"
+          },
+          "V5.4": {
+            "words": 5693,
+            "chunks": 200,
+            "tables_acc": 0,
+            "tables_rej": 21,
+            "status": "PASS",
+            "notes": "1 ▒ Introducing... preservado con ruido"
+          },
+          "V5.5": {
+            "words": 4844,
+            "chunks": 171,
+            "tables_acc": 0,
+            "tables_rej": 19,
+            "status": "FAIL (15% texto perdido)",
+            "notes": "Pérdida parcial por fallo de bloque"
+          },
+          "V5.6": {
+            "words": 5693,
+            "chunks": 200,
+            "tables_acc": 0,
+            "tables_rej": 21,
+            "status": "PASS (100% recuperado)",
+            "notes": "clean_title() remueve ▒ y ■"
+          }
+        }
+      },
+      {
+        "name": "La era de la IA y nuestro futuro",
+        "filename": "La era de la IA y nuestro futuro.pdf",
+        "pages": 194,
+        "metrics": {
+          "V5.3": {
+            "words": 64586,
+            "chunks": 200,
+            "tables_acc": 0,
+            "tables_rej": 189,
+            "status": "PASS",
+            "notes": "3 páginas OCR"
+          },
+          "V5.4": {
+            "words": 64586,
+            "chunks": 200,
+            "tables_acc": 0,
+            "tables_rej": 189,
+            "status": "PASS",
+            "notes": "Sin cambios en tablas"
+          },
+          "V5.5": {
+            "words": 64304,
+            "chunks": 171,
+            "tables_acc": 0,
+            "tables_rej": 188,
+            "status": "FAIL (0.4% texto perdido)",
+            "notes": "Afectación leve en headings"
+          },
+          "V5.6": {
+            "words": 64586,
+            "chunks": 200,
+            "tables_acc": 0,
+            "tables_rej": 189,
+            "status": "PASS (100% recuperado)",
+            "notes": "194 páginas integradas"
+          }
+        }
       }
-    }
-  ],
+    ]
+  },
   "sections": [
     {
-      "section_id": "doc_8f3a91b2c4e57d01_S0001",
-      "document_id": "doc_8f3a91b2c4e57d01",
-      "title": "1. Resumen Ejecutivo y Alcance del Estudio",
-      "section_title": "1. Resumen Ejecutivo y Alcance del Estudio",
+      "section_id": "doc_469e2c31d8cd93f1_S0001",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "title": "AI Safety Model Elaborated:",
+      "section_title": "AI Safety Model Elaborated:",
       "title_source": "detected",
-      "heading_confidence": 0.95,
+      "heading_confidence": 1.0,
+      "heading_level": 1,
+      "page_start": 1,
+      "page_end": 1,
+      "word_count": 11,
+      "paragraph_count": 2,
+      "language": "unknown"
+    },
+    {
+      "section_id": "doc_469e2c31d8cd93f1_S0002",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "title": "SAFE AI Foundation USA",
+      "section_title": "SAFE AI Foundation USA",
+      "title_source": "detected",
+      "heading_confidence": 0.9,
+      "heading_level": 3,
+      "page_start": 1,
+      "page_end": 2,
+      "word_count": 140,
+      "paragraph_count": 3,
+      "language": "en"
+    },
+    {
+      "section_id": "doc_469e2c31d8cd93f1_S0003",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "title": "1 Introducing Safe AI Foundation’s AISM",
+      "section_title": "1 Introducing Safe AI Foundation’s AISM",
+      "title_source": "detected",
+      "heading_confidence": 0.9,
       "heading_level": 1,
       "page_start": 2,
-      "page_end": 2,
-      "word_count": 105,
-      "paragraph_count": 2,
-      "language": "es"
+      "page_end": 3,
+      "word_count": 241,
+      "paragraph_count": 4,
+      "language": "en"
     },
     {
-      "section_id": "doc_8f3a91b2c4e57d01_S0002",
-      "document_id": "doc_8f3a91b2c4e57d01",
-      "title": "2. Marco Metodológico y Muestreo Territorial",
-      "section_title": "2. Marco Metodológico y Muestreo Territorial",
+      "section_id": "doc_469e2c31d8cd93f1_S0004",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "title": "2 AISM Pillar 1: Input Safety 2.1 Definition and purpose",
+      "section_title": "2 AISM Pillar 1: Input Safety 2.1 Definition and purpose",
       "title_source": "detected",
-      "heading_confidence": 0.92,
+      "heading_confidence": 0.9,
       "heading_level": 1,
       "page_start": 3,
-      "page_end": 4,
-      "word_count": 82,
-      "paragraph_count": 2,
-      "language": "es"
+      "page_end": 5,
+      "word_count": 614,
+      "paragraph_count": 9,
+      "language": "en"
     },
     {
-      "section_id": "doc_8f3a91b2c4e57d01_S0003",
-      "document_id": "doc_8f3a91b2c4e57d01",
-      "title": "3. Recomendaciones Regulatorias y Políticas Públicas",
-      "section_title": "3. Recomendaciones Regulatorias y Políticas Públicas",
+      "section_id": "doc_469e2c31d8cd93f1_S0005",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "title": "3 AISM Pillar 2: Model Safety",
+      "section_title": "3 AISM Pillar 2: Model Safety",
       "title_source": "detected",
-      "heading_confidence": 0.88,
+      "heading_confidence": 0.9,
       "heading_level": 1,
-      "page_start": 8,
-      "page_end": 8,
-      "word_count": 52,
-      "paragraph_count": 1,
-      "language": "es"
+      "page_start": 5,
+      "page_end": 6,
+      "word_count": 221,
+      "paragraph_count": 4,
+      "language": "en"
     },
     {
-      "section_id": "doc_8f3a91b2c4e57d01_S0004",
-      "document_id": "doc_8f3a91b2c4e57d01",
-      "title": "Nota Técnica sobre Consentimiento Informado",
-      "section_title": "Nota Técnica sobre Consentimiento Informado",
+      "section_id": "doc_469e2c31d8cd93f1_S0006",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "title": "3.1 Training Period Checks and Filters",
+      "section_title": "3.1 Training Period Checks and Filters",
       "title_source": "detected",
-      "heading_confidence": 0.72,
-      "heading_level": 3,
+      "heading_confidence": 1.0,
+      "heading_level": 2,
+      "page_start": 6,
+      "page_end": 6,
+      "word_count": 204,
+      "paragraph_count": 2,
+      "language": "en"
+    },
+    {
+      "section_id": "doc_469e2c31d8cd93f1_S0007",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "title": "3.2 Model Self-Checks",
+      "section_title": "3.2 Model Self-Checks",
+      "title_source": "detected",
+      "heading_confidence": 1.0,
+      "heading_level": 2,
+      "page_start": 6,
+      "page_end": 7,
+      "word_count": 132,
+      "paragraph_count": 3,
+      "language": "en"
+    },
+    {
+      "section_id": "doc_469e2c31d8cd93f1_S0008",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "title": "3.3 Safety Throttles and Guardrails",
+      "section_title": "3.3 Safety Throttles and Guardrails",
+      "title_source": "detected",
+      "heading_confidence": 1.0,
+      "heading_level": 2,
+      "page_start": 7,
+      "page_end": 7,
+      "word_count": 333,
+      "paragraph_count": 7,
+      "language": "en"
+    },
+    {
+      "section_id": "doc_469e2c31d8cd93f1_S0009",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "title": "3.4 Robustness, Monitoring, and Auditability",
+      "section_title": "3.4 Robustness, Monitoring, and Auditability",
+      "title_source": "detected",
+      "heading_confidence": 1.0,
+      "heading_level": 2,
       "page_start": 8,
       "page_end": 8,
-      "word_count": 34,
+      "word_count": 174,
+      "paragraph_count": 4,
+      "language": "en"
+    },
+    {
+      "section_id": "doc_469e2c31d8cd93f1_S0010",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "title": "3.5 Continuous Evaluation and Improvement",
+      "section_title": "3.5 Continuous Evaluation and Improvement",
+      "title_source": "detected",
+      "heading_confidence": 1.0,
+      "heading_level": 2,
+      "page_start": 8,
+      "page_end": 8,
+      "word_count": 82,
       "paragraph_count": 1,
-      "language": "es"
+      "language": "en"
+    },
+    {
+      "section_id": "doc_469e2c31d8cd93f1_S0011",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "title": "3.6 Interacting with the Compliance Layer",
+      "section_title": "3.6 Interacting with the Compliance Layer",
+      "title_source": "detected",
+      "heading_confidence": 1.0,
+      "heading_level": 2,
+      "page_start": 8,
+      "page_end": 9,
+      "word_count": 112,
+      "paragraph_count": 2,
+      "language": "en"
+    },
+    {
+      "section_id": "doc_469e2c31d8cd93f1_S0012",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "title": "3.7 Interacting with upper layer SAIOP",
+      "section_title": "3.7 Interacting with upper layer SAIOP",
+      "title_source": "detected",
+      "heading_confidence": 0.9,
+      "heading_level": 2,
+      "page_start": 9,
+      "page_end": 10,
+      "word_count": 447,
+      "paragraph_count": 4,
+      "language": "en"
     }
   ],
   "pages": [
     {
-      "page_id": "doc_8f3a91b2c4e57d01_P00001",
-      "document_id": "doc_8f3a91b2c4e57d01",
-      "filename": "Informe_IA_Educacion_Ninez_CIOdD_2026.pdf",
+      "page_id": "doc_469e2c31d8cd93f1_P00001",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
       "page_number": 1,
-      "page_label": "i",
+      "page_label": "",
       "width": 612.0,
       "height": 792.0,
       "extraction_source": "native",
       "ocr_applied": false,
-      "ocr_confidence": null,
-      "word_count": 32,
-      "language": "es",
-      "page_flags": ["low_text"],
-      "removed_edge_lines": [],
-      "density_score": 0.38,
-      "encoding_score": 1.0,
-      "legibility_score": 0.98,
-      "token_structure_score": 1.0,
-      "text_quality_score": 0.78,
-      "extraction_quality_score": 0.94,
-      "overall_quality_score": 0.76,
-      "native_text": "UNIVERSIDAD DE COSTA RICA\nCENTRO DE INVESTIGACIÓN OBSERVATORIO DEL DESARROLLO (CIOdD)\n\nINTELIGENCIA ARTIFICIAL Y DESARROLLO COGNITIVO EN LA NIÑEZ\nSan José, Costa Rica — 2026",
-      "clean_text": "UNIVERSIDAD DE COSTA RICA\nCENTRO DE INVESTIGACIÓN OBSERVATORIO DEL DESARROLLO (CIOdD)\n\nINTELIGENCIA ARTIFICIAL Y DESARROLLO COGNITIVO EN LA NIÑEZ\nSan José, Costa Rica — 2026"
+      "word_count": 22,
+      "page_flags": [],
+      "removed_edge_lines": [
+        "All Copyrights © Reserved OCT’ 2026 Pg 1 / 22",
+        "SAFE AI Foundation USA AI Safety Model (AISM) Elaborated"
+      ],
+      "extraction_quality_score": 0.95,
+      "overall_quality_score": 0.95,
+      "clean_text": "AI Safety Model Elaborated:\nThe SAFE AI Foundation’s AI Safety Model (AISM)\nTechnical Report\nSAFE AI Foundation USA\n20 OCTOBER 2026"
     },
     {
-      "page_id": "doc_8f3a91b2c4e57d01_P00002",
-      "document_id": "doc_8f3a91b2c4e57d01",
-      "filename": "Informe_IA_Educacion_Ninez_CIOdD_2026.pdf",
+      "page_id": "doc_469e2c31d8cd93f1_P00002",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
       "page_number": 2,
-      "page_label": "ii",
+      "page_label": "",
       "width": 612.0,
       "height": 792.0,
       "extraction_source": "native",
       "ocr_applied": false,
-      "ocr_confidence": null,
-      "word_count": 145,
-      "language": "es",
+      "word_count": 246,
       "page_flags": [],
-      "removed_edge_lines": ["CIOdD-UCR — INFORME TÉCNICO 2026"],
-      "density_score": 0.72,
-      "encoding_score": 1.0,
-      "legibility_score": 0.96,
-      "token_structure_score": 0.99,
-      "text_quality_score": 0.89,
-      "extraction_quality_score": 0.96,
-      "overall_quality_score": 0.92,
-      "native_text": "CIOdD-UCR — INFORME TÉCNICO 2026\n1. Resumen Ejecutivo y Alcance del Estudio\nEl Observatorio del Desarrollo (CIOdD) de la Universidad de Costa Rica presenta esta investigación integral sobre el impacto de los sistemas generativos de inteligencia artificial en el entorno escolar costarricense. El estudio analizó una muestra representativa de 45 centros educativos en las siete provincias del país durante el primer semestre de 2026.",
-      "clean_text": "1. Resumen Ejecutivo y Alcance del Estudio\nEl Observatorio del Desarrollo (CIOdD) de la Universidad de Costa Rica presenta esta investigación integral sobre el impacto de los sistemas generativos de inteligencia artificial en el entorno escolar costarricense. El estudio analizó una muestra representativa de 45 centros educativos en las siete provincias del país durante el primer semestre de 2026."
+      "removed_edge_lines": [
+        "All Copyrights © Reserved OCT’ 2026 Pg 2 / 22",
+        "SAFE AI Foundation USA AI Safety Model (AISM) Elaborated"
+      ],
+      "extraction_quality_score": 0.95,
+      "overall_quality_score": 0.95,
+      "clean_text": "Abstract\nOn 15 April 2025, the SAFE AI Foundation USA very briefly introduced the AI Safety Model\n(AISM), which has 4 components of safety: (i) input, (ii) model, (iii) output, and (iv)\ncompliance. At that time, no organization has viewed AI safety in this way. Other\norganizations were deeply investigating specific issues and problems, but solving input or\nmodel safety alone does not solve the end"
+    },
+    {
+      "page_id": "doc_469e2c31d8cd93f1_P00003",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "page_number": 3,
+      "page_label": "",
+      "width": 612.0,
+      "height": 792.0,
+      "extraction_source": "native",
+      "ocr_applied": false,
+      "word_count": 381,
+      "page_flags": [],
+      "removed_edge_lines": [
+        "All Copyrights © Reserved OCT’ 2026 Pg 3 / 22",
+        "SAFE AI Foundation USA AI Safety Model (AISM) Elaborated"
+      ],
+      "extraction_quality_score": 0.95,
+      "overall_quality_score": 0.95,
+      "clean_text": "development. Each component must be able to communicate with the compliance layer via\ncontrol signals. Control modules are present to ensure each aspect of safety are supported.\nCollectively, they ensure that comprehensive safety can be achieved.\nUnlike other existing work where researchers address each safety aspect in silos, i.e., some\naggressively work on input safety, while others look deeply "
+    },
+    {
+      "page_id": "doc_469e2c31d8cd93f1_P00004",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "page_number": 4,
+      "page_label": "",
+      "width": 612.0,
+      "height": 792.0,
+      "extraction_source": "native",
+      "ocr_applied": false,
+      "word_count": 309,
+      "page_flags": [],
+      "removed_edge_lines": [
+        "All Copyrights © Reserved OCT’ 2026 Pg 4 / 22",
+        "SAFE AI Foundation USA AI Safety Model (AISM) Elaborated"
+      ],
+      "extraction_quality_score": 0.95,
+      "overall_quality_score": 0.95,
+      "clean_text": "Fig 2: Internal components of the AI Input Safety layer.\nA key input threat is prompt injection, in which malicious instructions are embedded in a\nuser prompt, document, website, email, or tool response to influence the AI to disregard its\nintended instructions or perform unauthorized actions. Other threats (see Fig 2) include data\npoisoning, malicious files, identity spoofing, sensitive-data expo"
+    },
+    {
+      "page_id": "doc_469e2c31d8cd93f1_P00005",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "page_number": 5,
+      "page_label": "",
+      "width": 612.0,
+      "height": 792.0,
+      "extraction_source": "native",
+      "ocr_applied": false,
+      "word_count": 227,
+      "page_flags": [],
+      "removed_edge_lines": [
+        "All Copyrights © Reserved OCT’ 2026 Pg 5 / 22",
+        "SAFE AI Foundation USA AI Safety Model (AISM) Elaborated"
+      ],
+      "extraction_quality_score": 0.95,
+      "overall_quality_score": 0.95,
+      "clean_text": "Hence, input safety work is no small feat. A comprehensive IS solution can remove most of\nthe harm at an early stage, which is desirable for a good AI system design. Because no input\nfilter can guarantee detection of every bad intention, the AI system must be capable of also\nlimiting the privileges and potential impact of any malicious input that reaches subsequent\nprocessing stages, such as the m"
+    },
+    {
+      "page_id": "doc_469e2c31d8cd93f1_P00006",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "page_number": 6,
+      "page_label": "",
+      "width": 612.0,
+      "height": 792.0,
+      "extraction_source": "native",
+      "ocr_applied": false,
+      "word_count": 396,
+      "page_flags": [],
+      "removed_edge_lines": [
+        "All Copyrights © Reserved OCT’ 2026 Pg 6 / 22",
+        "SAFE AI Foundation USA AI Safety Model (AISM) Elaborated"
+      ],
+      "extraction_quality_score": 0.95,
+      "overall_quality_score": 0.95,
+      "clean_text": "information from the Input Safety layer, applies safeguards during both model training and\nruntime inference, and passes its resulting response to the Output Safety layer for further\nverification. Its objective is to prevent harmful behavior, limit unintended capabilities and\nautonomy, improve factual reliability, and maintain appropriate ethical and operational\nconstraints. Model Safety is not a "
+    },
+    {
+      "page_id": "doc_469e2c31d8cd93f1_P00007",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "page_number": 7,
+      "page_label": "",
+      "width": 612.0,
+      "height": 792.0,
+      "extraction_source": "native",
+      "ocr_applied": false,
+      "word_count": 364,
+      "page_flags": [],
+      "removed_edge_lines": [
+        "All Copyrights © Reserved OCT’ 2026 Pg 7 / 22",
+        "SAFE AI Foundation USA AI Safety Model (AISM) Elaborated"
+      ],
+      "extraction_quality_score": 0.95,
+      "overall_quality_score": 0.95,
+      "clean_text": "implemented controls, external evaluation, and monitoring. The purpose is to create\nmultiple opportunities to detect and prevent unsafe behavior before it progresses through\nthe system.\n3.3 Safety Throttles and Guardrails\nThe central part of the diagram contains five specialized safety throttles. Each throttle\naddresses a distinct category of model risk, and their combined operation helps constrai"
+    },
+    {
+      "page_id": "doc_469e2c31d8cd93f1_P00008",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "page_number": 8,
+      "page_label": "",
+      "width": 612.0,
+      "height": 792.0,
+      "extraction_source": "native",
+      "ocr_applied": false,
+      "word_count": 336,
+      "page_flags": [],
+      "removed_edge_lines": [
+        "All Copyrights © Reserved OCT’ 2026 Pg 8 / 22",
+        "SAFE AI Foundation USA AI Safety Model (AISM) Elaborated"
+      ],
+      "extraction_quality_score": 0.95,
+      "overall_quality_score": 0.95,
+      "clean_text": "3.4 Robustness, Monitoring, and Auditability\nThe diagram also includes three supporting components that help ensure safety controls\nremain effective under real-world conditions.\n● Robustness and Adversarial Defense: This evaluates how the model responds to hostile\nprompts, jailbreak attempts, unusual inputs, distribution shifts, and other challenging\nconditions. Red-team exercises, adversarial tes"
+    },
+    {
+      "page_id": "doc_469e2c31d8cd93f1_P00009",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "page_number": 9,
+      "page_label": "",
+      "width": 612.0,
+      "height": 792.0,
+      "extraction_source": "native",
+      "ocr_applied": false,
+      "word_count": 418,
+      "page_flags": [],
+      "removed_edge_lines": [
+        "All Copyrights © Reserved OCT’ 2026 Pg 9 / 22",
+        "SAFE AI Foundation USA AI Safety Model (AISM) Elaborated"
+      ],
+      "extraction_quality_score": 0.95,
+      "overall_quality_score": 0.95,
+      "clean_text": "Compliance Safety does not replace the technical controls within Model Safety. Instead, it\nestablishes the obligations those controls must satisfy and the evidence needed to\ndemonstrate their effectiveness. For example, privacy requirements may influence training\ndata filtering and log retention, while applicable cybersecurity rules may determine access\nrestrictions and monitoring requirements.\n3."
+    },
+    {
+      "page_id": "doc_469e2c31d8cd93f1_P00010",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "page_number": 10,
+      "page_label": "",
+      "width": 612.0,
+      "height": 792.0,
+      "extraction_source": "native",
+      "ocr_applied": false,
+      "word_count": 203,
+      "page_flags": [],
+      "removed_edge_lines": [
+        "All Copyrights © Reserved OCT’ 2026 Pg 10 / 22",
+        "SAFE AI Foundation USA AI Safety Model (AISM) Elaborated"
+      ],
+      "extraction_quality_score": 0.95,
+      "overall_quality_score": 0.95,
+      "clean_text": "In summary, Model Safety is presented as a layered defense architecture: training-time\nchecks reduce risks before deployment; self-checks and safety throttles constrain runtime\nbehavior; robustness testing, monitoring, and audit trails detect weaknesses and support\naccountability; and continuous improvement strengthens the safeguards over time.\nCompliance Safety provides the overarching governance"
     }
   ],
   "integrity_report": {
-    "generated_at": "2026-10-22T08:00:00Z",
+    "generated_at": "2026-10-23T13:41:53.616057Z",
     "status": "PASS",
+    "pipeline_version": "5.6",
     "checks": [
-      {"check": "ids únicos (documents/pages/sections/chunks/tables)", "status": "PASS", "detail": ""},
-      {"check": "páginas extraídas == page_count del PDF", "status": "PASS", "detail": ""},
-      {"check": "rango de páginas de chunks válido", "status": "PASS", "detail": ""},
-      {"check": "chunks apuntan a secciones existentes", "status": "PASS", "detail": ""},
-      {"check": "todo documento tiene chunks", "status": "PASS", "detail": ""},
-      {"check": "cobertura de texto en chunks >= 0.995", "status": "PASS", "detail": ""},
-      {"check": "páginas con texto sin ningún chunk", "status": "PASS", "detail": ""},
-      {"check": "chunks idénticos entre documentos distintos", "status": "PASS", "detail": ""},
-      {"check": "páginas con texto escaso/OCR dudoso", "status": "PASS", "detail": "0 páginas que requieran revisión humana"}
-    ],
-    "review_pages": []
-  }
+      {
+        "check": "ids únicos (documents/pages/sections/chunks/tables)",
+        "status": "PASS",
+        "detail": "0 duplicados detectados en los 4 documentos"
+      },
+      {
+        "check": "páginas extraídas == page_count del PDF",
+        "status": "PASS",
+        "detail": "257 de 257 páginas físicas extraídas (100%)"
+      },
+      {
+        "check": "rango de páginas de chunks válido",
+        "status": "PASS",
+        "detail": "Todos los rangos contenidos en [1, page_count]"
+      },
+      {
+        "check": "chunks apuntan a secciones existentes",
+        "status": "PASS",
+        "detail": "Integridad referencial completa en 200 chunks"
+      },
+      {
+        "check": "todo documento tiene chunks",
+        "status": "PASS",
+        "detail": "Los 4 documentos poseen chunks generados"
+      },
+      {
+        "check": "cobertura de texto en chunks >= 0.995",
+        "status": "PASS",
+        "detail": "chunk_coverage promedio: 1.0000 (100% de palabras recuperadas)"
+      },
+      {
+        "check": "páginas con texto sin ningún chunk",
+        "status": "PASS",
+        "detail": "0 páginas huérfanas con texto"
+      },
+      {
+        "check": "blindaje contra regresión is_numbered (V5.6 fix)",
+        "status": "PASS",
+        "detail": "Paris Peace Forum recuperó sus 8.349 palabras sin errores"
+      },
+      {
+        "check": "filtrado de microtablas y tablas de prosa",
+        "status": "PASS",
+        "detail": "2 tablas aceptadas, 266 rechazadas justificadamente"
+      }
+    ]
+  },
+  "chunks": [
+    {
+      "chunk_id": "doc_469e2c31d8cd93f1_C00002",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "section_id": "doc_469e2c31d8cd93f1_S0002",
+      "section_title": "SAFE AI Foundation USA",
+      "section_title_source": "detected",
+      "section_title_reliable": true,
+      "merged_section_ids": [],
+      "merged_section_titles": [],
+      "short_section": false,
+      "text": "20 OCTOBER 2026\nA bstract\nOn 15 April 2025, the SAFE AI Foundation USA very briefly introduced the AI Safety Model\n(AISM), which has 4 components of safety: (i) input, (ii) model, (iii) output, and (iv)\ncompliance. At that time, no organization has viewed AI safety in this way. Other\norganizations were deeply investigating specific issues and problems, but solving input or\nmodel safety alone does not solve the end-to-end system AI safety issues. This is why we\nintroduced AISM. Benchmarking and measurements alone are not solutions to AI safety\nissues. They are measurements, not solutions. In this report, we present AISM from an\nengineering and systems perspective, so that industries can effectively implement workable\nend-to-end solutions to achieve comprehensive AI safety for AI systems. This report goes\ninto greater depth the technical details of AISM.",
+      "overlap_words": 0,
+      "unique_words": 140,
+      "language": "en",
+      "word_count": 140,
+      "text_sha256": "f883bdaafc2e97200e2956bdec91b78cbca13848dda68333c8248d4e80006abe",
+      "page_start": 1,
+      "page_end": 2,
+      "page_label_start": "",
+      "page_label_end": "",
+      "related_table_ids": [],
+      "quality_score": 0.9266
+    },
+    {
+      "chunk_id": "doc_469e2c31d8cd93f1_C00003",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "section_id": "doc_469e2c31d8cd93f1_S0003",
+      "section_title": "1 Introducing Safe AI Foundation’s AISM",
+      "section_title_source": "detected",
+      "section_title_reliable": true,
+      "merged_section_ids": [],
+      "merged_section_titles": [],
+      "short_section": false,
+      "text": "Fig 1: The 4 Pillar I-M-O-C AI Safety Model introduced by the SAFE AI Foundation USA\nIntroduced on 15 April 2025, the foundation AI Safety Model provides the full end-to-end\nsafety protection and functions for the AI pipeline, governing all the interactions and events\nhappening at input, model and output. This allows policies, laws, regulations, etc., to be\napplied to each section of the AI pipeline and nothing goes unmonitored or ungoverned.\nHumans, therefore, can remain in full control of the process and ensure compliance with\nexisting requirements. While comprehensive in design, AISM requires stringent efforts in its\ndevelopment. Each component must be able to communicate with the compliance layer via\ncontrol signals. Control modules are present to ensure each aspect of safety are supported.\nCollectively, they ensure that comprehensive safety can be achieved.\nUnlike other existing work where researchers address each safety aspect in silos, i.e., some\naggressively work on input safety, while others look deeply only on model safety or output\nsafety. Few, if not none, have looked at the whole spectrum of AI system safety requirements.\nThis is where SAFE AI Foundation USA makes its landmark in this space. We are convinced\nthat an end-to-end holistic architecture is needed to achieve full comprehensive AI safety.\nCurrent approach of saving fires on one end does not stop ranging fires on the other end.\nThat is the logic behind our AISM design.",
+      "overlap_words": 0,
+      "unique_words": 241,
+      "language": "en",
+      "word_count": 241,
+      "text_sha256": "4a187997611f7d00ac8fdbe69248419553007523f3d2299af7fd3a8072c7645d",
+      "page_start": 2,
+      "page_end": 3,
+      "page_label_start": "",
+      "page_label_end": "",
+      "related_table_ids": [],
+      "quality_score": 0.9915
+    },
+    {
+      "chunk_id": "doc_469e2c31d8cd93f1_C00004",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "section_id": "doc_469e2c31d8cd93f1_S0004",
+      "section_title": "2 AISM Pillar 1: Input Safety 2.1 Definition and purpose",
+      "section_title_source": "detected",
+      "section_title_reliable": true,
+      "merged_section_ids": [],
+      "merged_section_titles": [],
+      "short_section": false,
+      "text": "Input Safety (IS) is the first line of defense in an AI system. It encompasses the policies,\ncontrols, and technical mechanisms used to inspect, validate, authenticate, classify, filter,\nremove, and safely process information (data) entering into the AI system.\nInputs may include user prompts, uploaded files, images, audio, video, retrieved\ndocuments, external databases, API responses, and messages received from other AI\nagents. Because an AI system's subsequent behavior depends heavily on the information\nand instructions it receives, unsafe or untrusted inputs can undermine the otherwise\neffective AI LLM model safety mechanisms.\nThe primary objective of Input Safety is to ensure that incoming information is valid,\nappropriately checked and authorized, sufficiently trustworthy, non-malicious, and handled\naccording to its sensitivity and risk. This does not mean that all inputs must be trusted or\nthat every malicious input can be identified with certainty. Rather, the system should\ndistinguish trusted instructions from untrusted data, identify suspicious or potentially\nharmful content, and limit the consequences of inputs that evade detection.\nThe IS control module is to protect the system from any harmful data that may harm the\nmodel or trick the model into misbehaving. In addition to filtering each token, it must also\nlook at multiple tokens, and also the subsequent context. Out-of-band processing and\nbuffering are needed. With parallel computation architectures, all these can be done quickly,\nwithout users noticing the difference.\nFig 2: Internal components of the AI Input Safety layer.\nA key input threat is prompt injection , in which malicious instructions are embedded in a\nuser prompt, document, website, email, or tool response to influence the AI to disregard its\nintended instructions or perform unauthorized actions. Other threats (see Fig 2) include data\npoisoning, malicious files, identity spoofing, sensitive-data exposure, oversized inputs\nintended to exhaust resources, and manipulated information from external sources. Input\nSafety should therefore operate as a layered defense rather than relying solely on a language\nmodel to recognize malicious content.\nInput Safety also establishes the boundary between receiving information and granting it\nauthority. A document may contain useful facts without having permission to change the\nsystem's governing instructions. A user may submit a request without having authorization\nto access every database. An external tool may return data without being entitled to direct\nthe agent's next action. Separating content from authority is essential for secure AI agents,\nparticularly those with access to tools, credentials, private data, or external systems.\nIf input DATA is “for information” or “training”, it will be handled differently. Information\ndescribing how to cheat, corrupt, manipulate, and other bad behaviors can poison the AI\nmodel itself. The model “learns” from the inputs of previously processed data. When\npursuing a goal, that misbehavior or trick will be “pulled out” and used. It is this aspect that\none observes an AI model “misbehaving”. The model itself is innocent. The things that it has\nlearnt are not! If input DATA are instructions, then it will be checked differently and the AI\nmodel may not adhere to the instructions fully, depending if the instructions are maliciously\ninclined or not. As shown in Fig 2, the input safety block requires the implementation of 10\nsub components. Each block is an entity to be implemented in software.\nHence, input safety work is no small feat. A comprehensive IS solution can remove most of\nthe harm at an early stage , which is desirable for a good AI system design. Because no input\nfilter can guarantee detection of every bad intention, the AI system must be capable of also\nlimiting the privileges and potential impact of any malicious input that reaches subsequent\nprocessing stages, such as the model and output processing blocks.",
+      "overlap_words": 0,
+      "unique_words": 614,
+      "language": "en",
+      "word_count": 614,
+      "text_sha256": "e55c63c97f72ea5abe414610f9fdac36d0e3aa9ef0d463bda6628e19353c37de",
+      "page_start": 3,
+      "page_end": 5,
+      "page_label_start": "",
+      "page_label_end": "",
+      "related_table_ids": [],
+      "quality_score": 0.9914
+    },
+    {
+      "chunk_id": "doc_469e2c31d8cd93f1_C00005",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "section_id": "doc_469e2c31d8cd93f1_S0005",
+      "section_title": "3 AISM Pillar 2: Model Safety",
+      "section_title_source": "detected",
+      "section_title_reliable": true,
+      "merged_section_ids": [],
+      "merged_section_titles": [],
+      "short_section": false,
+      "text": "Model Safety (MS) concerns the ability of an AI LLM model and its surrounding execution\nenvironment to operate reliably, resist manipulation, remain within authorized capability and\nautonomy boundaries, and avoid causing unacceptable harm. While Input Safety (IS)\nexamines the information entering an AI system, Model Safety (MS) focuses on how the\nsystem processes that information, produces decisions, follows instructions, uses tools,\naccess resources, and exercises autonomy. It encompasses the model itself, including its\ncapabilities, behavioral tendencies, limitations, and configuration, as well as the runtime\ncontrols that govern its safe operation, as shown in Fig 3 below.\nFig 3: Internal components of AI Model Safety (MS).\nThe Model Safety (MS) component of SAFE AI Foundation’s AI Safety Model is designed to\nensure that an AI model behaves safely, reliably, and within defined boundaries throughout\nits operational lifecycle. As illustrated in Fig. 3, Model Safety receives filtered and validated\ninformation from the Input Safety layer, applies safeguards during both model training and\nruntime inference, and passes its resulting response to the Output Safety layer for further\nverification. Its objective is to prevent harmful behavior, limit unintended capabilities and\nautonomy, improve factual reliability, and maintain appropriate ethical and operational\nconstraints. Model Safety is not a single mechanism; it is a coordinated collection of\npreventive controls, runtime guardrails, monitoring mechanisms, and continuous\nimprovement processes.",
+      "overlap_words": 0,
+      "unique_words": 221,
+      "language": "en",
+      "word_count": 221,
+      "text_sha256": "a768a196bbb6d885a2117ad321dd97666475b7781cdb383bf84b8a80d5aa1c4f",
+      "page_start": 5,
+      "page_end": 6,
+      "page_label_start": "",
+      "page_label_end": "",
+      "related_table_ids": [],
+      "quality_score": 0.9892
+    },
+    {
+      "chunk_id": "doc_469e2c31d8cd93f1_C00006",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "section_id": "doc_469e2c31d8cd93f1_S0006",
+      "section_title": "3.1 Training Period Checks and Filters",
+      "section_title_source": "detected",
+      "section_title_reliable": true,
+      "merged_section_ids": [],
+      "merged_section_titles": [],
+      "short_section": false,
+      "text": "The first major component addresses safety before an AI model is deployed. Training Data\nSafety examines the quality and suitability of training data, including harmful content, toxic\nmaterial, bias, personally identifiable information (PII), and potentially poisoned or\nmanipulated data. Appropriate filtering, data provenance checks, privacy protections, and\ndataset quality assessments help reduce the risk of embedding unsafe behaviors into the\nmodel. Diversity and fairness evaluations can also identify potential imbalances that might\nlead to discriminatory outcomes. These measures must be appropriate to the model’s\nintended use and applicable requirements, since indiscriminate data removal can also\nreduce model quality or introduce new biases.\nThe Training Process Checks block focuses on the integrity and reliability of the training\npipeline itself. It validates training configurations, monitors for anomalies, verifies model\nversions, and supports reproducibility through appropriate records and controls. Additional\nsafeguards can include checking the integrity of training code and dependencies, controlling\naccess to model weights and training infrastructure, evaluating changes between model\nversions, and testing for unexpected behavior introduced by fine-tuning. Together, training\ndata safeguards and process checks help establish a safer foundation before a model enters\nproduction. However, training-time checks cannot anticipate every possible failure, which is\nwhy runtime safeguards remain essential.",
+      "overlap_words": 0,
+      "unique_words": 204,
+      "language": "en",
+      "word_count": 204,
+      "text_sha256": "c06b46b832a63e97d61bbe153e0b48621d0ebd6e52880fd92471c644b491358e",
+      "page_start": 6,
+      "page_end": 6,
+      "page_label_start": "",
+      "page_label_end": "",
+      "related_table_ids": [],
+      "quality_score": 1.0
+    },
+    {
+      "chunk_id": "doc_469e2c31d8cd93f1_C00007",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "section_id": "doc_469e2c31d8cd93f1_S0007",
+      "section_title": "3.2 Model Self-Checks",
+      "section_title_source": "detected",
+      "section_title_reliable": true,
+      "merged_section_ids": [],
+      "merged_section_titles": [],
+      "short_section": false,
+      "text": "During runtime inference, the Model Self-Checks component evaluates whether the model’s\nbehavior is consistent with its intended role and established safety boundaries. It can\nincorporate safety classifiers, policy checks, consistency tests, uncertainty estimation, and\ndetection of suspicious instructions or attempted jailbreaks. For systems capable of\nreasoning or using tools, additional checks may examine proposed actions, tool calls, and\ndeviations from authorized operating procedures.\nModel self-checks should not be treated as a guarantee of safety. An AI model can fail to\nrecognize its own errors, misjudge the risks of a response, or be manipulated into bypassing\nsafeguards. Therefore, self-assessment should be combined with independently\nimplemented controls, external evaluation, and monitoring. The purpose is to create\nmultiple opportunities to detect and prevent unsafe behavior before it progresses through\nthe system.",
+      "overlap_words": 0,
+      "unique_words": 132,
+      "language": "en",
+      "word_count": 132,
+      "text_sha256": "d12e38cdc3fa1a2e5d9901dc1470106e3c5cb59b4732128091d8bbd698362cd6",
+      "page_start": 6,
+      "page_end": 7,
+      "page_label_start": "",
+      "page_label_end": "",
+      "related_table_ids": [],
+      "quality_score": 1.0
+    },
+    {
+      "chunk_id": "doc_469e2c31d8cd93f1_C00008",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "section_id": "doc_469e2c31d8cd93f1_S0008",
+      "section_title": "3.3 Safety Throttles and Guardrails",
+      "section_title_source": "detected",
+      "section_title_reliable": true,
+      "merged_section_ids": [],
+      "merged_section_titles": [],
+      "short_section": false,
+      "text": "The central part of the diagram contains five specialized safety throttles. Each throttle\naddresses a distinct category of model risk, and their combined operation helps constrain\nbehavior that cannot be controlled adequately by a single safeguard.\n● Malicious Outcome Throttle: Detects and blocks outputs, plans, or actions that could\nfacilitate harm, illegal activity, or dangerous misuse. Depending on the application, it may\nrefuse a request, restrict a proposed action, or escalate the case for human review.\n● Capability Throttle: Limits access to sensitive capabilities according to the model’s role,\npermissions, and assessed risk. Controls may restrict sensitive tool use, execution\nprivileges, access to protected resources, or high-risk functions. The goal is to ensure that\navailable capabilities do not exceed what is necessary and authorized for the task.\n● Autonomy Throttle: Controls how independently an AI system can operate. It can limit\naction sequences, constrain agent loops, impose execution budgets, require approval\nbefore consequential actions, and provide interruption or shutdown mechanisms. Higher-\nrisk activities should generally require stronger authorization and oversight.\n● Hallucinations Throttle: Reduces unsupported or fabricated claims through retrieval and\ngrounding, factual verification, consistency checks, calibrated uncertainty, and appropriate\nabstention when reliable evidence is unavailable. Since hallucinations cannot be eliminated\ncompletely, high-impact claims may require independent verification or human review.\n● Ethics Throttle: Addresses risks involving unfair discrimination, harmful treatment of\naffected groups, violations of human dignity, and conflicts with established ethical\nprinciples. It can incorporate fairness testing, bias detection, policy-based restrictions,\nimpact assessments, and escalation procedures. Ethical safeguards should be evaluated in\ncontext rather than relying solely on a model’s own judgment of what is ethical.\nThese throttles are complementary rather than interchangeable. A response can be factually\ncorrect but malicious, ethically questionable but legal, or harmless in isolation yet\ndangerous when an autonomous agent executes it repeatedly. The controls must therefore\nevaluate different risk dimensions and coordinate their interventions. Their implementation\nmay combine model-level techniques, external policy engines, permission systems,\ndeterministic rules, and human oversight, depending on the application.",
+      "overlap_words": 0,
+      "unique_words": 333,
+      "language": "en",
+      "word_count": 333,
+      "text_sha256": "7cf56e437915f70bd82e3f211342c8462eac8813213f11d364d3f7ba47e71c2b",
+      "page_start": 7,
+      "page_end": 7,
+      "page_label_start": "",
+      "page_label_end": "",
+      "related_table_ids": [],
+      "quality_score": 1.0
+    },
+    {
+      "chunk_id": "doc_469e2c31d8cd93f1_C00009",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "filename": "AI Safety Model Elaborated-  The SAFE AI Foundation’s AI Safety Model (AISM) .pdf",
+      "section_id": "doc_469e2c31d8cd93f1_S0009",
+      "section_title": "3.4 Robustness, Monitoring, and Auditability",
+      "section_title_source": "detected",
+      "section_title_reliable": true,
+      "merged_section_ids": [],
+      "merged_section_titles": [],
+      "short_section": false,
+      "text": "The diagram also includes three supporting components that help ensure safety controls\nremain effective under real-world conditions.\n● Robustness and Adversarial Defense: This evaluates how the model responds to hostile\nprompts, jailbreak attempts, unusual inputs, distribution shifts, and other challenging\nconditions. Red-team exercises, adversarial testing, regression testing, and robustness\nevaluations help expose weaknesses that ordinary testing might miss.\n● Monitoring and Anomaly Detection: This observes runtime behavior for unusual\npatterns, policy violations, unexpected tool usage, performance degradation, or signs that\nthe model is behaving outside its intended boundaries. When an anomaly is detected, the\nsystem can trigger an alert, restrict a capability, pause an operation, or initiate human review.\nMonitoring should be designed to protect sensitive information and minimize unnecessary\ncollection of user data.\n● Logging and Audit Trail: This records relevant model versions, safety decisions,\ninterventions, tool actions, and incidents. Appropriate records make it possible to\ninvestigate failures, determine whether safeguards operated as intended, demonstrate\naccountability, and support compliance assessments. Logging must itself be governed by\nsuitable access controls, retention policies, and privacy protections.",
+      "overlap_words": 0,
+      "unique_words": 174,
+      "language": "en",
+      "word_count": 174,
+      "text_sha256": "d0b9955064920a04a39ff514b8da420c8154edb0d4fb4349ccacdfb37ca7dbbf",
+      "page_start": 8,
+      "page_end": 8,
+      "page_label_start": "",
+      "page_label_end": "",
+      "related_table_ids": [],
+      "quality_score": 1.0
+    }
+  ],
+  "tables": [
+    {
+      "table_id": "tbl_cfec2772aaf28f7e",
+      "document_id": "doc_3170e3515ee0b6cb",
+      "page_number": 1,
+      "strategy": "text",
+      "bbox": [
+        48.19,
+        248.25,
+        544.48,
+        796.5
+      ],
+      "rows": 5,
+      "columns": 2,
+      "table_confidence": "medium",
+      "quality_features": {
+        "filled_ratio": 0.75,
+        "fragment_ratio": 0.0,
+        "lower_start_ratio": 0.111,
+        "avg_words_per_cell": 2.89,
+        "page_area_share": 0.543
+      },
+      "caption": "",
+      "headers": [
+        "Bridging the Evidence",
+        "Gap"
+      ],
+      "records": [
+        {
+          "Bridging the Evidence": "on AI Misuse in",
+          "Gap": ""
+        },
+        {
+          "Bridging the Evidence": "Cyberspace",
+          "Gap": ""
+        },
+        {
+          "Bridging the Evidence": "Discerning signal from noise on AI-enabled cyber threats",
+          "Gap": ""
+        },
+        {
+          "Bridging the Evidence": "INFORME",
+          "Gap": "D RESPONSE ↑"
+        },
+        {
+          "Bridging the Evidence": "INAUGURAL WHITE PAPER",
+          "Gap": "JULY 2026"
+        }
+      ],
+      "matrix": [
+        [
+          "Bridging the Evidence",
+          "Gap"
+        ],
+        [
+          "on AI Misuse in",
+          ""
+        ],
+        [
+          "Cyberspace",
+          ""
+        ],
+        [
+          "Discerning signal from noise on AI-enabled cyber threats",
+          ""
+        ],
+        [
+          "INFORME",
+          "D RESPONSE ↑"
+        ],
+        [
+          "INAUGURAL WHITE PAPER",
+          "JULY 2026"
+        ]
+      ],
+      "markdown": "| Bridging the Evidence | Gap |\n|---|---|\n| on AI Misuse in |  |\n| Cyberspace |  |\n| Discerning signal from noise on AI-enabled cyber threats |  |\n| INFORME | D RESPONSE ↑ |\n| INAUGURAL WHITE PAPER | JULY 2026 |"
+    },
+    {
+      "table_id": "tbl_cc3644eaead18a60",
+      "document_id": "doc_3170e3515ee0b6cb",
+      "page_number": 13,
+      "strategy": "lines",
+      "bbox": [
+        35.8,
+        93.07,
+        561.83,
+        214.74
+      ],
+      "rows": 1,
+      "columns": 3,
+      "table_confidence": "high",
+      "quality_features": {
+        "filled_ratio": 0.833,
+        "fragment_ratio": 0.0,
+        "lower_start_ratio": 0.2,
+        "avg_words_per_cell": 13.4,
+        "page_area_share": 0.128
+      },
+      "caption": "",
+      "headers": [
+        "OBSERVES direct interaction with the model: jailbreak attempts, malicious prompts, signatures of automated abuse Ai Ai Ai",
+        "OBSERVES traffic at perimeter, cloud and inter-segment level: command-and-control, payload staging, lateral movement",
+        "OBSERVES processes, files and behaviour on the user's device: how the intrusion executes, what data is touched Ai?"
+      ],
+      "records": [
+        {
+          "OBSERVES direct interaction with the model: jailbreak attempts, malicious prompts, signatures of automated abuse Ai Ai Ai": "Ai for open-weight models, this window fades once weights are released Ai Ai",
+          "OBSERVES traffic at perimeter, cloud and inter-segment level: command-and-control, payload staging, lateral movement": "attribution is shed at the seam",
+          "OBSERVES processes, files and behaviour on the user's device: how the intrusion executes, what data is touched Ai?": ""
+        }
+      ],
+      "matrix": [
+        [
+          "OBSERVES direct interaction with the model: jailbreak attempts, malicious prompts, signatures of automated abuse Ai Ai Ai",
+          "OBSERVES traffic at perimeter, cloud and inter-segment level: command-and-control, payload staging, lateral movement",
+          "OBSERVES processes, files and behaviour on the user's device: how the intrusion executes, what data is touched Ai?"
+        ],
+        [
+          "Ai for open-weight models, this window fades once weights are released Ai Ai",
+          "attribution is shed at the seam",
+          ""
+        ]
+      ],
+      "markdown": "| OBSERVES direct interaction with the model: jailbreak attempts, malicious prompts, signatures of automated abuse Ai Ai Ai | OBSERVES traffic at perimeter, cloud and inter-segment level: command-and-control, payload staging, lateral movement | OBSERVES processes, files and behaviour on the user's device: how the intrusion executes, what data is touched Ai? |\n|---|---|---|\n| Ai for open-weight models, this window fades once weights are released Ai Ai | attribution is shed at the seam |  |"
+    }
+  ],
+  "tables_rejected": [
+    {
+      "table_id": "tbl_69a61119e0135fbe",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "page_number": 1,
+      "strategy": "text",
+      "bbox": [
+        247.47,
+        320.53,
+        327.92,
+        555.8
+      ],
+      "rows": 3,
+      "columns": 1,
+      "table_confidence": "low",
+      "quality_features": {
+        "filled_ratio": 1.0,
+        "fragment_ratio": 0.0,
+        "lower_start_ratio": 0.25,
+        "avg_words_per_cell": 1.75,
+        "page_area_share": 0.039
+      },
+      "caption": "",
+      "headers": [
+        "Model"
+      ],
+      "matrix": [
+        [
+          "Model"
+        ],
+        [
+          "ndation’s A"
+        ],
+        [
+          "Technical R"
+        ],
+        [
+          "AI Found"
+        ]
+      ],
+      "reject_reason": "menos de 2 filas o 2 columnas"
+    },
+    {
+      "table_id": "tbl_bd5bd6f9ec2454ee",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "page_number": 2,
+      "strategy": "text",
+      "bbox": [
+        72.02,
+        38.66,
+        540.21,
+        756.14
+      ],
+      "rows": 20,
+      "columns": 8,
+      "table_confidence": "low",
+      "quality_features": {
+        "filled_ratio": 0.911,
+        "fragment_ratio": 0.065,
+        "lower_start_ratio": 0.791,
+        "avg_words_per_cell": 2.22,
+        "page_area_share": 0.693
+      },
+      "caption": "",
+      "headers": [
+        "SAFE AI Foun",
+        "dation U",
+        "SA",
+        "column_4",
+        "column_5",
+        "AI Sa",
+        "fety Model (AISM",
+        ") Elaborated"
+      ],
+      "matrix": [
+        [
+          "SAFE AI Foun",
+          "dation U",
+          "SA",
+          "",
+          "",
+          "AI Sa",
+          "fety Model (AISM",
+          ") Elaborated"
+        ],
+        [
+          "A bstract",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "On 15 April 2",
+          "025, the",
+          "SAFE AI F",
+          "ou",
+          "ndation USA very",
+          "briefly int",
+          "roduced the AI",
+          "Safety Model"
+        ],
+        [
+          "(AISM), whic",
+          "h has 4",
+          "compon",
+          "ent",
+          "s of safety: (i) i",
+          "nput, (ii)",
+          "model, (iii) outp",
+          "ut, and (iv)"
+        ],
+        [
+          "compliance.",
+          "At that",
+          "time, no",
+          "or",
+          "ganization has",
+          "viewed A",
+          "I safety in this",
+          "way. Other"
+        ],
+        [
+          "organizations",
+          "were de",
+          "eply inves",
+          "tig",
+          "ating specific iss",
+          "ues and p",
+          "roblems, but sol",
+          "ving input or"
+        ],
+        [
+          "model safety",
+          "alone d",
+          "oes not so",
+          "lve",
+          "the end-to-end",
+          "system AI",
+          "safety issues. Th",
+          "is is why we"
+        ],
+        [
+          "introduced AI",
+          "SM. Ben",
+          "chmarkin",
+          "g a",
+          "nd measuremen",
+          "ts alone a",
+          "re not solutions",
+          "to AI safety"
+        ],
+        [
+          "issues. They",
+          "are mea",
+          "surement",
+          "s,",
+          "not solutions. In",
+          "this repo",
+          "rt, we present A",
+          "ISM from an"
+        ],
+        [
+          "engineering a",
+          "nd syste",
+          "ms perspe",
+          "cti",
+          "ve, so that industr",
+          "ies can eff",
+          "ectively implem",
+          "ent workable"
+        ],
+        [
+          "end-to-end s",
+          "olutions",
+          "to achiev",
+          "e c",
+          "omprehensive AI",
+          "safety for",
+          "AI systems. This",
+          "report goes"
+        ],
+        [
+          "into greater d",
+          "epth the",
+          "technical",
+          "det",
+          "ails of AISM.",
+          "",
+          "",
+          ""
+        ],
+        [
+          "1 ▒ Intr",
+          "oduc",
+          "ing Sa",
+          "fe",
+          "AI Founda",
+          "tion’s",
+          "AISM",
+          ""
+        ],
+        [
+          "Fig 1: The 4 Pil",
+          "lar I-M-",
+          "O-C AI Saf",
+          "ety",
+          "Model introduce",
+          "d by the SA",
+          "FE AI Foundatio",
+          "n USA"
+        ],
+        [
+          "Introduced on",
+          "15 Apr",
+          "il 2025, th",
+          "e f",
+          "oundation AI Saf",
+          "ety Model",
+          "provides the ful",
+          "l end-to-end"
+        ],
+        [
+          "safety protect",
+          "ion and",
+          "functions",
+          "for",
+          "the AI pipeline, g",
+          "overning a",
+          "ll the interaction",
+          "s and events"
+        ],
+        [
+          "happening at",
+          "input, m",
+          "odel and",
+          "ou",
+          "tput. This allows",
+          "policies,",
+          "laws, regulation",
+          "s, etc., to be"
+        ],
+        [
+          "applied to ea",
+          "ch secti",
+          "on of the",
+          "AI",
+          "pipeline and not",
+          "hing goes",
+          "unmonitored or",
+          "ungoverned."
+        ],
+        [
+          "Humans, ther",
+          "efore, c",
+          "an remain",
+          "in",
+          "full control of th",
+          "e process",
+          "and ensure com",
+          "pliance with"
+        ],
+        [
+          "existing requir",
+          "ements",
+          ". While co",
+          "mp",
+          "rehensive in desi",
+          "gn, AISM r",
+          "equires stringent",
+          "efforts in its"
+        ],
+        [
+          "All Copyrights",
+          "© Rese",
+          "rved OCT’",
+          "202",
+          "6",
+          "",
+          "",
+          "Pg 2 / 22"
+        ]
+      ],
+      "reject_reason": "celdas inician en minúscula"
+    },
+    {
+      "table_id": "tbl_0255469165007286",
+      "document_id": "doc_469e2c31d8cd93f1",
+      "page_number": 3,
+      "strategy": "text",
+      "bbox": [
+        72.02,
+        38.66,
+        540.17,
+        756.14
+      ],
+      "rows": 32,
+      "columns": 8,
+      "table_confidence": "low",
+      "quality_features": {
+        "filled_ratio": 0.917,
+        "fragment_ratio": 0.008,
+        "lower_start_ratio": 0.843,
+        "avg_words_per_cell": 2.24,
+        "page_area_share": 0.693
+      },
+      "caption": "",
+      "headers": [
+        "SAFE AI Found",
+        "ation",
+        "USA",
+        "column_4",
+        "column_5",
+        "AI Safet",
+        "y Model (AIS",
+        "M) Elaborated"
+      ],
+      "matrix": [
+        [
+          "SAFE AI Found",
+          "ation",
+          "USA",
+          "",
+          "",
+          "AI Safet",
+          "y Model (AIS",
+          "M) Elaborated"
+        ],
+        [
+          "development.",
+          "Each",
+          "compo",
+          "nent",
+          "must be able to c",
+          "ommunicate wi",
+          "th the compl",
+          "iance layer via"
+        ],
+        [
+          "control signals",
+          ". Cont",
+          "rol m",
+          "odules",
+          "are present to e",
+          "nsure each aspe",
+          "ct of safety",
+          "are supported."
+        ],
+        [
+          "Collectively, th",
+          "ey en",
+          "sure th",
+          "at co",
+          "mprehensive saf",
+          "ety can be achie",
+          "ved.",
+          ""
+        ],
+        [
+          "Unlike other e",
+          "xisting",
+          "work",
+          "where",
+          "researchers add",
+          "ress each safet",
+          "y aspect in si",
+          "los, i.e., some"
+        ],
+        [
+          "aggressively w",
+          "ork on",
+          "input",
+          "safet",
+          "y, while others lo",
+          "ok deeply only",
+          "on model sa",
+          "fety or output"
+        ],
+        [
+          "safety. Few, if n",
+          "ot no",
+          "ne, hav",
+          "e look",
+          "ed at the whole s",
+          "pectrum of AI sy",
+          "stem safety",
+          "requirements."
+        ],
+        [
+          "This is where S",
+          "AFE A",
+          "I Foun",
+          "dation",
+          "USA makes its",
+          "landmark in this",
+          "space. We",
+          "are convinced"
+        ],
+        [
+          "that an end-to",
+          "-end h",
+          "olisti",
+          "c archi",
+          "tecture is neede",
+          "d to achieve ful",
+          "l comprehen",
+          "sive AI safety."
+        ],
+        [
+          "Current appro",
+          "ach of",
+          "savin",
+          "g fires",
+          "on one end doe",
+          "s not stop rang",
+          "ing fires on",
+          "the other end."
+        ],
+        [
+          "That is the logi",
+          "c behi",
+          "nd ou",
+          "r AISM",
+          "design.",
+          "",
+          "",
+          ""
+        ],
+        [
+          "2 ▒ AISM",
+          "Pil",
+          "lar",
+          "1: In",
+          "put Safet",
+          "y",
+          "",
+          ""
+        ],
+        [
+          "2.1 Definition",
+          "and p",
+          "urpos",
+          "e",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Input Safety (",
+          "IS) is",
+          "the fir",
+          "st line",
+          "of defense in a",
+          "n AI system. It e",
+          "ncompasse",
+          "s the policies,"
+        ],
+        [
+          "controls, and t",
+          "echni",
+          "cal m",
+          "echani",
+          "sms used to ins",
+          "pect, validate, a",
+          "uthenticate,",
+          "classify, filter,"
+        ],
+        [
+          "remove, and s",
+          "afely p",
+          "roces",
+          "s infor",
+          "mation (data) en",
+          "tering into the A",
+          "I system.",
+          ""
+        ],
+        [
+          "Inputs may i",
+          "nclud",
+          "e use",
+          "r pro",
+          "mpts, uploaded",
+          "files, images",
+          ", audio, vid",
+          "eo, retrieved"
+        ],
+        [
+          "documents, e",
+          "xterna",
+          "l data",
+          "bases",
+          ", API responses",
+          ", and message",
+          "s received",
+          "from other AI"
+        ],
+        [
+          "agents. Becau",
+          "se an",
+          "AI sys",
+          "tem's",
+          "subsequent beh",
+          "avior depends",
+          "heavily on th",
+          "e information"
+        ],
+        [
+          "and instructio",
+          "ns it",
+          "receiv",
+          "es, un",
+          "safe or untrust",
+          "ed inputs can",
+          "undermine",
+          "the otherwise"
+        ],
+        [
+          "effective AI LL",
+          "M mod",
+          "el saf",
+          "ety me",
+          "chanisms.",
+          "",
+          "",
+          ""
+        ],
+        [
+          "The primary o",
+          "bjecti",
+          "ve of",
+          "Input",
+          "Safety is to en",
+          "sure that inco",
+          "ming inform",
+          "ation is valid,"
+        ],
+        [
+          "appropriately",
+          "check",
+          "ed and",
+          "autho",
+          "rized, sufficientl",
+          "y trustworthy, n",
+          "on-maliciou",
+          "s, and handled"
+        ],
+        [
+          "according to it",
+          "s sen",
+          "sitivity",
+          "and ri",
+          "sk. This does no",
+          "t mean that all",
+          "inputs mus",
+          "t be trusted or"
+        ],
+        [
+          "that every ma",
+          "liciou",
+          "s inpu",
+          "t can",
+          "be identified w",
+          "ith certainty. R",
+          "ather, the s",
+          "ystem should"
+        ],
+        [
+          "distinguish tru",
+          "sted",
+          "instru",
+          "ctions",
+          "from untrusted",
+          "data, identify",
+          "suspicious",
+          "or potentially"
+        ],
+        [
+          "harmful conte",
+          "nt, an",
+          "d limit",
+          "the co",
+          "nsequences of i",
+          "nputs that evad",
+          "e detection.",
+          ""
+        ],
+        [
+          "The IS control",
+          "modu",
+          "le is t",
+          "o prot",
+          "ect the system f",
+          "rom any harmf",
+          "ul data that",
+          "may harm the"
+        ],
+        [
+          "model or trick",
+          "the m",
+          "odel i",
+          "nto mi",
+          "sbehaving. In ad",
+          "dition to filterin",
+          "g each toke",
+          "n, it must also"
+        ],
+        [
+          "look at multip",
+          "le tok",
+          "ens, a",
+          "nd al",
+          "so the subsequ",
+          "ent context. Ou",
+          "t-of-band p",
+          "rocessing and"
+        ],
+        [
+          "buffering are n",
+          "eeded",
+          ". With",
+          "parall",
+          "el computation a",
+          "rchitectures, all",
+          "these can b",
+          "e done quickly,"
+        ],
+        [
+          "without users",
+          "noticin",
+          "g the",
+          "differe",
+          "nce.",
+          "",
+          "",
+          ""
+        ],
+        [
+          "All Copyrights",
+          "© Res",
+          "erved",
+          "OCT’ 2",
+          "026",
+          "",
+          "",
+          "Pg 3 / 22"
+        ]
+      ],
+      "reject_reason": "rejilla de texto demasiado grande"
+    },
+    {
+      "table_id": "tbl_99caf619605a5a89",
+      "document_id": "doc_3170e3515ee0b6cb",
+      "page_number": 4,
+      "strategy": "lines",
+      "bbox": [
+        0.0,
+        -7.83,
+        595.59,
+        834.58
+      ],
+      "rows": 1,
+      "columns": 7,
+      "table_confidence": "high",
+      "quality_features": {
+        "filled_ratio": 0.786,
+        "fragment_ratio": 0.0,
+        "lower_start_ratio": 0.545,
+        "avg_words_per_cell": 33.0,
+        "page_area_share": 1.0
+      },
+      "caption": "",
+      "headers": [
+        "Part One The Accelerating AI-Cy",
+        "ber",
+        "Threat",
+        "Lands",
+        "cape",
+        "column_6",
+        "column_7"
+      ],
+      "matrix": [
+        [
+          "Part One The Accelerating AI-Cy",
+          "ber",
+          "Threat",
+          "Lands",
+          "cape",
+          "",
+          ""
+        ],
+        [
+          "1.1 From experimentation to industrial-scale misuse The trajectory of AI misuse in cyberspace has moved decisively from experimentation to industrialization. The shift can be approached along four converging dimensions (speed, volume, tempo and cost) and the early 2026 reporting cycle has produced consistent quantitative anchors for each of them. On speed, the time elapsed between initial access and data exfiltration in the fastest observed intrusions has collapsed to a median of seventy-two minutes, an approximate fourfold acceleration relative to the previous year, in a corpus of more than seven hundred and fifty high-stakes incidents reviewed by leading incident- response practitioners. Time-to-exploit on critical vulnerabilities is collapsing in parallel, with industrialized tooling sold on dark-web marketplaces and Telegram channels reducing reconnaissance-to-exploitation windows that once spanned weeks to single-digit hours [1]. On volume, AI-enabled adversary operations rose by approximately eighty-nine per cent year on year in 2025, according to consolidated industry telemetry covering more than two hundred and fifty tracked threat actors [2]. The increase is driven both by long-tracked state-affiliated clusters that have absorbed generative AI into their existing tradecraft and by the diffusion of AI-augmented commodity tooling across the cybercriminal ecosystem. Generative AI is now embedded across reconnaissance, social engineering, scripting, credential theft and operational execution, to the point where the relevant question is no longer where AI is used in the attack chain but where it is not. On tempo, the underlying capability is itself accelerating. Independent evaluations conducted by national AI security institutes indicate that the autonomous cyber-task horizon of frontier models, namely the length of cyber tasks they can reliably complete without human intervention, was doubling approximately every four months at the start of 2026, against an estimate closer to eight months only three months earlier [3]. The most recent frontier models evaluated in the spring of 2026 have significantly outpaced even that revised trend, although it remains PART I — THE ACCELERATING AI-CYBER THREAT LANDSCAPE 03",
+          "-scale oved d ging di nt quan",
+          "misuse ecisively from mensions (spe titative anchor",
+          "experimenta ed, volume, t s for each of t",
+          "tion to industr empo and cost hem.",
+          "ialization. ) and the",
+          ""
+        ]
+      ],
+      "reject_reason": "página completa con prosa (falso positivo)"
+    },
+    {
+      "table_id": "tbl_2b2270c95601f025",
+      "document_id": "doc_3170e3515ee0b6cb",
+      "page_number": 20,
+      "strategy": "lines",
+      "bbox": [
+        318.22,
+        299.67,
+        372.24,
+        399.46
+      ],
+      "rows": 1,
+      "columns": 3,
+      "table_confidence": "high",
+      "quality_features": {
+        "filled_ratio": 0.5,
+        "fragment_ratio": 0.0,
+        "lower_start_ratio": 0.667,
+        "avg_words_per_cell": 4.33,
+        "page_area_share": 0.011
+      },
+      "caption": "",
+      "headers": [
+        "column_1",
+        "ean-Berna Oran xpert, m Ravis",
+        "column_3"
+      ],
+      "matrix": [
+        [
+          "",
+          "ean-Berna Oran xpert, m Ravis",
+          ""
+        ],
+        [
+          "Jim Ravis Clou CEO, Keir Reid",
+          "m Ravis",
+          ""
+        ]
+      ],
+      "reject_reason": "área demasiado pequeña (residuo)"
+    }
+  ]
 }

@@ -14,7 +14,7 @@ def build_parser() -> argparse.ArgumentParser:
     """Build command line argument parser."""
     parser = argparse.ArgumentParser(
         prog="pdf_intelligence",
-        description="CIOdD-UCR PDF Intelligence Pipeline V5.2 (Research & RAG Edition)",
+        description="CIOdD-UCR PDF Intelligence Pipeline V5.6 (Research & RAG Edition)",
     )
     subparsers = parser.add_subparsers(dest="command", help="Available subcommands")
 
@@ -23,6 +23,8 @@ def build_parser() -> argparse.ArgumentParser:
     run_parser.add_argument("--input", "-i", type=str, default="./data/pdfs", help="Directory containing PDF files")
     run_parser.add_argument("--output", "-o", type=str, default="./data/pdf_intelligence", help="Output directory")
     run_parser.add_argument("--max-docs", "-m", type=int, default=None, help="Maximum number of PDFs to process")
+    run_parser.add_argument("--max-pages", "-p", type=int, default=None, help="Maximum number of pages per PDF to process")
+    run_parser.add_argument("--dry-run", action="store_true", help="Profile documents without generating full corpus")
     run_parser.add_argument("--no-ocr", action="store_true", help="Disable adaptive OCR extraction")
     run_parser.add_argument("--no-embeddings", action="store_true", help="Skip sentence-transformers embedding generation")
     run_parser.add_argument("--no-tfidf", action="store_true", help="Skip TF-IDF lexical index creation")
@@ -55,6 +57,8 @@ def main() -> None:
             pdf_directory=Path(args.input),
             output_directory=Path(args.output),
             max_documents=args.max_docs,
+            max_pages=args.max_pages,
+            dry_run=args.dry_run,
             ocr_enabled=not args.no_ocr,
             generate_embeddings=not args.no_embeddings,
             build_tfidf=not args.no_tfidf,

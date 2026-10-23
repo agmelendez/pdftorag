@@ -1,4 +1,4 @@
-# Especificación de Salidas y Diccionario de Datos: V5.2
+# Especificación de Salidas y Diccionario de Datos: V5.6
 
 > [!NOTE]
 > **Aviso de Claridad Operativa:** Este documento define el **contrato de datos formal y diccionario de esquemas** de los 7 artefactos generados por el pipeline. Cuando ejecutas el pipeline sobre tu colección de PDFs mediante `pdf-intelligence process --input ./data/mis_pdfs --output ./data/salida`, el sistema crea exactamente estos archivos con los campos, tipos y relaciones aquí documentados. Los ejemplos presentados en la interfaz web de GitHub Pages son instancias sintéticas de referencia (mock de validación) para documentar visualmente estos esquemas.
